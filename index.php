@@ -42,8 +42,8 @@
           <li><a href="#speakers">Conferencistas</a></li>
           <li><a href="#schedule">Cronograma</a></li>
           <li><a href="#schedule">ECA</a></li>
-          <li><a href="#venue">JIC</a></li>
-          <li><a href="#hotels">WPA</a></li>
+          <li><a href="https://iniciacioncientifica.utp.ac.pa/" target="_blank">JIC</a></li>
+          <li><a href="https://utp.ac.pa/world-pendulum-alliance-international-conference" target="_blank" >WPA</a></li>
           <li class="buy-tickets"><a href="#buy-tickets">Registro</a></li>
         </ul>
       </nav>
@@ -57,7 +57,7 @@
       <p class="mb-4 pb-0">18-20 de Octubre, Universidad Tecnológica de Panamá, Ciudad de Panamá</p>
       <a href="" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
-      <a href="#about" class="about-btn scrollto">Sobre el congreso</a>
+      <a href="#about" class="about-btn scrollto">Sobre el Congreso</a>
     </div>
   </section>
 
@@ -92,14 +92,14 @@
       </div>
 
       <div class="owl-carousel gallery-carousel">
-        <a href="public/img/areas/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/1.jpg" alt=""></a>
-        <a href="public/img/areas/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/2.jpg" alt=""></a>
-        <a href="public/img/areas/3.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/3.jpg" alt=""></a>
-        <a href="public/img/areas/4.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/4.jpg" alt=""></a>
-        <a href="public/img/areas/5.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/5.jpg" alt=""></a>
-        <a href="public/img/areas/6.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/6.jpg" alt=""></a>
-        <a href="public/img/areas/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/7.jpg" alt=""></a>
-        <a href="public/img/areas/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/areas/8.jpg" alt=""></a>
+        <a href="public/img/interests/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/1.jpg" alt=""></a>
+        <a href="public/img/interests/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/2.jpg" alt=""></a>
+        <a href="public/img/interests/3.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/3.jpg" alt=""></a>
+        <a href="public/img/interests/4.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/4.jpg" alt=""></a>
+        <a href="public/img/interests/5.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/5.jpg" alt=""></a>
+        <a href="public/img/interests/6.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/6.jpg" alt=""></a>
+        <a href="public/img/interests/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/7.jpg" alt=""></a>
+        <a href="public/img/interests/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/8.jpg" alt=""></a>
       </div>
 
     </section>
@@ -114,9 +114,9 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="public/img/conferencistas/1.jpg" alt="conferencista 1" class="img-fluid">
+              <img src="public/img/speakers/1.jpg" alt="conferencista 1" class="img-fluid">
               <div class="details">
-                <h3><a href="view/conferencistas.html">William M. Martel</a></h3>
+                <h3><a href="view/speakers.html">William M. Martel</a></h3>
                 <p>Jefe de División de Competitividad, BID</p>
                 <div class="social">
                   <a href=""><i class="fa fa-twitter"></i></a>
@@ -129,7 +129,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="public/img/conferencistas/2.jpg" alt="conferencista 2" class="img-fluid">
+              <img src="public/img/speakers/2.jpg" alt="conferencista 2" class="img-fluid">
               <div class="details">
                 <h3><a href="view/speaker-details.html">Dannie S. Gibbons</a></h3>
                 <p>VCU College of Engineering</p>
@@ -144,7 +144,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="public/img/conferencistas/3.jpg" alt="conferencista 3" class="img-fluid">
+              <img src="public/img/speakers/3.jpg" alt="conferencista 3" class="img-fluid">
               <div class="details">
                 <h3><a href="view/speaker-details.html">Jose C. Lara</a></h3>
                 <p>Universidad Autónoma de Puebla</p>
@@ -159,7 +159,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="public/img/conferencistas/4.jpg" alt="conferencista 4" class="img-fluid">
+              <img src="public/img/speakers/4.jpg" alt="conferencista 4" class="img-fluid">
               <div class="details">
                 <h3><a href="public/speaker-details.html">Charles F. Jones</a></h3>
                 <p>Penn State University</p>
@@ -174,7 +174,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="public/img/conferencistas/5.jpg" alt="conferencista 5" class="img-fluid">
+              <img src="public/img/speakers/5.jpg" alt="conferencista 5" class="img-fluid">
               <div class="details">
                 <h3><a href="view/speaker-details.html">Speranza Roybal</a></h3>
                 <p>Vellore Institute of Technology</p>
@@ -189,7 +189,7 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="public/img/conferencistas/6.jpg" alt="conferencista 6" class="img-fluid">
+              <img src="public/img/speakers/6.jpg" alt="conferencista 6" class="img-fluid">
               <div class="details">
                 <h3><a href="view/speaker-details.html">Thelma L. Hitchens</a></h3>
                 <p>Faculty of Electronics - UPAEP</p>
@@ -241,7 +241,7 @@
               <div class="col-md-2"><time>10:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/1.jpg" alt="Brenden Legros">
+                  <img src="public/img/speakers/1.jpg" alt="Brenden Legros">
                 </div>
                 <h4>La Innovación. <span>Brenden Legros</span></h4>
                 <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
@@ -252,7 +252,7 @@
               <div class="col-md-2"><time>11:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/2.jpg" alt="Hubert Hirthe">
+                  <img src="public/img/speakers/2.jpg" alt="Hubert Hirthe">
                 </div>
                 <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
                 <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
@@ -263,7 +263,7 @@
               <div class="col-md-2"><time>12:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/3.jpg" alt="Cole Emmerich">
+                  <img src="public/img/speakers/3.jpg" alt="Cole Emmerich">
                 </div>
                 <h4>Esforzándose para desarrollar la super-batería. <span>Cole Emmerich</span></h4>
                 <p>La que ofrece alta potencia, alta capacidad de almacenamiento, bajo costo, y que es sustentable.</p>
@@ -274,7 +274,7 @@
               <div class="col-md-2"><time>02:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/4.jpg" alt="Jack Christiansen">
+                  <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
                 </div>
                 <h4>Robótica <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
@@ -285,7 +285,7 @@
               <div class="col-md-2"><time>03:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/5.jpg" alt="Alejandrin Littel">
+                  <img src="public/img/speakers/5.jpg" alt="Alejandrin Littel">
                 </div>
                 <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
                 <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
@@ -296,7 +296,7 @@
               <div class="col-md-2"><time>04:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/6.jpg" alt="Willow Trantow">
+                  <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
                 </div>
                 <h4>Desarrollo de tecnologías <span>Willow Trantow</span></h4>
                 <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
@@ -319,7 +319,7 @@
               <div class="col-md-2"><time>10:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/1.jpg" alt="Brenden Legros">
+                  <img src="public/img/speakers/1.jpg" alt="Brenden Legros">
                 </div>
                 <h4>La Innovación. <span>Brenden Legros</span></h4>
                 <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
@@ -330,7 +330,7 @@
               <div class="col-md-2"><time>11:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/2.jpg" alt="Hubert Hirthe">
+                  <img src="public/img/speakers/2.jpg" alt="Hubert Hirthe">
                 </div>
                 <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
                 <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
@@ -341,7 +341,7 @@
               <div class="col-md-2"><time>12:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/3.jpg" alt="Cole Emmerich">
+                  <img src="public/img/speakers/3.jpg" alt="Cole Emmerich">
                 </div>
                 <h4>Esforzándose para desarrollar la super-batería. <span>Cole Emmerich</span></h4>
                 <p>La que ofrece alta potencia, alta capacidad de almacenamiento, bajo costo, y que es sustentable.</p>
@@ -352,7 +352,7 @@
               <div class="col-md-2"><time>02:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/4.jpg" alt="Jack Christiansen">
+                  <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
                 </div>
                 <h4>Robótica <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
@@ -363,7 +363,7 @@
               <div class="col-md-2"><time>03:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/5.jpg" alt="Alejandrin Littel">
+                  <img src="public/img/speakers/5.jpg" alt="Alejandrin Littel">
                 </div>
                 <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
                 <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
@@ -374,7 +374,7 @@
               <div class="col-md-2"><time>04:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/6.jpg" alt="Willow Trantow">
+                  <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
                 </div>
                 <h4>Desarrollo de tecnologías <span>Willow Trantow</span></h4>
                 <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
@@ -382,7 +382,7 @@
             </div>
           </div>
 
-          <!-- Schdule Day 3 -->
+          <!-- Dia 3 -->
           <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
 
           <div class="row schedule-item">
@@ -397,7 +397,7 @@
               <div class="col-md-2"><time>10:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/1.jpg" alt="Brenden Legros">
+                  <img src="public/img/speakers/1.jpg" alt="Brenden Legros">
                 </div>
                 <h4>La Innovación. <span>Brenden Legros</span></h4>
                 <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
@@ -408,7 +408,7 @@
               <div class="col-md-2"><time>11:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/2.jpg" alt="Hubert Hirthe">
+                  <img src="public/img/speakers/2.jpg" alt="Hubert Hirthe">
                 </div>
                 <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
                 <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
@@ -419,7 +419,7 @@
               <div class="col-md-2"><time>12:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/3.jpg" alt="Cole Emmerich">
+                  <img src="public/img/speakers/3.jpg" alt="Cole Emmerich">
                 </div>
                 <h4>Esforzándose para desarrollar la super-batería. <span>Cole Emmerich</span></h4>
                 <p>La que ofrece alta potencia, alta capacidad de almacenamiento, bajo costo, y que es sustentable.</p>
@@ -430,7 +430,7 @@
               <div class="col-md-2"><time>02:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/4.jpg" alt="Jack Christiansen">
+                  <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
                 </div>
                 <h4>Robótica <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
@@ -441,7 +441,7 @@
               <div class="col-md-2"><time>03:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/5.jpg" alt="Alejandrin Littel">
+                  <img src="public/img/speakers/5.jpg" alt="Alejandrin Littel">
                 </div>
                 <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
                 <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
@@ -452,7 +452,7 @@
               <div class="col-md-2"><time>04:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/conferencistas/6.jpg" alt="Willow Trantow">
+                  <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
                 </div>
                 <h4>Desarrollo de tecnologías <span>Willow Trantow</span></h4>
                 <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
@@ -595,49 +595,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/1.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/1.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/2.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/2.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/3.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/3.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/4.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/4.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/5.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/5.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/6.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/6.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/7.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/7.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/8.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/8.png" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -659,49 +659,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/1.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/1.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/2.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/2.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/3.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/3.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/4.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/4.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/5.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/5.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/6.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/6.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/7.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/7.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/patrocinadores/8.png" class="img-fluid" alt="">
+              <img src="public/img/sponsors/8.png" class="img-fluid" alt="">
             </div>
           </div>
 

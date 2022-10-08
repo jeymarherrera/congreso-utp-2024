@@ -462,7 +462,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="public/img/hoteles/2.jpg" alt="Hotel 2" class="img-fluid">
+                <img src="public/img/hotels/2.jpg" alt="Hotel 2" class="img-fluid">
               </div>
               <h3><a href="#">Hotel 2</a></h3>
               <div class="stars">
@@ -479,7 +479,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="hotel">
               <div class="hotel-img">
-                <img src="public/img/hoteles/3.jpg" alt="Hotel 3" class="img-fluid">
+                <img src="public/img/hotels/3.jpg" alt="Hotel 3" class="img-fluid">
               </div>
               <h3><a href="#">Hotel 3</a></h3>
               <div class="stars">
