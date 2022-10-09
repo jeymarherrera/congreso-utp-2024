@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
+  <link href="public/css/bootstrap/bootstrap.css" rel="stylesheet">
   <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
@@ -55,7 +56,7 @@
     <div class="intro-container wow fadeIn">
       <h1 class="mb-4 pb-0">VIX <span>Congreso Internacional</span><br>de Ingeniería, Ciencias y Tecnología</h1>
       <p class="mb-4 pb-0">18-20 de Octubre, Universidad Tecnológica de Panamá, Ciudad de Panamá</p>
-      <a href="" class="venobox play-btn mb-4" data-vbtype="video"
+      <a href="https://www.youtube.com/watch?v=a98t4z_rXU4" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
       <a href="#about" class="about-btn scrollto">Sobre el Congreso</a>
     </div>
@@ -224,6 +225,8 @@
             <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Día 3</a>
           </li>
         </ul>
+
+        
         
           <div class="tab-content row justify-content-center">
           <!-- Dia 1 -->
@@ -319,7 +322,7 @@
               <div class="col-md-2"><time>10:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/speakers/1.jpg" alt="Brenden Legros">
+                  <img src="public/img/speakers/4.jpg" alt="Brenden Legros">
                 </div>
                 <h4>La Innovación. <span>Brenden Legros</span></h4>
                 <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
@@ -330,7 +333,7 @@
               <div class="col-md-2"><time>11:00 AM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/speakers/2.jpg" alt="Hubert Hirthe">
+                  <img src="public/img/speakers/5.jpg" alt="Hubert Hirthe">
                 </div>
                 <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
                 <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
@@ -352,7 +355,7 @@
               <div class="col-md-2"><time>02:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
+                  <img src="public/img/speakers/2.jpg" alt="Jack Christiansen">
                 </div>
                 <h4>Robótica <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
@@ -363,7 +366,7 @@
               <div class="col-md-2"><time>03:00 PM</time></div>
               <div class="col-md-10">
                 <div class="speaker">
-                  <img src="public/img/speakers/5.jpg" alt="Alejandrin Littel">
+                  <img src="public/img/speakers/1.jpg" alt="Alejandrin Littel">
                 </div>
                 <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
                 <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
@@ -517,7 +520,6 @@
             </div>
           </div>
 
-
           <div class="col-lg-4">
             <div class="card">
               <div class="card-body">
@@ -595,49 +597,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/1.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/1.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/2.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/2.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/3.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/3.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/4.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/4.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/5.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/5.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/6.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/6.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/7.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/7.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
-              <img src="public/img/sponsors/8.png" class="img-fluid" alt="">
+              <img src="public/img/strategic-allies/8.png" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -940,7 +942,7 @@
   <!-- JavaScript Librarias -->
   <script src="public/js/jquery/jquery.min.js"></script>
   <script src="public/js/jquery/jquery-migrate.min.js"></script>
-  <script src="public/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="public/js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="public/js/easing/easing.min.js"></script>
   <script src="public/js/superfish/hoverIntent.js"></script>
   <script src="public/js/superfish/superfish.min.js"></script>
@@ -952,7 +954,7 @@
   <script src="public/js/contactform.js"></script>
 
   <!-- JS -->
-  <script src="../public/js/main.js"></script>
+  <script src="public/js/main.js"></script>
 </body>
 
 </html>
