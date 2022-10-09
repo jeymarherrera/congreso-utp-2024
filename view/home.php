@@ -13,17 +13,19 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
+  <!-- Bootstrap -->
   <link href="public/css/bootstrap/bootstrap.css" rel="stylesheet">
   <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
+  <!-- Librarias CSS -->
+  <script src="https://kit.fontawesome.com/3f6fcc0d63.js" crossorigin="anonymous"></script>
+  <link href="public/css/font-awesome/font-awesome.css" rel="stylesheet">
   <link href="public/css/font-awesome/font-awesome.min.css" rel="stylesheet">
   <link href="public/css/animate/animate.min.css" rel="stylesheet">
   <link href="public/css/venobox/venobox.css" rel="stylesheet">
   <link href="public/css/owlcarousel/owl.carousel.min.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
+  <!-- CSS -->
   <link href="public/css/style.css" rel="stylesheet">
 </head>
 
@@ -235,7 +237,7 @@
             <div class="row schedule-item">
               <div class="col-md-2"><time>09:30 AM</time></div>
               <div class="col-md-10">
-                <h4>Bienvenida</h4>
+                <h4>Bienvenida. </h4>
                 <p>Bienvenida de los Organizadores del Congreso.</p>
               </div>
             </div>
@@ -279,7 +281,7 @@
                 <div class="speaker">
                   <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
                 </div>
-                <h4>Robótica <span>Jack Christiansen</span></h4>
+                <h4>Robótica. <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
               </div>
             </div>
@@ -301,7 +303,7 @@
                 <div class="speaker">
                   <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
                 </div>
-                <h4>Desarrollo de tecnologías <span>Willow Trantow</span></h4>
+                <h4>Desarrollo de tecnologías. <span>Willow Trantow</span></h4>
                 <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
               </div>
             </div>
@@ -313,7 +315,7 @@
           <div class="row schedule-item">
               <div class="col-md-2"><time>09:30 AM</time></div>
               <div class="col-md-10">
-                <h4>Bienvenida</h4>
+                <h4>Bienvenida. </h4>
                 <p>Bienvenida de los Organizadores del Congreso.</p>
               </div>
             </div>
@@ -357,7 +359,7 @@
                 <div class="speaker">
                   <img src="public/img/speakers/2.jpg" alt="Jack Christiansen">
                 </div>
-                <h4>Robótica <span>Jack Christiansen</span></h4>
+                <h4>Robótica. <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
               </div>
             </div>
@@ -379,7 +381,7 @@
                 <div class="speaker">
                   <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
                 </div>
-                <h4>Desarrollo de tecnologías <span>Willow Trantow</span></h4>
+                <h4>Desarrollo de tecnologías. <span>Willow Trantow</span></h4>
                 <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
               </div>
             </div>
@@ -391,7 +393,7 @@
           <div class="row schedule-item">
               <div class="col-md-2"><time>09:30 AM</time></div>
               <div class="col-md-10">
-                <h4>Bienvenida</h4>
+                <h4>Bienvenida.</h4>
                 <p>Bienvenida de los Organizadores del Congreso.</p>
               </div>
             </div>
@@ -435,7 +437,7 @@
                 <div class="speaker">
                   <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
                 </div>
-                <h4>Robótica <span>Jack Christiansen</span></h4>
+                <h4>Robótica. <span>Jack Christiansen</span></h4>
                 <p>Investigación, educación, y educación en investigación con robótica.</p>
               </div>
             </div>
@@ -457,7 +459,7 @@
                 <div class="speaker">
                   <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
                 </div>
-                <h4>Desarrollo de tecnologías <span>Willow Trantow</span></h4>
+                <h4>Desarrollo de tecnologías. <span>Willow Trantow</span></h4>
                 <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
               </div>
             </div>
@@ -718,7 +720,7 @@
       <div class="container wow fadeInUp">
         <div class="section-header">
           <h2>¿Deseas obtener más información sobre el congreso?</h2>
-          <p>Suscríbete con tu correo y estaremos manteniendote al tanto de cada una de las novedades.</p>
+          <p>Suscríbete con tu correo y estaremos manteniéndote al tanto de cada una de las novedades.</p>
         </div>
 
         <form method="POST" action="#">
@@ -727,7 +729,7 @@
               <input type="text" class="form-control" placeholder="Ingresa tu correo">
             </div>
             <div class="col-auto">
-              <button type="submit">Subscribe</button>
+              <button type="submit">Subscribirme</button>
             </div>
           </div>
         </form>
@@ -817,7 +819,7 @@
       <div class="container">
 
         <div class="section-header">
-          <h2>Contactanos</h2>
+          <h2>Contáctanos</h2>
           <p>Atendemos en horario de oficina.</p>
         </div>
 
@@ -843,7 +845,7 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Correo</h3>
-              <p><a href="mailto:info@example.com">correo@example.com</a></p>
+              <p><a href="mailto:info@example.com">iestec2024@utp.ac.pa</a></p>
             </div>
           </div>
 
@@ -903,8 +905,8 @@
               <li><i class="fa fa-angle-right"></i> <a href="#">Inicio</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Sobre el Congreso</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">Lugar de Encuentro</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Areas de Interes</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Contactanos</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Áreas de Interés</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Contáctanos</a></li>
             </ul>
           </div>
 
@@ -914,14 +916,14 @@
               <li><i class="fa fa-angle-right"></i> <a href="#">JIC</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">WPA</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="#">UTP</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Mapa de Ubicacion</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Mapa de Ubicación</a></li>
             </ul>
 
             <div class="social-links">
               <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
               <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
               <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -942,6 +944,7 @@
   <!-- JavaScript Librarias -->
   <script src="public/js/jquery/jquery.min.js"></script>
   <script src="public/js/jquery/jquery-migrate.min.js"></script>
+  <script src="public/js/bootstrap/bootstrap.min.js"></script>
   <script src="public/js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="public/js/easing/easing.min.js"></script>
   <script src="public/js/superfish/hoverIntent.js"></script>
