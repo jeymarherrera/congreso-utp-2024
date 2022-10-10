@@ -549,7 +549,7 @@
 
       </div>
 
-      <!-- Costos -->
+      <!-- Ventana de Registros -->
       <div id="buy-ticket-modal" class="modal fade">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
