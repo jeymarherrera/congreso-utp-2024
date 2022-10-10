@@ -549,7 +549,8 @@
 
       </div>
 
-      <!-- Ventana de Registros -->
+   
+      <!-- Ventana de Registros 
       <div id="buy-ticket-modal" class="modal fade">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -571,6 +572,7 @@
                   <select id="ticket-type" name="ticket-type" class="form-control" >
                     <option value="">-- Seleccione según su rol --</option>
                     <option value="standard-access">Estudiantes</option>
+                      
                     <option value="pro-access">Profesionales</option>
                     <option value="premium-access">Autores</option>
                   </select>
@@ -582,7 +584,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </section>
 

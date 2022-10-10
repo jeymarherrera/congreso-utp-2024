@@ -125,10 +125,7 @@ h6 {
   background-color: #f6f7fd;
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-
+/* header */
 #header {
   height: 90px;
   padding: 25px 0;
@@ -175,9 +172,7 @@ h6 {
   margin-bottom: 5px;
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+/* nav menu */
 
 /* Nav Menu Essentials */
 
@@ -238,14 +233,14 @@ h6 {
   content: "\f105";
 }
 
-/* Nav Meu Container */
+/* Nav Menu Container */
 
 #nav-menu-container {
   float: right;
   margin: 0;
 }
 
-/* Nav Meu Styling */
+/* Nav menu Styling */
 
 .nav-menu a {
   padding: 8px;
@@ -361,7 +356,7 @@ h6 {
   color: #fff;
 }
 
-/* Mobile Nav Styling */
+/* Mobile Nav  */
 
 #mobile-nav {
   position: fixed;
@@ -434,7 +429,7 @@ h6 {
   display: none;
 }
 
-/* Mobile Nav body classes */
+/* mobile nav */
 
 body.mobile-nav-active {
   overflow: hidden;
@@ -448,10 +443,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# Intro Section
---------------------------------------------------------------*/
-
+/* encabezado */
 #intro {
   width: 100%;
   height: 100vh;
@@ -636,10 +628,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-/*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
-
+/* sobre el congreso */
 #about {
   background: url("../img/conference1-bg.jpg");
   background-size: cover;
@@ -680,10 +669,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# Speakers Section
---------------------------------------------------------------*/
-
+/* conferencista */
 #speakers {
   padding: 60px 0 30px 0;
 }
@@ -777,10 +763,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 10px;
 }
 
-/*--------------------------------------------------------------
-# Schedule Section
---------------------------------------------------------------*/
-
+/* cronograma */
 #schedule {
   padding: 60px 0 60px 0;
 }
@@ -875,10 +858,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Venue Section
---------------------------------------------------------------*/
-
+/* lugar */
 #venue {
   padding: 60px 0;
 }
@@ -941,10 +921,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   transform: scale(1.1);
 }
 
-/*--------------------------------------------------------------
-# Hotels Section
---------------------------------------------------------------*/
-
+/* hoteles */
 #hotels {
   padding: 60px 0;
 }
@@ -1001,10 +978,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 15px;
 }
 
-/*--------------------------------------------------------------
-# Gallery Section
---------------------------------------------------------------*/
-
+/* areas */
 #gallery {
   padding: 60px;
   overflow: hidden;
@@ -1047,10 +1021,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   z-index: 1;
 }
 
-/*--------------------------------------------------------------
-# Sponsors Section
---------------------------------------------------------------*/
-
+/* sponsors */
 #sponsors {
   padding: 60px 0;
 }
@@ -1088,9 +1059,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: all 0.4s ease-in-out;
 }
 
-/*--------------------------------------------------------------
-# F.A.Q Section
---------------------------------------------------------------*/
+/* preguntas frecuentes */
 
 #faq {
   padding: 60px 0;
@@ -1139,9 +1108,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   content: "\f055" !important;
 }
 
-/*--------------------------------------------------------------
-# Subscribe Section
---------------------------------------------------------------*/
+/* suscribirse */
 
 #subscribe {
   padding: 60px;
@@ -1193,9 +1160,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #7A1C79;
 }
 
-/*--------------------------------------------------------------
-# Buy Tickets Section
---------------------------------------------------------------*/
+/* registro */
 
 #buy-tickets {
   padding: 60px 0;
@@ -1269,9 +1234,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-color: #7A1C79;
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
+/* contacto */
 
 #contact {
   padding: 60px 0;
@@ -1373,9 +1336,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #7A1C79;
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
+/* footer */
 
 #footer {
   background: #101522;
@@ -1520,9 +1481,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #ddd;
 }
 
-/*--------------------------------------------------------------
-# Responsive Media Queries
---------------------------------------------------------------*/
+/* mobile */
 
 @media (min-width: 767px) {
   #subscribe input {
