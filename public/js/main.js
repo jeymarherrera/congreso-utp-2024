@@ -143,3 +143,191 @@ jQuery(document).ready(function( $ ) {
   // })
 
 });
+
+
+function SelectChanged() {
+  const tipoUsuario = document.registro.tipoUsuario.value;
+  var span = document.getElementById("subtotal");
+  var span2 = document.getElementById("porcentaje");
+  var span3 = document.getElementById("procesamiento");
+  var span4 = document.getElementById("total");
+  document.getElementById('TipoEstudiante').innerHTML = tipoUsuario;
+
+  switch (tipoUsuario) {
+    case 'Estudiante UTP':
+      /*  var input = document.getElementById('paper1');
+      input.parentNode.removeChild(input); 
+      var input2 = document.getElementById('paper2');
+      input2.parentNode.removeChild(input2);
+      var input = document.getElementById('paper3');
+      input.parentNode.removeChild(input); */
+
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+      document.getElementById('pais').style.display = 'none'
+      document.getElementById('pais').style.display = 'none'
+      document.getElementById('idEst').style.display = 'none'
+      document.getElementById('ocupacion').style.display = 'none'
+      document.getElementById('wpa').style.display = 'none'
+      document.getElementById('institucion').disabled = true
+      document.getElementById('institucion').value = "Universidad Tecnológica de Panamá"
+
+      span.textContent = "USD 75";
+      span2.textContent = "USD 3.75";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 79.25";
+      break;
+    case 'Autor':
+      document.getElementById('paper1').style.display = 'block'
+      document.getElementById('paper2').style.display = 'block'
+      document.getElementById('paper3').style.display = 'block'
+      document.getElementById('pais').style.display = 'block'
+      document.getElementById('idEst').style.display = 'none'
+      document.getElementById('provincia').style.display = 'none'
+      document.getElementById('wpa').style.display = 'none'
+      document.getElementById('ocupacion').style.display = 'block'
+      document.getElementById('institucion').disabled = false
+      document.getElementById('institucion').value = ""
+
+      span.textContent = "USD 325";
+      span2.textContent = "USD 16.25";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 341.75";
+      break;
+    case 'Estudiante nacional':
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+      document.getElementById('pais').style.display = 'none'
+      document.getElementById('pais').style.display = 'block'
+      document.getElementById('idEst').style.display = 'none'
+      document.getElementById('ocupacion').style.display = 'none'
+      document.getElementById('wpa').style.display = 'block'
+      document.getElementById('institucion').disabled = false
+      document.getElementById('institucion').value = ""
+
+      span.textContent = "USD 75";
+      span2.textContent = "USD 3.75";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 79.25";
+      break;
+    case 'Estudiante internacional':
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+      document.getElementById('pais').style.display = 'block'
+      document.getElementById('provincia').style.display = 'none'
+      document.getElementById('idEst').style.display = 'block'
+      document.getElementById('ocupacion').style.display = 'none'
+      document.getElementById('wpa').style.display = 'block'
+      document.getElementById('institucion').disabled = false
+      document.getElementById('institucion').value = ""
+
+      span.textContent = "USD 150";
+      span2.textContent = "USD 7.50";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 158.00";
+      break;
+    case 'Funcionario UTP':
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+      document.getElementById('pais').style.display = 'none'
+      document.getElementById('idEst').style.display = 'none'
+      document.getElementById('wpa').style.display = 'none'
+      document.getElementById('ocupacion').style.display = 'block'
+      document.getElementById('institucion').disabled = true
+      document.getElementById('institucion').value = "Universidad Tecnológica de Panamá"
+
+      span.textContent = "USD 225";
+      span2.textContent = "USD 11.25";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 236.75";
+      break;
+    case 'Profesional nacional':
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+      document.getElementById('pais').style.display = 'none'
+      document.getElementById('idEst').style.display = 'none'
+      document.getElementById('ocupacion').style.display = 'block'
+      document.getElementById('wpa').style.display = 'block'
+      document.getElementById('institucion').disabled = false
+      document.getElementById('institucion').value = ""
+
+      span.textContent = "USD 225";
+      span2.textContent = "USD 11.25";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 236.75";
+      break;
+    case 'Profesional internacional':
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+      document.getElementById('pais').style.display = 'block'
+      document.getElementById('provincia').style.display = 'none'
+      document.getElementById('idEst').style.display = 'block'
+      document.getElementById('ocupacion').style.display = 'none'
+      document.getElementById('wpa').style.display = 'block'
+      document.getElementById('institucion').disabled = false
+      document.getElementById('institucion').value = ""
+
+      span.textContent = "USD 300";
+      span2.textContent = "USD 15.00";
+      span3.textContent = "USD 0.50";
+      span4.textContent = "USD 315.50";
+      break;
+    default:
+      span.textContent = "USD 0.00";
+      span2.textContent = "USD 0.00";
+      span3.textContent = "USD 0.00";
+      span4.textContent = "USD 0.00";
+  }
+
+
+
+  /*   if (tipoUsuario == "Estudiante UTP") {
+      document.getElementById('paper1').style.display = 'none'
+      document.getElementById('paper2').style.display = 'none'
+      document.getElementById('paper3').style.display = 'none'
+    } if (tipoUsuario == '') {
+  
+    } if (condition) {
+  
+    } if (condition) {
+  
+    } */
+
+
+
+  /*   const MiembIEEE = document.registro.IEEE.value;
+    if (MiembIEEE == 'Si') {
+  
+    } */
+
+}
+
+function codigos() {
+  const ieee = document.registro.IEEE.value;
+  const paper2 = document.registro.paper2.value;
+  const paper3 = document.registro.paper3.value;
+
+  if (ieee == 'no') {
+    document.getElementById('MEM').style.display = 'none'
+  } else {
+    document.getElementById('MEM').style.display = 'block'
+  }
+
+  if (paper2 == 'no') {
+    document.getElementById('paper2_').style.display = 'none'
+  } else {
+    document.getElementById('paper2_').style.display = 'block'
+  }
+  if (paper3 == 'no') {
+    document.getElementById('paper3_').style.display = 'none'
+  } else {
+    document.getElementById('paper3_').style.display = 'block'
+  }
+}
+

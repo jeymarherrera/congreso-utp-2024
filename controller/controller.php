@@ -6,4 +6,8 @@ class Controller
         //Le paso los datos a la vista
         require("view/home.php");
     }
+
+    public function CrearCuenta(){
+        require("view/registro.php");
+    }
 }

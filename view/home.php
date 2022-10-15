@@ -494,7 +494,9 @@
                 </ul>
                 <hr>
                 <div class="text-center">
-                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Registrarme</button>
+                  <a href="?op=crear">
+                     <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Registrarme</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -516,7 +518,9 @@
                 </ul>
                 <hr>
                 <div class="text-center">
-                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Registrarme</button>
+                  <a href="?op=crear">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Registrarme</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -539,9 +543,10 @@
                 </ul>
                 <hr>
                 <div class="text-center">
-                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Registrarme</button>
+                  <a href="?op=crear">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Registrarme</button>
+                  </a>
                 </div>
-
               </div>
             </div>
           </div>
