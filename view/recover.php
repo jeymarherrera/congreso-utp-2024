@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>recuperacion</title>
 
     <link href="public/img/logo-utp-white.png" rel="icon">
     <link href="public/img/logo-utp-white.png" rel="icon">
@@ -28,27 +27,15 @@
     <!-- CSS -->
     <link href="public/css/style.css" rel="stylesheet">
 </head>
-
+<header>
+<h2>Recuperacion de contraseña</h2>    
+</header>
 <body>
-    <section>
-        <h2>Bienvenido</h2>
-        <form action="" method="post">
-        <div>
-            <label for="email">correo electrónico</label>
-            <input type="email" name="" id="" placeholder="usuario@ejemplo.com">           
-        </div>
-        <div>
-            <label for="contraseña">contraseña</label> 
-            <input type="password" name="" id="" placeholder="contraseña">    
-    </div>
+    <form action="" method="post">
+        <p>Ingrese su correo para que obtenga un link en su correo para el cambio de contraseña</p>
+<input type="email" name="" id="" placeholder="sucorreo@dominio.com">
+<button type="submit" value="Enviar codigo">Enviar solicitud</button>
+    </form>
 
-        <button type="submit" value="Acceder"></button>
-        <ul>
-            <a href="#">Olvidaste tu contraseña?</a>
-            <h3> - </h3>
-            <a href="#">Registrate aqui!</a>
-        </ul>                    
-        </form>
-    </section>
 </body>
 </html>
