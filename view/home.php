@@ -48,6 +48,7 @@
           <li><a href="https://iniciacioncientifica.utp.ac.pa/" target="_blank">JIC</a></li>
           <li><a href="https://utp.ac.pa/world-pendulum-alliance-international-conference" target="_blank" >WPA</a></li>
           <li class="buy-tickets"><a href="#buy-tickets">Registro</a></li>
+          <li class="login"><a href="#signin">login</a></li>
         </ul>
       </nav>
     </div>
