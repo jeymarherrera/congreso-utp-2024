@@ -9,7 +9,7 @@ echo "Bienvenido:  ". $_SESSION["user"];
 
 if(isset($_POST["logout"])){unset($_SESSION["user"]);}
 if(!isset($_SESSION["acceso"])){
-  header("Location: signin.php")
+  header("Location: signin.php");
   exit();
 }
 ?>
