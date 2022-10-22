@@ -36,7 +36,7 @@
       <div id="logo" class="pull-left">
         <a href="index.html" class="scrollto"><img src="public/img/logo-utp-white.png" alt="UTP" title=""></a>
       </div>
-      <?php
+  <?php
       require_once 'view/Header-Footer/Header.php';
       ?>
     </div>

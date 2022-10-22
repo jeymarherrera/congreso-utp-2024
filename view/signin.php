@@ -28,12 +28,20 @@
     <!-- CSS -->
     <link href="public/css/style.css" rel="stylesheet">
 </head>
+<?php
 
+if (count($_POST)!=0) {
+  $_ADM->verify($_POST["email"], $_POST["password"]);
+}
+?>
 <body>
     <section>
         <h2>Bienvenido</h2>
         <form action="" method="post">
         <div>
+     <?php
+    if ($_ADM->error!="") { echo "<div class='error'>".$_ADM->error."</div>"; }
+    ?>
             <label for="email">correo electrónico</label>
             <input type="email" name="" id="" placeholder="usuario@ejemplo.com">           
         </div>
