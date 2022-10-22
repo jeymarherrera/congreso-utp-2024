@@ -10,4 +10,10 @@ class Controller
     public function CrearCuenta(){
         require("view/registro.php");
     }
+
+    public function Itinerario(){
+        require("view/itinerario.php");
+    }
+
+
 }

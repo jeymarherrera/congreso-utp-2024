@@ -36,21 +36,9 @@
       <div id="logo" class="pull-left">
         <a href="index.html" class="scrollto"><img src="public/img/logo-utp-white.png" alt="UTP" title=""></a>
       </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="index.html">Inicio</a></li>
-          <li><a href="#about">Congreso</a></li>
-          <li><a href="#gallery">Áreas de Interés</a></li>
-          <li><a href="#speakers">Conferencistas</a></li>
-          <li><a href="#schedule">Cronograma</a></li>
-          <li><a href="#schedule">ECA</a></li>
-          <li><a href="https://iniciacioncientifica.utp.ac.pa/" target="_blank">JIC</a></li>
-          <li><a href="https://utp.ac.pa/world-pendulum-alliance-international-conference" target="_blank" >WPA</a></li>
-          <li class="buy-tickets"><a href="#buy-tickets">Registro</a></li>
-          <li class="login"><a href="#signin">login</a></li>
-        </ul>
-      </nav>
+  <?php
+      require_once 'view/Header-Footer/Header.php';
+      ?>
     </div>
   </header>
 
@@ -892,61 +880,10 @@
 
 
  <!-- Footer -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
 
-          <div class="col-lg-6 col-md-6 footer-info">
-            <img src="public/img/logo-utp-white.png" alt="UTP">
-            <p>Universidad Tecnológica de Panamá - 2022 <br>
-              Dirección: Avenida Universidad Tecnológica de Panamá, Vía Puente Centenario,
-              Campus Metropolitano Víctor Levi Sasso. <br>
-              Teléfono. (507) 560-3000 <br>
-              Correo electrónico: buzondesugerencias@utp.ac.pa <br>
-              311 Centro de Atención Ciudadana <br>
-              Políticas de Privacidad</p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Inicio</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Sobre el Congreso</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Lugar de Encuentro</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Áreas de Interés</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Contáctanos</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">ECA</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">JIC</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">WPA</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">UTP</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Mapa de Ubicación</a></li>
-            </ul>
-
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; 2024 Copyright <strong>Universidad Tecnológica de Panamá | </strong> All Rights Reserved by UTP.
-      </div>
-      <div class="credits">
-      </div>
-    </div>
-  </footer>
-
+ <?php
+require_once 'view/Header-Footer/Footer.php';
+?>
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Librarias -->

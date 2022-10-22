@@ -10,9 +10,16 @@ if (isset($_GET['op'])) {
 
   $opcion = $_GET['op'];
 
-  if ($opcion == "crear") {
+  if ($opcion == "crear") 
+  {
       $controller->CrearCuenta();
-  } else {
+   
+  } 
+  elseif ($opcion== "itinerario"){
+            
+    $controller->Itinerario();
+  }
+   else {
       $controller->Index();
   }
 } else {
