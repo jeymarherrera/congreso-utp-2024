@@ -52,7 +52,7 @@ h6 {
   width: 100%;
   height: 100%;
   overflow: visible;
-  background: #fff url("../img/preloader.svg") no-repeat center center;
+  background: #fff url("../public/img/ajax-loader.gif") no-repeat center center;
 }
 
 /* boton backtotop */
@@ -173,9 +173,6 @@ h6 {
 }
 
 /* nav menu */
-
-/* Nav Menu Essentials */
-
 .nav-menu,
 .nav-menu * {
   margin: 0;
@@ -214,8 +211,6 @@ h6 {
   min-width: 180px;
 }
 
-/* Nav Menu Arrows */
-
 .sf-arrows .sf-with-ul {
   padding-right: 30px;
 }
@@ -233,14 +228,10 @@ h6 {
   content: "\f105";
 }
 
-/* Nav Menu Container */
-
 #nav-menu-container {
   float: right;
   margin: 0;
 }
-
-/* Nav menu Styling */
 
 .nav-menu a {
   padding: 8px;
@@ -335,7 +326,7 @@ h6 {
   margin: 0;
 }
 
-/* Mobile Nav Toggle */
+/* Mobile Nav */
 
 #mobile-nav-toggle {
   position: fixed;
@@ -355,8 +346,6 @@ h6 {
 #mobile-nav-toggle i {
   color: #fff;
 }
-
-/* Mobile Nav  */
 
 #mobile-nav {
   position: fixed;
@@ -667,9 +656,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
   margin-bottom: 20px;
   color: #fff;
-}
 
-/* conferencista */
+}/* conferencista */
 #speakers {
   padding: 60px 0 30px 0;
 }
@@ -856,126 +844,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-style: italic;
   color: #152b79;
   margin-bottom: 0;
-}
-
-/* lugar */
-#venue {
-  padding: 60px 0;
-}
-
-#venue .container-fluid {
-  margin-bottom: 3px;
-}
-
-#venue .venue-map iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-}
-
-#venue .venue-info {
-  background: url("../img/venue-info-bg.jpg") top center no-repeat;
-  background-size: cover;
-  position: relative;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-#venue .venue-info:before {
-  content: "";
-  background: rgba(13, 20, 41, 0.8);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#venue .venue-info h3 {
-  font-size: 36px;
-  font-weight: 700;
-  color: #fff;
-}
-
-#venue .venue-info p {
-  color: #fff;
-  margin-bottom: 0;
-}
-
-#venue .venue-gallery-container {
-  padding-right: 12px;
-}
-
-#venue .venue-gallery {
-  overflow: hidden;
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-}
-
-#venue .venue-gallery img {
-  transition: all ease-in-out 0.4s;
-}
-
-#venue .venue-gallery:hover img {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-/* hoteles */
-#hotels {
-  padding: 60px 0;
-}
-
-#hotels .hotel {
-  border: 1px solid #e0e5fa;
-  background: #fff;
-  margin-bottom: 30px;
-}
-
-#hotels .hotel:hover .hotel-img img {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-#hotels .hotel-img {
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-#hotels .hotel-img img {
-  transition: 0.3s ease-in-out;
-}
-
-#hotels h3 {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 5px;
-  padding: 0 20px;
-}
-
-#hotels a {
-  color: #152b79;
-}
-
-#hotels a:hover {
-  color: #7A1C79;
-}
-
-#hotels .stars {
-  padding: 0 20px;
-  margin-bottom: 5px;
-}
-
-#hotels .stars i {
-  color: #ffc31d;
-}
-
-#hotels p {
-  padding: 0 20px;
-  margin-bottom: 20px;
-  color: #060c22;
-  font-style: italic;
-  font-size: 15px;
 }
 
 /* areas */
@@ -1585,11 +1453,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-@media (max-width: 574px) {
-  #venue .venue-info h3 {
-    font-size: 24px;
-  }
-}
 
 @media (max-width: 480px) {
   #schedule .nav-tabs a {

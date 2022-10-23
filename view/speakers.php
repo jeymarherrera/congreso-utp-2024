@@ -47,7 +47,7 @@
   </header>
 
   <main id="main" class="main-page">
-    <section id="speakers-details" class="wow fadeIn">
+    <section id="speakers" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
           <h2>Informacion sobre los conferencistas</h2>

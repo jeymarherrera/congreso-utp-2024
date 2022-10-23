@@ -6,17 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Congreso UTP - 2024</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <!-- Logos UTP -->
   <link href="public/img/logo-utp-white.png" rel="icon">
   <link href="public/img/logo-utp-white.png" rel="icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
   <!-- Bootstrap -->
   <link href="public/css/bootstrap/bootstrap.css" rel="stylesheet">
   <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
   <!-- Librarias CSS -->
   <script src="https://kit.fontawesome.com/3f6fcc0d63.js" crossorigin="anonymous"></script>
   <link href="public/css/font-awesome/font-awesome.css" rel="stylesheet">
@@ -24,11 +21,9 @@
   <link href="public/css/animate/animate.min.css" rel="stylesheet">
   <link href="public/css/venobox/venobox.css" rel="stylesheet">
   <link href="public/css/owlcarousel/owl.carousel.min.css" rel="stylesheet">
-
   <!-- CSS -->
   <link href="public/css/style.css" rel="stylesheet">
 </head>
-
 <body>
   <!-- Header -->
   <header id="header">
@@ -36,12 +31,20 @@
       <div id="logo" class="pull-left">
         <a href="index.html" class="scrollto"><img src="public/img/logo-utp-white.png" alt="UTP" title=""></a>
       </div>
-  <?php
-      require_once 'view/Header-Footer/Header.php';
-      ?>
-    </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.html">Inicio</a></li>
+          <li><a href="#about">Congreso</a></li>
+          <li><a href="#gallery">Áreas de Interés</a></li>
+          <li><a href="#speakers">Conferencistas</a></li>
+          <li><a href="?op=itinerario">Cronograma</a></li>
+          <li><a href="#schedule">ECA</a></li>
+          <li><a href="https://iniciacioncientifica.utp.ac.pa/" target="_blank">JIC</a></li>
+          <li><a href="https://utp.ac.pa/world-pendulum-alliance-international-conference" target="_blank" >WPA</a></li>
+          <li class="buy-tickets"><a href="#buy-tickets">Registro</a></li>
+        </ul>
+      </nav>
   </header>
-
   <!-- Encabezado -->
   <section id="intro">
     <div class="intro-container wow fadeIn">
@@ -52,8 +55,8 @@
       <a href="#about" class="about-btn scrollto">Sobre el Congreso</a>
     </div>
   </section>
-
   <main id="main">
+    <!-- Sobre el congreso -->
     <section id="about">
       <div class="container">
         <div class="row">
@@ -72,17 +75,14 @@
         </div>
       </div>
     </section>
-
     <!-- Areas de Interes -->
     <section id="gallery" class="wow fadeInUp">
-
       <div class="container">
         <div class="section-header">
           <h2>Áreas de Interés</h2>
           <p>Las diferentes tématicas abordadas en el Congreso</p>
         </div>
       </div>
-
       <div class="owl-carousel gallery-carousel">
         <a href="public/img/interests/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/1.jpg" alt=""></a>
         <a href="public/img/interests/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/2.jpg" alt=""></a>
@@ -93,9 +93,7 @@
         <a href="public/img/interests/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/7.jpg" alt=""></a>
         <a href="public/img/interests/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="public/img/interests/8.jpg" alt=""></a>
       </div>
-
     </section>
-
     <!-- Conferencistas -->
     <section id="speakers" class="wow fadeInUp">
       <div class="container">
@@ -108,12 +106,11 @@
             <div class="speaker">
               <img src="public/img/speakers/1.jpg" alt="conferencista 1" class="img-fluid">
               <div class="details">
-                <h3><a href="view/speakers.html">William M. Martel</a></h3>
+                <h3><a href="view/speakers.html">Sergio Vega</a></h3>
                 <p>Jefe de División de Competitividad, BID</p>
                 <div class="social">
                   <a href=""><i class="fa fa-twitter"></i></a>
                   <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
                   <a href=""><i class="fa fa-linkedin"></i></a>
                 </div>
               </div>
@@ -123,12 +120,11 @@
             <div class="speaker">
               <img src="public/img/speakers/2.jpg" alt="conferencista 2" class="img-fluid">
               <div class="details">
-                <h3><a href="view/speaker-details.html">Dannie S. Gibbons</a></h3>
-                <p>VCU College of Engineering</p>
+                <h3><a href="view/speaker-details.html">Jose Soler</a></h3>
+                <p>Universidad de Ingeniería Industrial</p>
                 <div class="social">
                   <a href=""><i class="fa fa-twitter"></i></a>
                   <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
                   <a href=""><i class="fa fa-linkedin"></i></a>
                 </div>
               </div>
@@ -158,7 +154,6 @@
                 <div class="social">
                   <a href=""><i class="fa fa-twitter"></i></a>
                   <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
                   <a href=""><i class="fa fa-linkedin"></i></a>
                 </div>
               </div>
@@ -173,7 +168,6 @@
                 <div class="social">
                   <a href=""><i class="fa fa-twitter"></i></a>
                   <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
                   <a href=""><i class="fa fa-linkedin"></i></a>
                 </div>
               </div>
@@ -188,7 +182,6 @@
                 <div class="social">
                   <a href=""><i class="fa fa-twitter"></i></a>
                   <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
                   <a href=""><i class="fa fa-linkedin"></i></a>
                 </div>
               </div>
@@ -197,274 +190,12 @@
         </div>
       </div>
     </section>
-
-    <!-- Cronograma -->
-    <section id="schedule" class="section-with-bg">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h2>Cronograma</h2>
-          <p>Este será nuestro cronograma de conferencias</p>
-        </div>
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Día 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Día 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Día 3</a>
-          </li>
-        </ul>
-
-        
-        
-          <div class="tab-content row justify-content-center">
-          <!-- Dia 1 -->
-          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>09:30 AM</time></div>
-              <div class="col-md-10">
-                <h4>Bienvenida. </h4>
-                <p>Bienvenida de los Organizadores del Congreso.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/1.jpg" alt="Brenden Legros">
-                </div>
-                <h4>La Innovación. <span>Brenden Legros</span></h4>
-                <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>11:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/2.jpg" alt="Hubert Hirthe">
-                </div>
-                <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
-                <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>12:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/3.jpg" alt="Cole Emmerich">
-                </div>
-                <h4>Esforzándose para desarrollar la super-batería. <span>Cole Emmerich</span></h4>
-                <p>La que ofrece alta potencia, alta capacidad de almacenamiento, bajo costo, y que es sustentable.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>02:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
-                </div>
-                <h4>Robótica. <span>Jack Christiansen</span></h4>
-                <p>Investigación, educación, y educación en investigación con robótica.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>03:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/5.jpg" alt="Alejandrin Littel">
-                </div>
-                <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
-                <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>04:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
-                </div>
-                <h4>Desarrollo de tecnologías. <span>Willow Trantow</span></h4>
-                <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dia 2 -->
-          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-
-          <div class="row schedule-item">
-              <div class="col-md-2"><time>09:30 AM</time></div>
-              <div class="col-md-10">
-                <h4>Bienvenida. </h4>
-                <p>Bienvenida de los Organizadores del Congreso.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/4.jpg" alt="Brenden Legros">
-                </div>
-                <h4>La Innovación. <span>Brenden Legros</span></h4>
-                <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>11:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/5.jpg" alt="Hubert Hirthe">
-                </div>
-                <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
-                <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>12:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/3.jpg" alt="Cole Emmerich">
-                </div>
-                <h4>Esforzándose para desarrollar la super-batería. <span>Cole Emmerich</span></h4>
-                <p>La que ofrece alta potencia, alta capacidad de almacenamiento, bajo costo, y que es sustentable.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>02:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/2.jpg" alt="Jack Christiansen">
-                </div>
-                <h4>Robótica. <span>Jack Christiansen</span></h4>
-                <p>Investigación, educación, y educación en investigación con robótica.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>03:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/1.jpg" alt="Alejandrin Littel">
-                </div>
-                <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
-                <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>04:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
-                </div>
-                <h4>Desarrollo de tecnologías. <span>Willow Trantow</span></h4>
-                <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dia 3 -->
-          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-
-          <div class="row schedule-item">
-              <div class="col-md-2"><time>09:30 AM</time></div>
-              <div class="col-md-10">
-                <h4>Bienvenida.</h4>
-                <p>Bienvenida de los Organizadores del Congreso.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>10:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/1.jpg" alt="Brenden Legros">
-                </div>
-                <h4>La Innovación. <span>Brenden Legros</span></h4>
-                <p>El Imperativo de Innovar para un desarrollo inclusivo y sustentable.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>11:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/2.jpg" alt="Hubert Hirthe">
-                </div>
-                <h4>Topografía de superficie. <span>Hubert Hirthe</span></h4>
-                <p>Uso de la Biología Básica para informar el Diseño de Dispositivos Médicos: Topografía de superficie.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>12:00 AM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/3.jpg" alt="Cole Emmerich">
-                </div>
-                <h4>Esforzándose para desarrollar la super-batería. <span>Cole Emmerich</span></h4>
-                <p>La que ofrece alta potencia, alta capacidad de almacenamiento, bajo costo, y que es sustentable.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>02:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/4.jpg" alt="Jack Christiansen">
-                </div>
-                <h4>Robótica. <span>Jack Christiansen</span></h4>
-                <p>Investigación, educación, y educación en investigación con robótica.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>03:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/5.jpg" alt="Alejandrin Littel">
-                </div>
-                <h4>Oportunidades y desafíos en la Educación Superior. <span>Alejandrin Littel</span></h4>
-                <p>Un enfoque Personal, Evolutivo y Experiencial.</p>
-              </div>
-            </div>
-
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>04:00 PM</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="public/img/speakers/6.jpg" alt="Willow Trantow">
-                </div>
-                <h4>Desarrollo de tecnologías. <span>Willow Trantow</span></h4>
-                <p>Calzado ortopédico sostenible y asequible para países en desarrollo utilizando materiales múltiples funcionales sostenibles y tecnologías de Industria 4.0.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Costos -->
     <section id="buy-tickets" class="section-with-bg wow fadeInUp">
       <div class="container">
-
         <div class="section-header">
           <h2>Costos de Participación</h2>
         </div>
-
         <div class="row">
           <div class="col-lg-4">
             <div class="card mb-5 mb-lg-0">
@@ -475,16 +206,16 @@
                 <ul class="fa-ul">
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Asiento Regular</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Descanso</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Certificado</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Certificado de Asistencia</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Acceso a Eventos</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Acceso a Conferencias</li>
                   <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Presentación de Artículo</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Cena de Festejo</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Cena de Festejo</li>
                 </ul>
                 <hr>
                 <div class="text-center">
                   <a href="?op=crear">
-                     <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="standard-access">Registrarme</button>
+                     <button type="button" class="btn">Registrarme</button>
                   </a>
                 </div>
               </div>
@@ -499,7 +230,7 @@
                 <ul class="fa-ul">
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Asiento Regular</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Descanso</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Certificado</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Certificado de Asistencia</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Acceso a Eventos</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Acceso a Conferencias</li>
                   <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Presentación de Artículo</li>
@@ -508,13 +239,12 @@
                 <hr>
                 <div class="text-center">
                   <a href="?op=crear">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Registrarme</button>
+                    <button type="button" class="btn">Registrarme</button>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-lg-4">
             <div class="card">
               <div class="card-body">
@@ -522,12 +252,12 @@
                 <h6 class="card-price text-center">$250</h6>
                 <hr>
                 <ul class="fa-ul">
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-check"></i></span>Asiento Regular</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Asiento Regular</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Descanso</li>
-                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Certificado</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-check"></i></span>Acceso a Eventos</li>
-                  <li class="text-muted"><span class="fa-li"><i class="fa fa-check"></i></span>Acceso a Conferencias</li>
-                  <li><span class="fa-li"><i class="fa fa-times"></i></span>Presentación de Artículo</li>
+                  <li  class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Certificado de Asistencia</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Acceso a Eventos</li>
+                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>Acceso a Conferencias</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Presentación de Artículo</li>
                   <li><span class="fa-li"><i class="fa fa-check"></i></span>Cena de Festejo</li>
                 </ul>
                 <hr>
@@ -585,132 +315,104 @@
 
     <!-- Aliados -->
     <section id="sponsors" class="section-with-bg wow fadeInUp">
-
       <div class="container">
         <div class="section-header">
           <h2>Aliados Estratégicos</h2>
         </div>
-
         <div class="row no-gutters sponsors-wrap clearfix">
-
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/1.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>       
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/2.png" class="img-fluid" alt="">
             </div>
-          </div>
-        
+          </div>        
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/3.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/4.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/5.png" class="img-fluid" alt="">
             </div>
-          </div>
-        
+          </div>       
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/6.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/7.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/strategic-allies/8.png" class="img-fluid" alt="">
             </div>
           </div>
-
         </div>
-
       </div>
-
     </section>
-
     <!-- Patrocinadores -->
     <section id="sponsors" class="section-with-bg wow fadeInUp">
-
       <div class="container">
         <div class="section-header">
           <h2>Patrocinadores</h2>
         </div>
-
         <div class="row no-gutters sponsors-wrap clearfix">
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/1.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>     
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/2.png" class="img-fluid" alt="">
             </div>
-          </div>
-        
+          </div>       
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/3.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/4.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/5.png" class="img-fluid" alt="">
             </div>
-          </div>
-        
+          </div>        
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/6.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/7.png" class="img-fluid" alt="">
             </div>
-          </div>
-          
+          </div>          
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="sponsor-logo">
               <img src="public/img/sponsors/8.png" class="img-fluid" alt="">
             </div>
           </div>
-
         </div>
-
       </div>
-
     </section>
-
      <!-- Suscripción -->
     <section id="subscribe">
       <div class="container wow fadeInUp">
@@ -718,7 +420,6 @@
           <h2>¿Deseas obtener más información sobre el congreso?</h2>
           <p>Suscríbete con tu correo y estaremos manteniéndote al tanto de cada una de las novedades.</p>
         </div>
-
         <form method="POST" action="#">
           <div class="form-row justify-content-center">
             <div class="col-auto">
@@ -729,23 +430,17 @@
             </div>
           </div>
         </form>
-
       </div>
     </section>
-
      <!-- Preguntas -->
     <section id="faq" class="wow fadeInUp">
-
       <div class="container">
-
         <div class="section-header">
           <h2>Preguntas Frecuentes</h2>
         </div>
-
         <div class="row justify-content-center">
           <div class="col-lg-9">
               <ul id="faq-list">
-
                 <li>
                   <a data-toggle="collapse" class="collapsed" href="#faq1">¿Qué es un congreso? <i class="fa fa-minus-circle"></i></a>
                   <div id="faq1" class="collapse" data-parent="#faq-list">
@@ -753,8 +448,7 @@
                     Un congreso es una reunión o conferencia, generalmente periódica, donde los legisladores se reúnen para debatir cuestiones de diversa índole. Se compone de 3 elementos: moderador, mediador y partícipe.
                     </p>
                   </div>
-                </li>
-      
+                </li>     
                 <li>
                   <a data-toggle="collapse" href="#faq2" class="collapsed">¿Quién puede participar? <i class="fa fa-minus-circle"></i></a>
                   <div id="faq2" class="collapse" data-parent="#faq-list">
@@ -762,8 +456,7 @@
                       Todas las personas que deseen hacerlo, tanto nacionales como extranjeros, estudiantes, profesionales, entre otros.
                     </p>
                   </div>
-                </li>
-      
+                </li>     
                 <li>
                   <a data-toggle="collapse" href="#faq3" class="collapsed">¿Cómo puedo participar? <i class="fa fa-minus-circle"></i></a>
                   <div id="faq3" class="collapse" data-parent="#faq-list">
@@ -772,8 +465,7 @@
                     Todos los participantes deben participar realizar el registro previo al congreso. Tiene la posibilidad de realizarlo de manera online o presencial.
                     </p>
                   </div>
-                </li>
-      
+                </li>     
                 <li>
                   <a data-toggle="collapse" href="#faq4" class="collapsed">¿Qué debo llevar? <i class="fa fa-minus-circle"></i></a>
                   <div id="faq4" class="collapse" data-parent="#faq-list">
@@ -781,8 +473,7 @@
                       Es esencial llevar contigo tu smartphone, ya que a través de nuestra aplicación móvil llevarás el control de tu asistencia dentro del congreso y de los diferentes eventos y conferencias que se realizarán. De esta manera lograrás obtener tu certificado de participación.
                     </p>
                   </div>
-                </li>
-      
+                </li>      
                 <li>
                   <a data-toggle="collapse" href="#faq5" class="collapsed">¿Qué es lo que no debo llevar? <i class="fa fa-minus-circle"></i></a>
                   <div id="faq5" class="collapse" data-parent="#faq-list">
@@ -790,8 +481,7 @@
                     Por ningún motivo debes traer contigo armas de cualquier tipo, drogas, o alcohol. Si no estás seguro de algo,<a href="#">¡pregúntanos!</a>
                     </p>
                   </div>
-                </li>
-      
+                </li>    
                 <li>
                   <a data-toggle="collapse" href="#faq6" class="collapsed">¿Cuánto cuesta participar? <i class="fa fa-minus-circle"></i></a>
                   <div id="faq6" class="collapse" data-parent="#faq-list">
@@ -799,28 +489,20 @@
                       Al momento de realizar tu registro y seleccionar tu rol podrás visualizar los diferentes costos disponibles para participar en el congreso. ¡Atento! que tenemos ofertas para los primeros en realizar su registro.
                     </p>
                   </div>
-                </li>
-      
+                </li>     
               </ul>
           </div>
         </div>
-
       </div>
-
     </section>
-
     <!--  Contacto -->
     <section id="contact" class="section-bg wow fadeInUp">
-
       <div class="container">
-
         <div class="section-header">
           <h2>Contáctanos</h2>
           <p>Atendemos en horario de oficina.</p>
         </div>
-
         <div class="row contact-info">
-
           <div class="col-md-4">
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
@@ -828,7 +510,6 @@
               <address>Ricardo J. Alfaro, Ciudad de Panamá.</address>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
@@ -836,7 +517,6 @@
               <p><a href="tel:+507-6015-1314">+507-6015-1314</a></p>
             </div>
           </div>
-
           <div class="col-md-4">
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
@@ -844,9 +524,7 @@
               <p><a href="mailto:info@example.com">iestec2024@utp.ac.pa</a></p>
             </div>
           </div>
-
         </div>
-
         <div class="form">
           <div id="sendmessage">Su mensaje ha sido enviado, gracias!</div>
           <div id="errormessage"></div>
@@ -872,20 +550,14 @@
             <div class="text-center"><button type="submit">Enviar</button></div>
           </form>
         </div>
-
       </div>
     </section>
-
   </main>
-
-
- <!-- Footer -->
-
- <?php
-require_once 'view/Header-Footer/Footer.php';
-?>
+  <!-- Footer -->
+  <?php
+  require_once 'view/template/footer.php';
+  ?>
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
   <!-- JavaScript Librarias -->
   <script src="public/js/jquery/jquery.min.js"></script>
   <script src="public/js/jquery/jquery-migrate.min.js"></script>
@@ -897,12 +569,9 @@ require_once 'view/Header-Footer/Footer.php';
   <script src="public/js/wow/wow.min.js"></script>
   <script src="public/js/venobox/venobox.min.js"></script>
   <script src="public/js/owlcarousel/owl.carousel.min.js"></script>
-
   <!-- Contactos -->
   <script src="public/js/contactform.js"></script>
-
   <!-- JS -->
   <script src="public/js/main.js"></script>
 </body>
-
 </html>

@@ -7,23 +7,35 @@ require("./controller/Controller.php");
 $controller = new Controller;
 
 if (isset($_GET['op'])) {
-
   $opcion = $_GET['op'];
 
-  if ($opcion == "crear") 
-  {
-      $controller->CrearCuenta();
-   
+  if ($opcion == "home") {
+      $controller->Index();
   } 
-  elseif ($opcion== "itinerario"){
-            
+  elseif ($opcion== "conferencista"){        
+    $controller->Conferencista();
+  }
+  elseif ($opcion== "itinerario"){        
     $controller->Itinerario();
   }
-   else {
-      $controller->Index();
+  elseif ($opcion== "eca") {
+    $controller->ECA();
   }
-} else {
-
-  //Llamo al método por defecto del controlador
+   elseif ($opcion== "crear") {
+      $controller->CrearCuenta();
+  }
+  elseif ($opcion== "login") {
+    $controller->Login();
+  }
+  elseif ($opcion== "recuperar") {
+    $controller->Recover();
+  }
+  elseif ($opcion== "panel") {
+    $controller->Panel();
+  }
+} 
+else {
   $controller->Index();
 }
+
+?>

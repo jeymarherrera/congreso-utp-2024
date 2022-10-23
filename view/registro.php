@@ -47,7 +47,7 @@
             </div>
 
             <?php
-      require_once 'view/Header-Footer/Header.php';
+      require_once 'view/template/header.php';
       ?>
         </div>
     </header>
