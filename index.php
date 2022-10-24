@@ -33,6 +33,9 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "panel") {
     $controller->Panel();
   }
+  elseif ($opcion== "evento") {
+    $controller->CrearEvento();
+  }
 } 
 else {
   $controller->Index();

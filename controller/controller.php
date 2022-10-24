@@ -32,7 +32,11 @@ class Controller
     }
 
     public function Panel(){
-        require("view/panel.php");
+        require("view/panel/dashboard.php");
     }
+
+    public function CrearEvento(){
+        require("view/crear-evento.php");
+    } 
     
 }

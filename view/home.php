@@ -554,6 +554,7 @@
     </section>
   </main>
   <!-- Footer -->
+  <footer>
   <?php
   require_once 'view/template/footer.php';
   ?>
@@ -573,5 +574,6 @@
   <script src="public/js/contactform.js"></script>
   <!-- JS -->
   <script src="public/js/main.js"></script>
+  </footer>
 </body>
 </html>
