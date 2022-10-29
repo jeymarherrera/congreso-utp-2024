@@ -4,7 +4,7 @@ class Controller
 {
     public function Index(){
         //Le paso los datos a la vista
-        require("view/home.php");
+        require("view/dashboard.php");
     }
 
     public function Conferencista(){
