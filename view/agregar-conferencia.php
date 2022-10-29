@@ -17,6 +17,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-  datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <link href="public/css/owlcarousel/owl.carousel.min.css" rel="stylesheet">
     <link href="public/css/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
@@ -30,51 +31,44 @@
     <?php
     require_once 'view/template/dashboard-header.php';
     ?>
+
+    <!-- formulario -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
-            <div class="m-n2">
-                <a href="?op=newArea"><button class="btn btn-primary w-100 m-2" type="button">Agregar nueva área de interés</button></a>
-            </div>
-        </div>
-    </div>
-    <!-- congresos -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="bg-light text-center rounded p-4">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Áreas de Interés agregadas</h6>
-            </div>
-            <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                    <thead>
-                        <tr class="text-dark">
-                            <th scope="col">ID</th>
-                            <th scope="col">Titulo</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Ingeniería</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Ciencias</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>Tecnología</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h6 class="mb-4">Ingrese los datos de la nueva coferencia</h6>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Titulo</label>
+                    <input type="name" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Cantidad de Ponencias</label>
+                    <input type="number" class="form-control" id="quantity">
+                </div>
+                <div class="mb-3">
+                <label for="startDate">Seleccione la fecha de iniciacion</label>
+                <input id="startDate" class="form-control" type="date" />
+                </div>
+                <label for="finishDate">Seleccione la fecha de culminacion</label>
+                <input id="finishDate" class="form-control" type="date" />
+                </div>
+                <label for="pais" class="form-label">Sala</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Seleccione una opción</option>
+                    <option value="1">0011</option>
+                    <option value="2">0012</option>
+                    <option value="3">0013</option>
+                </select>
+                <label for="pais" class="form-label">Congreso</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Seleccione una opción</option>
+                    <option value="1">Congreso 2024</option>
+                    <option value="2">Congreso 2024</option>
+                    <option value="3">Congreso 2024</option>
+                </select>
+                <br><br>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
         </div>
     </div>
 

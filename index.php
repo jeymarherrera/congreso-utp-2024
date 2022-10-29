@@ -63,6 +63,24 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "invitados") {
     $controller->AgregarInvitado();
   }
+  elseif ($opcion== "newAdmin") {
+    $controller->nuevoAdministrador();
+  }
+  elseif ($opcion== "newInvitado") {
+    $controller->nuevoInvitado();
+  }
+  elseif ($opcion== "newSala") {
+    $controller->nuevaSala();
+  }
+  elseif ($opcion== "newCongreso") {
+    $controller->nuevoCongreso();
+  }
+  elseif ($opcion== "newConferencia") {
+    $controller->nuevaConferencia();
+  }
+  elseif ($opcion== "newEvento") {
+    $controller->nuevoEvento();
+  }
   
 } 
 else {

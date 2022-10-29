@@ -33,7 +33,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-                <button class="btn btn-primary w-100 m-2" type="button">Agregar nueva sala</button>
+                <a href="?op=newSala"><button class="btn btn-primary w-100 m-2" type="button">Agregar nueva sala</button></a>
             </div>
         </div>
     </div>
@@ -60,21 +60,21 @@
                             <td>0011</td>
                             <td>50</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
                         </tr>
                         <tr>
                             <td>02</td>
                             <td>0012</td>
                             <td>65</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
                         </tr>
                         <tr>
                             <td>03</td>
                             <td>0013</td>
                             <td>45</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
                         </tr>
                     </tbody>
                 </table>

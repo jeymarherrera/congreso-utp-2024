@@ -69,4 +69,29 @@ class Controller
     public function AgregarInvitado(){
         require("view/invitados.php");
     } 
+
+    public function nuevoAdministrador(){
+        require("view/agregar-admin.php");
+    } 
+
+    public function nuevoInvitado(){
+        require("view/agregar-invitados.php");
+    }
+
+    public function nuevaSala(){
+        require("view/agregar-sala.php");
+    }
+
+    public function nuevoCongreso(){
+        require("view/agregar-congreso.php");
+    }
+
+    public function nuevaConferencia(){
+        require("view/agregar-conferencia.php");
+    }
+
+    public function nuevoEvento(){
+        require("view/agregar-evento.php");
+    }
+    
 }

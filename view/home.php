@@ -263,7 +263,7 @@
                 <hr>
                 <div class="text-center">
                   <a href="?op=crear">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="premium-access">Registrarme</button>
+                    <button type="button" >Registrarme</button>
                   </a>
                 </div>
               </div>
@@ -272,44 +272,6 @@
         </div>
 
       </div>
-
-   
-      <!-- Ventana de Registros 
-      <div id="buy-ticket-modal" class="modal fade">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Costos de Participación</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="POST" action="#">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="your-name" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="your-email" placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                  <select id="ticket-type" name="ticket-type" class="form-control" >
-                    <option value="">-- Seleccione según su rol --</option>
-                    <option value="standard-access">Estudiantes</option>
-                      
-                    <option value="pro-access">Profesionales</option>
-                    <option value="premium-access">Autores</option>
-                  </select>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn">Registrarme</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </section>
 
 

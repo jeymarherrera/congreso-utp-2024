@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- jQuery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script><!-- Bootstrap -->
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -33,7 +36,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-                <button class="btn btn-primary w-100 m-2" type="button">Crear nuevo congreso</button>
+               <a href="?op=newCongreso"><button class="btn btn-primary w-100 m-2" type="button">Crear nuevo congreso</button></a>
             </div>
         </div>
     </div>
@@ -66,13 +69,18 @@
                             <td>01 Oct 2024</td>
                             <td>03 Oct 2024</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+
+    <?php
+    require_once 'view/template/modal-delete.php';
+    ?>
 
     <?php
     require_once 'view/template/dashboard-footer.php';

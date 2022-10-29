@@ -30,53 +30,7 @@
     <?php
     require_once 'view/template/dashboard-header.php';
     ?>
-    <div class="container-fluid pt-4 px-4">
-        <div class="bg-light rounded h-100 p-4">
-            <div class="m-n2">
-                <a href="?op=newArea"><button class="btn btn-primary w-100 m-2" type="button">Agregar nueva área de interés</button></a>
-            </div>
-        </div>
-    </div>
-    <!-- congresos -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="bg-light text-center rounded p-4">
-            <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Áreas de Interés agregadas</h6>
-            </div>
-            <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                    <thead>
-                        <tr class="text-dark">
-                            <th scope="col">ID</th>
-                            <th scope="col">Titulo</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Ingeniería</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Ciencias</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>Tecnología</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    
 
     <?php
     require_once 'view/template/dashboard-footer.php';

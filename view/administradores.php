@@ -33,7 +33,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-                <button class="btn btn-primary w-100 m-2" type="button">Agregar Nuevo Administrador</button>
+                <a href="?op=newAdmin"><button class="btn btn-primary w-100 m-2" type="button" >Agregar Nuevo Administrador</button></a>
             </div>
         </div>
     </div>

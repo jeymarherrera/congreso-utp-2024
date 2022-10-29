@@ -62,7 +62,7 @@
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button class="btn btn-lg btn-primary w-100 m-2" type="submit">Entrar</button>
                 <div class="d-flex justify-content-center links">
-                  <a style="color:#000" href="?op=olvido">¿Olvidó su contraseña?</a>
+                  <a style="color:#000" href="?op=recuperar">¿Olvidó su contraseña?</a>
                 </div>
 
               </div>
