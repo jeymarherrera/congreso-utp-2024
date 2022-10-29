@@ -36,6 +36,34 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "evento") {
     $controller->CrearEvento();
   }
+  elseif ($opcion== "congresos") {
+    $controller->CrearCongreso();
+  }
+  elseif ($opcion== "conferencias") {
+    $controller->CrearConferencia();
+  }
+  elseif ($opcion== "eventos") {
+    $controller->CrearEvento();
+  }
+  elseif ($opcion== "areas") {
+    $controller->AgregarArea();
+  }
+  elseif ($opcion== "salas") {
+    $controller->AgregarSala();
+  }
+  elseif ($opcion== "reportes") {
+    $controller->GenerarReportes();
+  }
+  elseif ($opcion== "certificados") {
+    $controller->GenerarCertificados();
+  }
+  elseif ($opcion== "admin") {
+    $controller->AgregarAdmin();
+  }
+  elseif ($opcion== "invitados") {
+    $controller->AgregarInvitado();
+  }
+  
 } 
 else {
   $controller->Index();

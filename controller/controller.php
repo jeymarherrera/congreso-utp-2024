@@ -4,7 +4,7 @@ class Controller
 {
     public function Index(){
         //Le paso los datos a la vista
-        require("view/dashboard.php");
+        require("view/home.php");
     }
 
     public function Conferencista(){
@@ -32,11 +32,41 @@ class Controller
     }
 
     public function Panel(){
-        require("view/panel/dashboard.php");
+        require("view/dashboard.php");
     }
+    public function CrearCongreso(){
+        require("view/congreso.php");
+    } 
+
+    public function CrearConferencia(){
+        require("view/conferencia.php");
+    } 
 
     public function CrearEvento(){
-        require("view/crear-evento.php");
+        require("view/evento.php");
     } 
     
+    public function AgregarArea(){
+        require("view/areas.php");
+    } 
+
+    public function AgregarSala(){
+        require("view/salas.php");
+    } 
+
+    public function GenerarReportes(){
+        require("view/reportes.php");
+    } 
+
+    public function GenerarCertificados(){
+        require("view/certificados.php");
+    } 
+
+    public function AgregarAdmin(){
+        require("view/administradores.php");
+    } 
+
+    public function AgregarInvitado(){
+        require("view/invitados.php");
+    } 
 }

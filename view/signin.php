@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +24,7 @@
   <link href="public/css/owlcarousel/owl.carousel.min.css" rel="stylesheet">
   <!-- CSS -->
   <link href="public/css/style.css" rel="stylesheet">
+  <link href="public/css/dashboard.css" rel="stylesheet">
 </head>
 
 <?php
@@ -31,64 +33,50 @@
   $_ADM->verify($_POST["email"], $_POST["password"]);
 }*/
 ?>
+
 <body>
   <!-- Header -->
-  
 
+  <!-- Login -->
+  <section id="schedule" class="section-with-bg">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <!-- CAMBIAR EL TIPO DE METODO AL GUARDAR EN LA BASE -->
+          <form method="POST" action="./?op=panel">
+            <div class="section-header">
+              <h2 style="text-align:center">Accede al Sistema</h2>
+            </div>
+            <!-- AREA CORREO -->
+            <div class="form-outline mb-4">
+              <!-- Cambiar tipo luego de la presentacion -->
+              <input type="text" id="form3Example3" name="correo" class="form-control form-control-lg" placeholder="Correo" />
+            </div>
 
-
-   <!-- Login -->
-    <section id="schedule" class="section-with-bg">
-  <div class="container-fluid h-custom">
-
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-          class="img-fluid" alt="Sample image">
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <!-- CAMBIAR EL TIPO DE METODO AL GUARDAR EN LA BASE -->
-        <form method="POST" action="./?op=panel">
-        <h1 class="h3 mb-3 fw-normal t" style="text-align:center">Acceder al sistema</h1>
-          <!-- AREA CORREO -->
-          <div class="form-outline mb-4">
-    <!-- Cambiar tipo luego de la presentacion -->         
-    <input type="text" id="form3Example3" 
-            name="correo" class="form-control form-control-lg"
-              placeholder="Email" />
-          </div>
-
-          <!-- AREA CONTRASENA -->
-          <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
-            name="password" placeholder="password" />
+            <!-- AREA CONTRASENA -->
+            <div class="form-outline mb-3">
+              <input type="password" id="form3Example4" class="form-control form-control-lg" name="password" placeholder="Contraseña" />
               <div class="text-center text-lg-start mt-4 pt-2">
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-    <div class="d-flex justify-content-center links">
-      <a href="?op=Olvido">¿Olvido su contraseña?</a>
-    </div>
+                <button class="btn btn-lg btn-primary w-100 m-2" type="submit">Entrar</button>
+                <div class="d-flex justify-content-center links">
+                  <a style="color:#000" href="?op=olvido">¿Olvidó su contraseña?</a>
+                </div>
 
-          </div>
-          </div>
-          
-          </div>
-        
-          </div>
-          </div> 
-
-        </form> 
-
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-</div>
+  </section>
 
-</section>
-
- <!-- Footer -->
-
- <?php
-require_once 'view/template/footer.php';
-?>
+  <!-- Footer -->
+  <?php
+  require_once 'view/template/footer.php';
+  ?>
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
   <!-- JavaScript Librarias -->
   <script src="public/js/jquery/jquery.min.js"></script>
@@ -107,4 +95,5 @@ require_once 'view/template/footer.php';
   <script src="public/js/main.js"></script>
 
 </body>
+
 </html>
