@@ -37,6 +37,10 @@
             <h6 class="mb-4">Ingrese los datos del nuevo usuario</h6>
             <form>
                 <div class="mb-3">
+                    <label for="id" class="form-label">Cedula</label>
+                    <input type="id" class="form-control" id="id">
+                </div>
+                <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="name" class="form-control" id="name">
                 </div>
@@ -51,11 +55,11 @@
                 <p>Seleccione su sexo</p>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                    <label class="form-check-label" for="male">Hombre</label>
+                    <label class="form-check-label" for="male">Masculino</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                    <label class="form-check-label" for="female">Mujer</label>
+                    <label class="form-check-label" for="female">Femenino</label>
                 </div>
                 <div class="mb-3">
                     <br><label for="email" class="form-label">Correo</label>

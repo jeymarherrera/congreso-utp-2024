@@ -44,7 +44,7 @@
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Asientos</label>
                     <input type="number" class="form-control" id="quantity">
-                </div><br><br>
+                </div><br>
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>

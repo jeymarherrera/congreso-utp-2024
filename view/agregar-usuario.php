@@ -34,16 +34,8 @@
 <!-- formulario -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
-            <h6 class="mb-4">Ingrese los datos del usuario invitado</h6>
+            <h6 class="mb-4">Ingrese los datos del conferencista invitado</h6>
             <form>
-                <label for="pais" class="form-label">Seleccione el tipo de rol del invitado</label>
-                <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Conferencista</option>
-                    <option value="2">Estudiante</option>
-                    <option value="3">Profesional</option>
-                    <option value="4">Autor</option>
-                </select>
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="name" class="form-control" id="name">

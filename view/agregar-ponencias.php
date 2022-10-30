@@ -17,6 +17,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-  datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <link href="public/css/owlcarousel/owl.carousel.min.css" rel="stylesheet">
     <link href="public/css/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
@@ -30,7 +31,38 @@
     <?php
     require_once 'view/template/dashboard-header.php';
     ?>
-    
+
+    <!-- formulario -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light rounded h-100 p-4">
+            <h6 class="mb-4">Ingrese los datos de la nueva ponencia</h6>
+            <form>
+                <label for="pais" class="form-label">Ponente</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Seleccione una opción</option>
+                    <option value="1">Manuel Mendoza</option>
+                    <option value="2">Marcos Marquez</option>
+                    <option value="3">Daniel Perez</option>
+                </select>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Titulo</label>
+                    <input type="name" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                <label for="startDate">Seleccione la fecha de iniciacion</label>
+                <input id="startDate" class="form-control" type="date" />
+                </div>
+                <label for="finishDate">Seleccione la fecha de culminacion</label>
+                <input id="finishDate" class="form-control" type="date" />
+                <br><label for="conferencia" class="form-label">Conferencia</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Seleccione una opción</option>
+                    <option value="1">La Innovación.</option>
+                </select>
+                <br><button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+        </div>
+    </div>
 
     <?php
     require_once 'view/template/dashboard-footer.php';

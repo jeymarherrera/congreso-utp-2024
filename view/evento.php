@@ -34,7 +34,7 @@
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
                 <a href="?op=newEvento"><button class="btn btn-primary w-100 m-2" type="button">Crear nuevo evento</button></a>
-                <a href="?op=newPonencia"><button class="btn btn-outline-primary w-100 m-2" type="button">Crear nueva ponencia</button></a>
+                <a href="?op=newPonencia"><button class="btn btn-primary w-100 m-2" type="button">Crear nueva ponencia</button></a>
             </div>
         </div>
     </div>
@@ -50,10 +50,13 @@
                         <tr class="text-dark">
                             <th scope="col">ID</th>
                             <th scope="col">Titulo</th>
+                            <th scope="col">Horas Minímas de Estadia</th>
                             <th scope="col">Cantidad de Ponencias</th>
-                            <th scope="col">Fecha</th>
+                            <th scope="col">Fecha y Hora de Inicio</th>
+                            <th scope="col">Fecha y Hora de Finalización</th>
                             <th scope="col">Sala</th>
                             <th scope="col">Congreso</th>
+                            <th scope="col">Areas de Interes</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -62,10 +65,13 @@
                         <tr>
                             <td>01</td>
                             <td>La Innovación.</td>
+                            <td>2</td>
                             <td>5</td>
                             <td>01-10-2024 10:00</td>
-                            <td>0012</td>
+                            <td>01-10-2024 13:00</td>
+                            <td>0011</td>
                             <td>Congreso Internacional de Ingeniería, Ciencias y Tecnología</td>
+                            <td>Tecnologia</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
@@ -84,22 +90,34 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">ID</th>
-                            <th scope="col">Titulo</th>
-                            <th scope="col">Autor</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Evento</th>
+                            <th scope="col">Conferencista</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Fecha y Hora de Inicio</th>
+                            <th scope="col">Fecha y Hora de Finalización</th>
+                            <th scope="col">Conferencia a presentar</th>
+                            <th scope="col">Areas de Interes</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>01</td>
+                            <td>Marcos Mendoza</td>
                             <td>La Innovación de los datos.</td>
-                            <td>Angel Mendoza</td>
+                            <td>01-10-2024 10:00</td>
                             <td>01-10-2024 11:00</td>
                             <td>La Innovacion</td>
+                            <td>Tecnologia</td>
+                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Manuel Marquez</td>
+                            <td>La Innovación de las tecnologias.</td>
+                            <td>01-10-2024 12:00</td>
+                            <td>01-10-2024 13:00</td>
+                            <td>La Innovacion</td>
+                            <td>Tecnologia</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>

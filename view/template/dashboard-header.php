@@ -19,16 +19,18 @@
                     <a href="?op=conferencias" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Conferencias</a>
                     <a href="?op=eventos" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Eventos</a>
                     <a href="?op=areas" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Áreas</a>
-                    <a href="?op=salas" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Salas</a>
-                    <a href="?op=reportes" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Reportes</a>
-                    <a href="?op=certificados" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Certificados</a>
+                    <a href="?op=salas" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Salas</a>                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user me-2"></i>Usuarios</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="?op=admin" class="dropdown-item">Administradores</a>
-                            <a href="?op=invitados" class="dropdown-item">Invitados</a>
+                            <a href="?op=invitados" class="dropdown-item">Usuarios Registrados</a>
                         </div>
                     </div>
+                    <a href="?op=articulos" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Articulos</a>
+                    <a href="?op=membresias" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Membresias</a>
+                    <a href="?op=certificados" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Certificados</a>
+                    <a href="?op=reportes" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Reportes</a>
                 </div>
             </nav>
         </div>

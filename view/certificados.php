@@ -51,7 +51,7 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">ID</th>
+                            <th scope="col">Cedula</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
                             <th scope="col">Correo</th>
@@ -63,7 +63,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>01</td>
+                            <td>01-324-2323</td>
                             <td>Jeymar</td>
                             <td>Herrera</td>
                             <td>jeymarherrera@gmail.com</td>
@@ -73,7 +73,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
-                            <td>02</td>
+                            <td>02-564-4535</td>
                             <td>Jeymar</td>
                             <td>Herrera</td>
                             <td>jeymarherrera@gmail.com</td>
@@ -83,7 +83,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
-                            <td>03</td>
+                            <td>03-7657-3244</td>
                             <td>Jeymar</td>
                             <td>Herrera</td>
                             <td>jeymarherrera@gmail.com</td>

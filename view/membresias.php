@@ -33,15 +33,15 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-            <a href="?op=newInvitado"><button class="btn btn-primary w-100 m-2" type="button">Agregar Invitado Especial</button></a>
+                <a href="?op=newMembresia"><button class="btn btn-primary w-100 m-2" type="button">Agregar Membresia</button></a>
             </div>
         </div>
     </div>
-    <!-- congresos -->
+    <!-- IEEE -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Conferencistas Agregados</h6>
+                <h6 class="mb-0">Codigos de Membresia - IEEE</h6>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
@@ -52,44 +52,24 @@
                     <thead>
                         <tr class="text-dark">
                             <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Notificar</th>
-                            <th scope="col">Editar</th>
+                            <th scope="col">Codigo de Membresia</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>01</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>6044-1454</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td>312425654</td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
                             <td>02</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>6044-1454</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td>23435646</td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
                             <td>03</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>6044-1454</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td>54657657</td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                     </tbody>
@@ -98,10 +78,11 @@
         </div>
     </div>
 
+    <!-- WPA -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Invitados Especiales Agregados</h6>
+                <h6 class="mb-0">Codigos de Membresia - WPA</h6>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
@@ -112,44 +93,24 @@
                     <thead>
                         <tr class="text-dark">
                             <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Notificar</th>
-                            <th scope="col">Editar</th>
+                            <th scope="col">Codigo de Membresia</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>01</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>6044-1454</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td>312425654</td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
                             <td>02</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>6044-1454</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td>23435646</td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
                             <td>03</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>6044-1454</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td>54657657</td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                     </tbody>
@@ -157,6 +118,7 @@
             </div>
         </div>
     </div>
+
     <?php
     require_once 'view/template/dashboard-footer.php';
     ?>

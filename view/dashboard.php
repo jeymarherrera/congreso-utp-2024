@@ -83,53 +83,83 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">Fecha</th>
-                            <th scope="col">No. Factura</th>
-                            <th scope="col">Cliente</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Fecha de Registro</th>
+                            <th scope="col">Método de Pago</th>
                             <th scope="col">Monto</th>
-                            <th scope="col">Tipo</th>
+                            <th scope="col">Descuento</th>
+                            <th scope="col">Cena</th>
+                            <th scope="col">Comisión</th>
+                            <th scope="col">Comisión Pago</th>
+                            <th scope="col">Monto Total</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">Información</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>01 Oct 2024</td>
-                            <td>INV-0123</td>
-                            <td>Carlos Medina</td>
-                            <td>$166</td>
-                            <td>Estudiante</td>
+                            <td>01</td>
+                            <td>25/09/2024</td>
+                            <td>Nequi</td>
+                            <td>$75</td>
+                            <td>$0</td>
+                            <td>$10</td>
+                            <td>$4.25</td>
+                            <td>$0.50</td>
+                            <td>$89.75</td>
+                            <td>PAGADO</td>
                             <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                         </tr>
                         <tr>
-                            <td>01 Oct 2024</td>
-                            <td>INV-0123</td>
-                            <td>Ariel Torres</td>
-                            <td>$166</td>
-                            <td>Estudiante</td>
+                            <td>02</td>
+                            <td>25/09/2024</td>
+                            <td>Nequi</td>
+                            <td>$75</td>
+                            <td>$0</td>
+                            <td>$10</td>
+                            <td>$4.25</td>
+                            <td>$0.50</td>
+                            <td>$89.75</td>
+                            <td>PAGADO</td>
                             <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                         </tr>
                         <tr>
-                            <td>01 Oct 2024</td>
-                            <td>INV-0123</td>
-                            <td>Fernando Restrepo</td>
-                            <td>$166</td>
-                            <td>Estudiante</td>
+                            <td>03</td>
+                            <td>25/09/2024</td>
+                            <td>Nequi</td>
+                            <td>$75</td>
+                            <td>$0</td>
+                            <td>$10</td>
+                            <td>$4.25</td>
+                            <td>$0.50</td>
+                            <td>$89.75</td>
+                            <td>PAGADO</td>
                             <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                         </tr>
                         <tr>
-                            <td>01 Oct 2024</td>
-                            <td>INV-0123</td>
-                            <td>Mickael Santos</td>
-                            <td>$166</td>
-                            <td>Estudiante</td>
+                            <td>04</td>
+                            <td>25/09/2024</td>
+                            <td>Nequi</td>
+                            <td>$75</td>
+                            <td>$0</td>
+                            <td>$10</td>
+                            <td>$4.25</td>
+                            <td>$0.50</td>
+                            <td>$89.75</td>
+                            <td>PAGADO</td>
                             <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                         </tr>
                         <tr>
-                            <td>01 Oct 2024</td>
-                            <td>INV-0123</td>
-                            <td>Joe King</td>
-                            <td>$166</td>
-                            <td>Estudiante</td>
+                            <td>05</td>
+                            <td>25/09/2024</td>
+                            <td>Nequi</td>
+                            <td>$75</td>
+                            <td>$0</td>
+                            <td>$10</td>
+                            <td>$4.25</td>
+                            <td>$0.50</td>
+                            <td>$89.75</td>
+                            <td>PAGADO</td>
                             <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                         </tr>
                     </tbody>

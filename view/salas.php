@@ -48,7 +48,7 @@
                     <thead>
                         <tr class="text-dark">
                             <th scope="col">ID</th>
-                            <th scope="col">No. Sala</th>
+                            <th scope="col">Número de Sala</th>
                             <th scope="col">Cantidad de Asientos</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>

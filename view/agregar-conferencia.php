@@ -35,7 +35,7 @@
     <!-- formulario -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
-            <h6 class="mb-4">Ingrese los datos de la nueva coferencia</h6>
+            <h6 class="mb-4">Ingrese los datos de la nueva conferencia</h6>
             <form>
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
@@ -51,8 +51,7 @@
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminacion</label>
                 <input id="finishDate" class="form-control" type="date" />
-                </div>
-                <label for="pais" class="form-label">Sala</label>
+                <br><label for="pais" class="form-label">Sala</label>
                 <select class="form-select mb-3" aria-label="Default select example">
                     <option selected>Seleccione una opción</option>
                     <option value="1">0011</option>
@@ -66,8 +65,7 @@
                     <option value="2">Congreso 2024</option>
                     <option value="3">Congreso 2024</option>
                 </select>
-                <br><br>
-                <button type="submit" class="btn btn-primary">Agregar</button>
+                <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
     </div>

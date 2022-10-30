@@ -37,11 +37,10 @@
             <h6 class="mb-4">Ingrese los datos de la nueva area de interes</h6>
             <form>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Titulo del Area de Interes</label>
+                    <label for="name" class="form-label">Titulo</label>
                     <input type="name" class="form-control" id="name">
-                </div>
-                
-                <br><br>
+                </div>      
+                <br>
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>

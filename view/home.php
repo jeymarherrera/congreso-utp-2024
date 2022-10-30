@@ -263,7 +263,7 @@
                 <hr>
                 <div class="text-center">
                   <a href="?op=crear">
-                    <button type="button" >Registrarme</button>
+                    <button type="button" class="btn">Registrarme</button>
                   </a>
                 </div>
               </div>

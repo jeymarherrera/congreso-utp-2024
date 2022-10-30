@@ -63,6 +63,12 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "invitados") {
     $controller->AgregarInvitado();
   }
+  elseif ($opcion== "articulos") {
+    $controller->AgregarArticulo();
+  }
+  elseif ($opcion== "membresias") {
+    $controller->AgregarMembresia();
+  }
   elseif ($opcion== "newAdmin") {
     $controller->nuevoAdministrador();
   }
@@ -80,6 +86,15 @@ if (isset($_GET['op'])) {
   }
   elseif ($opcion== "newEvento") {
     $controller->nuevoEvento();
+  }
+  elseif ($opcion== "newPonencia") {
+    $controller->nuevaPonencia();
+  }
+  elseif ($opcion== "newArea") {
+    $controller->nuevaArea();
+  }
+  elseif ($opcion== "newMembresia") {
+    $controller->nuevaMembresia();
   }
   
 } 

@@ -51,44 +51,76 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">ID</th>
+                            <th scope="col">Cedula</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Sexo</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Contrasena</th>
-                            <th scope="col">Telefono</th>
+                            <th scope="col">Pais de Residencia</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Ocupacion</th>
+                            <th scope="col">Entidad</th>
+                            <th scope="col">Miembro IEEE</th>
+                            <th scope="col">Miembro WPA</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>01</td>
+                            <td>20-70-5165</td>
                             <td>Jeymar</td>
                             <td>Herrera</td>
+                            <td>6044-1464</td>
+                            <td>Femenino</td>
                             <td>jeymarherrera@gmail.com</td>
                             <td>123456</td>
-                            <td>6044-1454</td>
+                            <td>Panama</td>
+                            <td>Panama</td>
+                            <td>Panama</td>
+                            <td>Funcionario UTP</td>
+                            <td>Universidad Tecnologica de Panama</td>
+                            <td>Si</td>
+                            <td>No</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
-                            <td>02</td>
+                            <td>20-70-4534</td>
                             <td>Jeymar</td>
                             <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
+                            <td>6044-1464</td>
+                            <td>Femenino</td>
+                            <td>jey@gmail.com</td>
                             <td>123456</td>
-                            <td>6044-1454</td>
+                            <td>Panama</td>
+                            <td>Panama</td>
+                            <td>Panama</td>
+                            <td>Funcionario UTP</td>
+                            <td>Universidad Tecnologica de Panama</td>
+                            <td>Si</td>
+                            <td>No</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                         <tr>
-                            <td>03</td>
+                            <td>20-70-6546</td>
                             <td>Jeymar</td>
                             <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
+                            <td>6044-1464</td>
+                            <td>Femenino</td>
+                            <td>jherrera@gmail.com</td>
                             <td>123456</td>
-                            <td>6044-1454</td>
+                            <td>Panama</td>
+                            <td>Panama</td>
+                            <td>Panama</td>
+                            <td>Funcionario UTP</td>
+                            <td>Universidad Tecnologica de Panama</td>
+                            <td>Si</td>
+                            <td>No</td>
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>

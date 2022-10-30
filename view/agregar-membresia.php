@@ -17,7 +17,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
-    <script href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-  datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <link href="public/css/owlcarousel/owl.carousel.min.css" rel="stylesheet">
     <link href="public/css/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
@@ -32,30 +31,24 @@
     require_once 'view/template/dashboard-header.php';
     ?>
 
-    <!-- formulario -->
+<!-- formulario -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
-            <h6 class="mb-4">Ingrese los datos del nuevo congreso</h6>
+            <h6 class="mb-4">Ingrese los datos de la nueva membresia</h6>
             <form>
+                <label for="pais" class="form-label">Tipo de Membresia</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Seleccione una opción</option>
+                    <option value="1">IEEE</option>
+                    <option value="2">WPA</option>
+                </select>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Título</label>
-                    <input type="name" class="form-control" id="name">
-                </div>
-                <div class="mb-3">
-                    <label for="quantity" class="form-label">Cantidad de Boletos</label>
-                    <input type="number" class="form-control" id="quantity">
-                </div>
-                <div class="mb-3">
-                    <label for="hours" class="form-label">Horas Mínimas de Asistencia</label>
-                    <input type="number" class="form-control" id="hours">
-                </div>
-                <div class="mb-3">
-                <label for="startDate">Seleccione la fecha de iniciación</label>
-                <input id="startDate" class="form-control" type="date" />
-                </div>
-                <label for="finishDate">Seleccione la fecha de culminación</label>
-                <input id="finishDate" class="form-control" type="date" />
-                <br><button type="submit" class="btn btn-primary">Agregar</button>
+                    <label for="number" class="form-label">Codigo de Membresia</label>
+                    <input type="number" class="form-control" id="number" disabled>
+                    <br><button type="submit" class="btn btn-primary">Generar Codigo</button>
+                </div><br>
+                
+                <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
     </div>

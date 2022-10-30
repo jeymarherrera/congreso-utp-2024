@@ -12,7 +12,7 @@ class Controller
     }
 
     public function Itinerario(){
-        require("view/itinerario.php");
+        require("view/schedule.php");
     }
 
     public function ECA(){
@@ -67,15 +67,24 @@ class Controller
     } 
 
     public function AgregarInvitado(){
-        require("view/invitados.php");
+        require("view/usuarios.php");
     } 
+
+    public function AgregarArticulo(){
+        require("view/articulos.php");
+    } 
+
+    public function AgregarMembresia(){
+        require("view/membresias.php");
+    } 
+
 
     public function nuevoAdministrador(){
         require("view/agregar-admin.php");
     } 
 
     public function nuevoInvitado(){
-        require("view/agregar-invitados.php");
+        require("view/agregar-usuario.php");
     }
 
     public function nuevaSala(){
@@ -92,6 +101,18 @@ class Controller
 
     public function nuevoEvento(){
         require("view/agregar-evento.php");
+    }
+
+    public function nuevaPonencia(){
+        require("view/agregar-ponencias.php");
+    }
+
+    public function nuevaArea(){
+        require("view/agregar-area.php");
+    }
+    
+    public function nuevaMembresia(){
+        require("view/agregar-membresia.php");
     }
     
 }

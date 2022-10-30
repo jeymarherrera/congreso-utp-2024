@@ -55,8 +55,7 @@
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminacion</label>
                 <input id="finishDate" class="form-control" type="date" />
-                </div>
-                <label for="pais" class="form-label">Sala</label>
+                <br><label for="pais" class="form-label">Sala</label>
                 <select class="form-select mb-3" aria-label="Default select example">
                     <option selected>Seleccione una opción</option>
                     <option value="1">0011</option>
@@ -70,8 +69,7 @@
                     <option value="2">Congreso 2024</option>
                     <option value="3">Congreso 2024</option>
                 </select>
-                <br><br>
-                <button type="submit" class="btn btn-primary">Agregar</button>
+                <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
     </div>
