@@ -1,7 +1,25 @@
 <?php
 session_start();// Comienzo de la sesión
+
+require_once 'model/Panel/Usuarios.php';
+require_once 'model/Panel/Salas.php';
+require_once 'model/Panel/Panel_H.php';
+require_once 'model/Panel/Eventos.php';
+require_once 'model/Panel/Congreso.php';
+require_once 'model/Panel/Conferencias.php';
+require_once 'model/Panel/Certificados.php';
+require_once 'model/Panel/Areas.php';
+require_once 'model/Inicio/Itinerario.php';
+require_once 'model/Inicio/Registro.php';
 class Controller
 {
+    private $model_usuario1;
+    
+    public function __CONSTRUCT(){
+        $this->model_usuario1 = new Usuarios();
+
+    }
+
     public function Index(){
         //Le paso los datos a la vista
         require("view/home.php");
@@ -32,6 +50,9 @@ class Controller
     }
 
     public function Panel(){
+
+        $listaUsuario = new Usuarios();
+        $listaUsuario = $this->model_usuario1->ObtenerTodosLosUsuarios();
         require("view/dashboard.php");
     }
     public function CrearCongreso(){
