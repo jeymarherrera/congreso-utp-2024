@@ -35,52 +35,52 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos del conferencista invitado</h6>
-            <form>
+            <form method="POST" action="?op=RegistrarConferencista">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
-                    <input type="name" class="form-control" id="name">
+                    <input type="name" class="form-control" id="name" name="nombre">
                 </div>
                 <div class="mb-3">
                     <label for="lastname" class="form-label">Apellido</label>
-                    <input type="lstname" class="form-control" id="lastname">
+                    <input type="lstname" class="form-control" id="lastname" name="apellido">
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Telefono</label>
-                    <input type="phone" class="form-control" id="phone">
+                    <input type="phone" class="form-control" id="phone" name="telefono">
                 </div>
                 <p>Seleccione su sexo</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <input class="form-check-input" type="radio" name="sexo" id="male" value="male">
                     <label class="form-check-label" for="male">Hombre</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <input class="form-check-input" type="radio" name="sexo" id="female" value="female">
                     <label class="form-check-label" for="female">Mujer</label>
                 </div>
                 <div class="mb-3">
                     <br><label for="email" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" name="correo">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password" name="contrasena">
                 </div>
                 <label for="pais" class="form-label">País de Residencia</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" name="pais">
                     <option selected>Seleccione una opción</option>
                     <option value="1">Panamá</option>
                     <option value="2">Venezuela</option>
                     <option value="3">Colombia</option>
                 </select>
                 <label for="pais" class="form-label">Ciudad</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" name="ciudad">
                     <option selected>Seleccione una opción</option>
                     <option value="1">Panamá</option>
                     <option value="2">Caracas</option>
                     <option value="3">Bogota</option>
                 </select>
                 <label for="pais" class="form-label">Provincia</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" name="provincia">
                     <option selected>Seleccione una opción</option>
                     <option value="1">Panamá</option>
                     <option value="2">Venezuela</option>
@@ -88,11 +88,11 @@
                 </select>
                 <div class="mb-3">
                     <label for="ocupacion" class="form-label">Ocupacion</label>
-                    <input type="text" class="form-control" id="ocupacion">
+                    <input type="text" class="form-control" id="ocupacion" name="ocupacion">
                 </div>
                 <div class="mb-3">
                     <label for="entidad" class="form-label">Entidad/Institución/Empresa</label>
-                    <input type="text" class="form-control" id="entidad">
+                    <input type="text" class="form-control" id="entidad" name="entidad">
                 </div>
                 <p>¿Es miembro de la IEEE?</p>
                 <div class="form-check form-check-inline">

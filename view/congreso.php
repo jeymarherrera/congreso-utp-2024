@@ -61,6 +61,28 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        /* $n = 1;
+                        foreach ($listaRegistros as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->titulo; ?></td>
+                                <td><?php echo $lista->cantidad; ?></td>
+                                <td><?php echo $lista->hotaMin; ?></td>
+                                <td><?php echo $lista->fechaIni; ?></td>
+                                <td><?php echo $lista->FechaFin; ?></td>
+                                <td><?php echo $lista->Areas; ?></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>01</td>

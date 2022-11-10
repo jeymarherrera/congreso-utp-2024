@@ -36,25 +36,25 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos del nuevo congreso</h6>
-            <form>
+            <form method="POST" action="?op=crearCongreo">
                 <div class="mb-3">
                     <label for="name" class="form-label">Título</label>
-                    <input type="name" class="form-control" id="name">
+                    <input type="name" class="form-control" id="name" name="titulo">
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Boletos</label>
-                    <input type="number" class="form-control" id="quantity">
+                    <input type="number" class="form-control" id="quantity" name="cantidad">
                 </div>
                 <div class="mb-3">
                     <label for="hours" class="form-label">Horas Mínimas de Asistencia</label>
-                    <input type="number" class="form-control" id="hours">
+                    <input type="number" class="form-control" id="hours" name="horas">
                 </div>
                 <div class="mb-3">
                 <label for="startDate">Seleccione la fecha de iniciación</label>
-                <input id="startDate" class="form-control" type="date" />
+                <input id="startDate" class="form-control" type="date" name="fechaIni"/>
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminación</label>
-                <input id="finishDate" class="form-control" type="date" />
+                <input id="finishDate" class="form-control" type="date" name="fechaFin"/>
                 <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>

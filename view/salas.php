@@ -54,6 +54,25 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                       /*  $n = 1;
+                        foreach ($listaAreas as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->numeroSala; ?></td>
+                                <td><?php echo $lista->cantidad; ?></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
+
                     <tbody>
                         <tr>
                             <td>01</td>

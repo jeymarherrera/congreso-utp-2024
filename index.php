@@ -39,8 +39,17 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "congresos") {
     $controller->CrearCongreso();
   }
+  elseif ($opcion == "crearCongreo") {
+    $controller->RegistrarCongreso();
+  }
   elseif ($opcion== "conferencias") {
     $controller->CrearConferencia();
+  }
+  elseif ($opcion == "CrearConferencia") {
+    $controller->RegistrarConferencia();
+  }
+  elseif ($opcion == "CrearPonencia") {
+    $controller->RegistrarPonencia();
   }
   elseif ($opcion== "eventos") {
     $controller->CrearEvento();
@@ -48,8 +57,14 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "areas") {
     $controller->AgregarArea();
   }
+  elseif ($opcion == "crearArea") {
+    $controller->RegistrarArea();
+  }
   elseif ($opcion== "salas") {
     $controller->AgregarSala();
+  }
+  elseif ($opcion == "registrarSala") {
+    $controller->RegistrarSala();
   }
   elseif ($opcion== "reportes") {
     $controller->GenerarReportes();
@@ -60,17 +75,56 @@ if (isset($_GET['op'])) {
   elseif ($opcion== "admin") {
     $controller->AgregarAdmin();
   }
+  elseif ($opcion== "newAdmin") {
+    $controller->nuevoAdministrador();
+  }
+  elseif ($opcion == "registrarAdmin") {
+    $controller->RegistrarAdmin();
+  }
+  elseif ($opcion == "eliminarAdmin") {
+    $controller->EliminarAdmin();
+  }
   elseif ($opcion== "invitados") {
     $controller->AgregarInvitado();
+  }
+  elseif ($opcion == "RegistrarConferencista") {
+    $controller->RegistrarConferencista();
+  }
+  elseif ($opcion == "eliminarConferencista") {
+    $controller->EliminarConferencista();
+  }
+  elseif ($opcion == "verGafete") {
+    $controller->verGafete();
+  }
+  elseif ($opcion == "eliminarAutor") {
+    $controller->EliminarAutor();
+  }
+  elseif ($opcion == "verGafeteAutor") {
+    $controller->verGafeteAutor();
+  }
+  elseif ($opcion == "eliminarProfesional") {
+    $controller->EliminarProfesional();
+  }
+  elseif ($opcion == "verGafeteProfesional") {
+    $controller->verGafeteProfesional();
+  }
+  elseif ($opcion == "verCertificadoProf") {
+    $controller->verCertificadoProfesional();
+  }
+  elseif ($opcion == "eliminarEstudiante") {
+    $controller->EliminarEstudiante();
+  }
+  elseif ($opcion == "verGafeteEstudiante") {
+    $controller->verGafeteEstudiante();
+  }
+  elseif ($opcion == "verCertificadoEstudiante") {
+    $controller->verCertificadoEstudiante();
   }
   elseif ($opcion== "articulos") {
     $controller->AgregarArticulo();
   }
   elseif ($opcion== "membresias") {
     $controller->AgregarMembresia();
-  }
-  elseif ($opcion== "newAdmin") {
-    $controller->nuevoAdministrador();
   }
   elseif ($opcion== "newInvitado") {
     $controller->nuevoInvitado();

@@ -96,6 +96,33 @@
                             <th scope="col">Información</th>
                         </tr>
                     </thead>
+
+
+                    <tbody>
+                        <?php
+                        /* $n = 1;
+                        foreach ($listaRegistros as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->fecha; ?></td>
+                                <td><?php echo $lista->metodoPago; ?></td>
+                                <td><?php echo $lista->monto; ?></td>
+                                <td><?php echo $lista->descuento; ?></td>
+                                <td><?php echo $lista->cena; ?></td>
+                                <td><?php echo $lista->comision; ?></td>
+                                <td><?php echo $lista->comisionPago; ?></td>
+                                <td><?php echo $lista->total; ?></td>
+                                <td><?php echo $lista->estado; ?></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
+
                     <tbody>
                         <tr>
                             <td>01</td>
