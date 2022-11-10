@@ -36,9 +36,9 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos de la nueva ponencia</h6>
-            <form>
+            <form method="POST" action="?op=CrearPonencia">
                 <label for="pais" class="form-label">Ponente</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" name="ponente">
                     <option selected>Seleccione una opción</option>
                     <option value="1">Manuel Mendoza</option>
                     <option value="2">Marcos Marquez</option>
@@ -46,16 +46,16 @@
                 </select>
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
-                    <input type="name" class="form-control" id="name">
+                    <input type="name" class="form-control" id="name" name="titulo">
                 </div>
                 <div class="mb-3">
                 <label for="startDate">Seleccione la fecha de iniciacion</label>
-                <input id="startDate" class="form-control" type="date" />
+                <input id="startDate" class="form-control" type="date" name="fechaIni"/>
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminacion</label>
-                <input id="finishDate" class="form-control" type="date" />
+                <input id="finishDate" class="form-control" type="date" name="fechaFin"/>
                 <br><label for="conferencia" class="form-label">Conferencia</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" name="conferencia">
                     <option selected>Seleccione una opción</option>
                     <option value="1">La Innovación.</option>
                 </select>

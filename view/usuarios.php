@@ -33,7 +33,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-            <a href="?op=newInvitado"><button class="btn btn-primary w-100 m-2" type="button">Agregar Conferencista Invitado</button></a>
+                <a href="?op=newInvitado"><button class="btn btn-primary w-100 m-2" type="button">Agregar Conferencista Invitado</button></a>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -71,6 +71,39 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        /* $n = 1;
+                        foreach ($listaConferencista as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->telefono; ?></td>
+                                <td><?php echo $lista->sexo; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><?php echo $lista->pais; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->provincia; ?></td>
+                                <td><?php echo $lista->ocupacion; ?></td>
+                                <td><?php echo $lista->entidad; ?></td>
+                                <td><?php echo $lista->iee; ?></td>
+                                <td><?php echo $lista->wpa; ?></td>
+                                <td><?php echo $lista->areas; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verGafete">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarConferencista">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>20-70-5165</td>
@@ -147,7 +180,7 @@
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -172,6 +205,39 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        /* $n = 1;
+                        foreach ($listaAutores as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->telefono; ?></td>
+                                <td><?php echo $lista->sexo; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><?php echo $lista->pais; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->provincia; ?></td>
+                                <td><?php echo $lista->ocupacion; ?></td>
+                                <td><?php echo $lista->entidad; ?></td>
+                                <td><?php echo $lista->iee; ?></td>
+                                <td><?php echo $lista->wpa; ?></td>
+                                <td><?php echo $lista->areas; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verGafeteAutor">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarAutor">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>20-70-5165</td>
@@ -248,7 +314,7 @@
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -273,6 +339,40 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+
+                    <tbody>
+                        <?php
+                        /* $n = 1;
+                        foreach ($listaProfesionales as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->telefono; ?></td>
+                                <td><?php echo $lista->sexo; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><?php echo $lista->pais; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->provincia; ?></td>
+                                <td><?php echo $lista->ocupacion; ?></td>
+                                <td><?php echo $lista->entidad; ?></td>
+                                <td><?php echo $lista->iee; ?></td>
+                                <td><?php echo $lista->wpa; ?></td>
+                                <td><?php echo $lista->areas; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verGafeteProfesional">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoProf">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarProfesional">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>20-70-5165</td>
@@ -349,7 +449,7 @@
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -375,6 +475,40 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+
+                    <tbody>
+                        <?php
+                        /* $n = 1;
+                        foreach ($listaEstudiantes as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->telefono; ?></td>
+                                <td><?php echo $lista->sexo; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><?php echo $lista->pais; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->provincia; ?></td>
+                                <td><?php echo $lista->ocupacion; ?></td>
+                                <td><?php echo $lista->entidad; ?></td>
+                                <td><?php echo $lista->iee; ?></td>
+                                <td><?php echo $lista->wpa; ?></td>
+                                <td><?php echo $lista->areas; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoEstudiante">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarEstudiante">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        } */
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>20-70-5165</td>
