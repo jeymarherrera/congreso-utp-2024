@@ -55,7 +55,7 @@
     <div class="container py-5 h-100">
         <h1 style="margin-top:15%; margin-bottom:3%; text-align: center;">Registro</h1>
         <div class="card shadow-2-strong well well-sm mb-5 " style="border-radius: 1rem;  align-self: center; ">
-            <form style="background-color: #EAEDF1;" id="registro" name="registro" class="form-horizontal card-body p-5" method="post" action="./?op=registrar" onSubmit="">
+            <form style="background-color: #EAEDF1;" id="registro" name="registro" class="form-horizontal card-body p-5" method="post" action="./?op=registrar">
                 <div style="background-color: white; margin:-15px;" id="tipoUsuario">
                     <div class="alert alert-info mt-">
                         <i class="fa fa-info-circle"></i>
@@ -77,7 +77,6 @@
                     </div>
                 </div>
                 <fieldset name="fieldset" style="background-color: white; " class="py-5 mt-5 row">
-                    <p class="<?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div>
@@ -98,13 +97,13 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="IEEE" id="IEEE" value="" class="chosen-select col-10" onchange="codigos()" required>
+                        <select style="height: 40px; width: 400px;" name="IEEE" id="IEEE" value="" class="chosen-select col-10" required>
                             <option id="no" value="no">Miembro IEEE: Descuento 15% *</option>
                             <option id="si" value="si">Sí</option>
                             <option id="no" value="no">No</option>
                         </select>
                         <div>
-                            <input id="MEM" name="cedula" type="text" placeholder="Código de membresia*" class="form-control  col-10" style="width: 400px; display:none;" required>
+                            <input id="MEM" name="mem" type="text" placeholder="Código de membresia*" class="form-control  col-10" style="width: 400px; display:none;" required>
                         </div>
                     </div>
 
@@ -123,7 +122,7 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="paper2" id="paper2" value="" class="chosen-select col-10" onchange="codigos()" required>
+                        <select style="height: 40px; width: 400px;" name="paper2" id="paper2" value="" class="chosen-select col-10" required>
                             <option id="no" value="no">Segundo paper aprobado *</option>
                             <option id="si" value="si">Sí</option>
                             <option id="no" value="no">No</option>
@@ -134,7 +133,7 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="paper3" id="paper3" value="" class="chosen-select col-10" onchange="codigos()" required>
+                        <select style="height: 40px; width: 400px;" name="paper3" id="paper3" value="" class="chosen-select col-10" required>
                             <option id="no" value="no">Tercer paper aprobado *</option>
                             <option id="si" value="si">Sí</option>
                             <option id="no" value="no">No</option>
@@ -578,10 +577,10 @@
         </div>
         <div class="form-group mt-5 mb-2">
             <div class="col-md-12 text-center">
-                <button style="text-align: center;" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="btnRegistrar" type="submit">Inscribirme y pagar</button>
+                <button style="text-align: center;" data-bs-target="#staticBackdrop" id="btnRegistrar" type="submit">Inscribirme y pagar</button>
             </div>
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+           <!--  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog ">
                     <div class="modal-content">
                         <div class="modal-header" style="background: #B766C4;">
@@ -637,7 +636,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         </form>
     </div>

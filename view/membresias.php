@@ -56,6 +56,24 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaIee as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->codigo; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>01</td>
@@ -97,6 +115,24 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaWpa as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->fecha; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>01</td>

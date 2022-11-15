@@ -49,46 +49,25 @@
                         <tr class="text-dark">
                             <th scope="col">ID</th>
                             <th scope="col">Titulo</th>
-                            <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaAreas as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
-                                <td><?php echo $lista->titulo; ?></td>
+                                <td><?php echo $lista->id_area ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarArea">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Ingeniería</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Ciencias</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>Tecnología</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

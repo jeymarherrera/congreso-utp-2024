@@ -74,7 +74,7 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaConferencista as $lista) {
                         ?>
                             <tr>
@@ -100,7 +100,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 
@@ -208,7 +208,7 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaAutores as $lista) {
                         ?>
                             <tr>
@@ -234,7 +234,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 
@@ -343,7 +343,7 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaProfesionales as $lista) {
                         ?>
                             <tr>
@@ -369,7 +369,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 
@@ -479,7 +479,7 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaEstudiantes as $lista) {
                         ?>
                             <tr>
@@ -505,7 +505,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 

@@ -22,7 +22,13 @@ if (isset($_GET['op'])) {
     $controller->ECA();
   }
    elseif ($opcion== "crear") {
-      $controller->CrearCuenta();
+    $controller->CrearCuenta();
+  }
+  elseif ($opcion == "pago") {
+    $controller->Pagar();
+  }
+  elseif ($opcion == "registrar") {
+    # code...
   }
   elseif ($opcion== "login") {
     $controller->Login();
@@ -59,6 +65,9 @@ if (isset($_GET['op'])) {
   }
   elseif ($opcion == "crearArea") {
     $controller->RegistrarArea();
+  }
+  elseif ($opcion == "eliminarArea") {
+    $controller->EliminarArea();
   }
   elseif ($opcion== "salas") {
     $controller->AgregarSala();

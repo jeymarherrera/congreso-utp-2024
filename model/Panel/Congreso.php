@@ -5,10 +5,10 @@ class Congreso
 	private $msg;
 
 	public $titulo;
-	public $cantidad;
-	public $horas;
-	public $fechaIni;
-	public $fechaFin;
+	public $cantidad_boletos;
+	public $horas_minimas;
+	public $fecha_inicio;
+	public $fecha_fin;
 
 	public function __CONSTRUCT()
 	{
@@ -26,7 +26,7 @@ class Congreso
 			$stm = $this->pdo->prepare("SELECT id_congreso, titulo, cantidad_boletos, horas_minimas, fecha_inicio, fecha_fin
 			FROM Congreso");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -36,22 +36,22 @@ class Congreso
 	{
 		try {
 
-			$sql = "INSERT INTO Congreso (titulo, cantidad_boletos, horas_minimas, fecha_inicio, fecha_fin)
-				VALUES ('?','?','?', '?', ?)";
+			$sql = "INSERT INTO congreso (titulo, cantidad_boletos, horas_minimas, fecha_inicio, fecha_fin)
+				VALUES ('?','?','?', '?', '?')";
 
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
 						$data->titulo,
-						$data->cantidad,
-						$data->horas,
-						$data->fechaIni,
-						$data->fecha_fin
+						$data->cantidad_boletos,
+						$data->horas_minimas,
+						$data->fecha_inicio = date("Ymd"),
+						$data->fecha_fin =  date("Ymd")
 					)
 				);
 			$this->msg = "¡Congreso creado con éxito!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "¡Error de creación!&t=text-danger";
+			$this->msg = "¡Error de creación!&t=text-danger&a=".$data->titulo.$data->cantidad_boletos.$data->horas_minimas.$data->fecha_inicio.$data->fecha_fin;
 		}
 		return $this->msg;
 	}

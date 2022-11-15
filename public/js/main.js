@@ -155,10 +155,14 @@ function SelectChanged() {
       var input = document.getElementById('paper3');
       input.parentNode.removeChild(input); */
 
+      /* document.getElementById('paper1').required = false
+      document.getElementById('paper2_').required = false
+      document.getElementById('paper3_').required = false
+      document.getElementById('idEst').required = false
+      document.getElementById('ocupacion').required = false       */
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'none'
       document.getElementById('pais').style.display = 'none'
       document.getElementById('idEst').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'none'
@@ -300,6 +304,22 @@ function SelectChanged() {
     } */
 
 }
+
+function TipoPago() { 
+  const tipoPago = document.Pago.tipoPago.value;
+
+  switch (tipoPago) {
+    case tarjeta:
+      
+      break;
+    
+    case efectivo:
+      break;
+
+    default:
+      break;
+  }
+ }
 
 function codigos() {
   const ieee = document.registro.IEEE.value;
