@@ -36,16 +36,19 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-               <a href="?op=newCongreso"><button class="btn btn-primary w-100 m-2" type="button">Crear nuevo congreso</button></a>
+                <a href="?op=newCongreso"><button class="btn btn-primary w-100 m-2" type="button">Crear nuevo congreso</button></a>
             </div>
         </div>
     </div>
+    <p class="text-center <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
     <!-- congresos -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Congresos Creados</h6>
             </div>
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -56,7 +59,6 @@
                             <th scope="col">Horas Minímas de Estadia</th>
                             <th scope="col">Fecha de Inicio</th>
                             <th scope="col">Fecha de Finalización</th>
-                            <th scope="col">Areas de Interes</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -64,37 +66,24 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
-                        foreach ($listaRegistros as $lista) {
+                        $n = 1;
+                        foreach ($listaCongresos as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->id_congreso; ?></td>
                                 <td><?php echo $lista->titulo; ?></td>
-                                <td><?php echo $lista->cantidad; ?></td>
-                                <td><?php echo $lista->hotaMin; ?></td>
-                                <td><?php echo $lista->fechaIni; ?></td>
-                                <td><?php echo $lista->FechaFin; ?></td>
-                                <td><?php echo $lista->Areas; ?></td>
+                                <td><?php echo $lista->cantidad_boletos; ?></td>
+                                <td><?php echo $lista->horas_minimas; ?></td>
+                                <td><?php echo $lista->fecha_inicio; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Congreso Internacional de Ingeniería, Ciencias y Tecnología </td>
-                            <td>500</td>
-                            <td>3</td>
-                            <td>01/10/2024 12:08:47 AM</td>
-                            <td>03/10/2024 5:08:45 PM</td>
-                            <td>Tecnologia <br>Ciencias <br>Ingenieria</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

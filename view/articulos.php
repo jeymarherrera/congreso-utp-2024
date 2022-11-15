@@ -39,7 +39,7 @@
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -53,6 +53,28 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaArticulos as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id_articulo; ?></td>
+                                <td><?php echo $lista->cod_aprobado; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->id_autor; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Verificar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>01</td>

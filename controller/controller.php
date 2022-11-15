@@ -11,6 +11,8 @@ require_once 'model/Panel/Certificados.php';
 require_once 'model/Panel/Areas.php';
 require_once 'model/Inicio/Itinerario.php';
 require_once 'model/Inicio/Registro.php';
+require_once 'model/Panel/Articulos.php';
+require_once 'model/Panel/Membresias.php';
 class Controller
 {
     private $modelUsuario1;
@@ -20,6 +22,9 @@ class Controller
     private $modelConferencia2;
     private $modelArea1;
     private $modelSala1;
+    private $modelArticulo;
+    private $modelMembresia1;
+    private $modelMembresia2;
     
     public function __CONSTRUCT(){
         $this->modelUsuario1 = new Usuario();
@@ -29,7 +34,9 @@ class Controller
         $this->modelConferencia2 = new Conferencias();
         $this->modelArea1 = new Areas();
         $this->modelSala1 = new Salas();
-
+        $this->modelArticulo = new Articulos();
+        $this->modelMembresia1 = new Membresias();
+        $this->modelMembresia2 = new Membresias();
     }
 
     public function Index(){
@@ -53,6 +60,16 @@ class Controller
         require("view/registro.php");
     }
 
+    public function Pagar()
+    {
+        require_once("view/pagoRegistro.php");
+    }
+
+    public function RegistrarUsuario()
+    {
+        # code...
+    }
+
     public function Login(){
         require("view/signin.php");
     }
@@ -65,7 +82,7 @@ class Controller
 
         $listaUsuario = new Usuarios();
         $listaRegistros = new Usuarios();
-        $listaUsuario = $this->modelUsuario2->ObtenerTodosLosUsuarios(); 
+        // $listaUsuario = $this->modelUsuario2->ObtenerTodosLosUsuarios(); 
         $listaRegistros = $this->modelUsuario2->ObtenerTodosLosRegistros();
         
         require("view/dashboard.php");
@@ -78,7 +95,7 @@ class Controller
 
     public function CrearConferencia(){
         $listaConferencia = new Conferencias();
-        $listaConferencia = $this->modelConferencias->ObtenerTodasLasConferencias();
+        $listaConferencia = $this->modelConferencia1->ObtenerTodasLasConferencias();
         $listaPonencias = new Conferencias();
         $listaPonencias = $this->modelConferencia2->ObtenerTodasLasPonencias();
         require("view/conferencia.php");
@@ -126,11 +143,22 @@ class Controller
         require("view/areas.php");
     } 
 
+    public function EliminarArea()
+    {
+        $area = new Areas();
+ 
+        $area->nombre = $_REQUEST['id'];
+      
+        $this->resp= $this->modelArea1->EliminarArea($area);
+
+        header('Location: ?op=areas&msg='.$this->resp);
+    }
+
     public function RegistrarArea()
     {
         $area = new Areas();
  
-        $area->titulo = $_REQUEST['titulo'];
+        $area->nombre = $_POST['titulo'];
       
         $this->resp= $this->modelArea1->crearArea($area);
 
@@ -164,11 +192,13 @@ class Controller
     } 
 
     public function GenerarCertificados(){
+        $listaCertificados = new Usuarios();
+        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
         require("view/certificados.php");
     } 
 
     public function AgregarAdmin(){
-        $listaAdmin = new Usuario();
+        $listaAdmin = new Usuarios();
         $listaAdmin = $this->modelUsuario2->ObtenerTodosLosAdmin();
         require("view/administradores.php");
     } 
@@ -213,20 +243,20 @@ class Controller
     }
 
     public function AgregarInvitado(){
-        $listaConferencista = new Usuario();
+        $listaConferencista = new Usuarios();
         $listaConferencista = $this->modelUsuario2->ObtenerTodosLosConferencistas();
-        $listaAutores = new Usuario();
+        $listaAutores = new Usuarios();
         $listaAutores = $this->modelUsuario2->ObtenerTodosLosAutores();
-        $listaProfesionales = new Usuario();
+        $listaProfesionales = new Usuarios();
         $listaProfesionales = $this->modelUsuario2->ObtenerTodosLosProfesionales();
-        $listaEstudiantes = new Usuario();
+        $listaEstudiantes = new Usuarios();
         $listaEstudiantes = $this->modelUsuario2->ObtenerTodosLosProfesionales();
         require("view/usuarios.php");
     } 
     
     public function RegistrarConferencista()
     {
-        $conferencista = new Usuario();
+        $conferencista = new Conferencias();
 
         //$admin->cedula = $_REQUEST['cedula'];  
         $conferencista->nombre = $_REQUEST['nombre'];
@@ -359,10 +389,16 @@ class Controller
     }
 
     public function AgregarArticulo(){
+        $listaArticulos = new Articulos();
+        $listaArticulos = $this->modelArticulo->ObtenerTodosLosArticulos();
         require("view/articulos.php");
     } 
 
     public function AgregarMembresia(){
+        $listaIee = new Membresias();
+        $listaIee = $this->modelMembresia1->ObtenerTodasLasMembresiasIEEE();
+        $listaWpa = new Membresias();
+        $listaWpa = $this->modelMembresia2->ObtenerTodasLasMembresiasWPA();
         require("view/membresias.php");
     } 
 
@@ -379,10 +415,10 @@ class Controller
         $congreso = new Congreso();
         
         $congreso->titulo = $_REQUEST['titulo'];
-        $congreso->cantidad = $_REQUEST['cantidad'];
-        $congreso->horas = $_REQUEST['horas'];  
-        $congreso->fechaIni = $_REQUEST['fechaIni'];
-        $congreso->fechaFin = $_REQUEST['fechaFin'];     
+        $congreso->cantidad_boletos = $_REQUEST['cantidad'];
+        $congreso->horas_minimas = $_REQUEST['horas'];  
+        $congreso->fecha_inicio = $_REQUEST['fechaIni'] = date("y-m-d");
+        $congreso->fecha_fin = $_REQUEST['fechaFin'] = date("y-m-d");
       
         $this->resp= $this->modelCongreso->CrearCongreso($congreso);
 

@@ -4,6 +4,8 @@ class Areas
 	private $pdo;
 	private $msg;
 
+	public $nombre;
+
 	public function __CONSTRUCT()
 	{
 		try {
@@ -16,9 +18,9 @@ class Areas
 	public function ObtenerTodasLasAreas()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT * FROM Area");
+			$stm = $this->pdo->prepare("SELECT * FROM AREA");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -34,12 +36,31 @@ class Areas
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->titulo
+						$data->nombre
 					)
 				);
 			$this->msg = "¡Área creada con éxito!&t=text-success";
 		} catch (Exception $e) {
 			$this->msg = "¡Error de creación!&t=text-danger";
+		}
+		return $this->msg;
+	}
+
+	public function EliminarArea(Areas $data)
+	{
+		try {
+			$sql = "DELETE FROM Areas
+					WHERE id_area = '?' ";
+
+			$this->pdo->prepare($sql)
+				->execute(
+					array(
+						$data->id_area
+					)
+				);
+			$this->msg = "¡El area ha sido eliminada!&t=text-success";
+		} catch (Exception $e) {
+			$this->msg = "Error al eliminar &t=text-danger";
 		}
 		return $this->msg;
 	}

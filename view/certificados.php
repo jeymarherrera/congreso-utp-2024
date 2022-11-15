@@ -46,7 +46,7 @@
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
             </div>
-            
+
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
@@ -61,6 +61,28 @@
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaCertificados as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
+
                     <tbody>
                         <tr>
                             <td>01-324-2323</td>

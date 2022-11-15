@@ -4,6 +4,27 @@ class Usuarios
 	private $pdo;
 	private $msg;
 
+	public $id_estudiante;
+	public $id_administrador;
+	public $id_conferencista;
+	public $id_autor;
+	public $id_profesional;
+	public $cod_estudiante;
+	public $tipo_usuario;
+	public $nombre;
+	public $apellido;
+	public $telefono;
+	public $sexo;
+	public $correo;
+	public $contrasena;
+	public $gafete;
+	public $id_residencia;
+	public $id_ocupacion;
+	public $id_entidad;
+	public $id_ieee;
+	public $id_wpa;
+	public $id_pago;
+
 	public function __CONSTRUCT()
 	{
 		try
@@ -36,14 +57,14 @@ class Usuarios
 			$stm = $this->pdo->prepare("SELECT fecha, metodo, tipo.monto, descuento, cena, comision, comision_pago, monto_total, estado
 			FROM Pago, Tipo");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
 	}
 
 
-	public function RegistrarConferencista(Usuario $data)
+	public function RegistrarConferencista(Conferencias $data)
 	{
 		try {
 
@@ -86,7 +107,7 @@ class Usuarios
 			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
 			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -132,7 +153,7 @@ class Usuarios
 			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
 			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -178,7 +199,7 @@ class Usuarios
 			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
 			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -217,7 +238,7 @@ class Usuarios
 	public function ObtenerCertificadoProfesional()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT certificado FROM Profesional WHERE id_profesional = '?' ");
+			$stm = $this->pdo->prepare("SELECT id_profesional, nombre, apellido, correo, certificado FROM Profesional WHERE id_profesional '?' ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -235,7 +256,7 @@ class Usuarios
 			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
 			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -271,12 +292,28 @@ class Usuarios
 		}
 	}
 
-	public function ObtenerCertificadoEstudiante(Usuario $data)
+	public function ObtenerCertificadoEstudiante()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT certificado FROM Estudiante WHERE id_estudiante = '?' ");
+			$stm = $this->pdo->prepare("SELECT id_estudiante, nombre, apellido, correo, certificado FROM Estudiante WHERE id_estudiante = '?' ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
+	public function ObtenerUsuariosCertificado()
+	{
+		try {
+			$stm = $this->pdo->prepare("SELECT id_estudiante, nombre, apellido, correo
+			FROM Estudiante  
+			UNION  
+			SELECT  id_profesional, nombre, apellido, correo  
+			FROM Profesional  
+			ORDER BY nombre; ");
+			$stm->execute();
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -340,7 +377,7 @@ class Usuarios
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM administrador");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}

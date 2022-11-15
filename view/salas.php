@@ -57,8 +57,8 @@
 
                     <tbody>
                         <?php
-                       /*  $n = 1;
-                        foreach ($listaAreas as $lista) {
+                        $n = 1;
+                        foreach ($listaSalas as $lista) {
                         ?>
                             <tr>
                                 <td><?php echo $lista->id; ?></td>
@@ -68,7 +68,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 

@@ -72,7 +72,7 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaAdmin as $lista) {
                         ?>
                             <tr>
@@ -96,7 +96,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 

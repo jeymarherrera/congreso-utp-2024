@@ -16,7 +16,7 @@ class Registro
 		}
 	}
 
-	/* public function RegistrarEstudiante(Usuario $data)
+	public function RegistrarEstudiante(Usuario $data)
 	{
 		try {
 
@@ -64,5 +64,5 @@ class Registro
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
-	} */
+	}
 }

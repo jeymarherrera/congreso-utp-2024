@@ -50,11 +50,11 @@
                     <input type="number" class="form-control" id="hours" name="horas">
                 </div>
                 <div class="mb-3">
-                <label for="startDate">Seleccione la fecha de iniciación</label>
-                <input id="startDate" class="form-control" type="date" name="fechaIni"/>
+                    <label for="startDate">Seleccione la fecha de iniciación</label>
+                    <input id="startDate" class="form-control" type="date" name="fechaIni" />
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminación</label>
-                <input id="finishDate" class="form-control" type="date" name="fechaFin"/>
+                <input id="finishDate" class="form-control" type="date" name="fechaFin" />
                 <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>

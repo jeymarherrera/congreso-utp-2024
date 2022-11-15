@@ -18,7 +18,7 @@ class Conferencias
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM Conferencia");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -29,7 +29,7 @@ class Conferencias
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM Conferencia");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}

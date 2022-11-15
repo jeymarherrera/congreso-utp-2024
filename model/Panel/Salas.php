@@ -4,6 +4,9 @@ class Salas
 	private $pdo;
 	private $msg;
 
+	public $num_sala;
+	public $cantidad_asientos;
+
 	public function __CONSTRUCT()
 	{
 		try
@@ -21,7 +24,7 @@ class Salas
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM Sala");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -37,8 +40,8 @@ class Salas
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->numero,
-						$data->cantidad
+						$data->num_sala,
+						$data->cantidad_asientos
 					)
 				);
 			$this->msg = "¡Sala creada con éxito!&t=text-success";

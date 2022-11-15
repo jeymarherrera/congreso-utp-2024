@@ -100,7 +100,7 @@
 
                     <tbody>
                         <?php
-                        /* $n = 1;
+                        $n = 1;
                         foreach ($listaRegistros as $lista) {
                         ?>
                             <tr>
@@ -118,7 +118,7 @@
                             </tr>
                         <?php
                             $n++;
-                        } */
+                        }
                         ?>
                     </tbody>
 
