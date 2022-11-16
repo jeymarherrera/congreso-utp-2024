@@ -31,11 +31,11 @@
     require_once 'view/template/dashboard-header.php';
     ?>
 
-<!-- formulario -->
+    <!-- formulario -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos del nuevo usuario</h6>
-            <form method="POST" action="?op=registrarAdmin">
+            <form name="registro" method="POST" action="?op=registrarAdmin">
                 <div class="mb-3">
                     <label for="id" class="form-label">Cedula</label>
                     <input type="id" class="form-control" id="id" name="cedula">
@@ -70,25 +70,21 @@
                     <input type="password" class="form-control" id="password" name="contrasena">
                 </div>
                 <label for="pais" class="form-label">País de Residencia</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="pais">
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Panamá</option>
-                    <option value="2">Venezuela</option>
-                    <option value="3">Colombia</option>
+
+                <select class="form-select mb-3" aria-label="Default select example" name="pais" id="pais" onchange="SelectProvincia()">
+                    <?php foreach ($pais as $p) { ?>
+                        <option value="<?php echo $p->id_pais; ?>"><?php echo $p->nombre_pais; ?></option>
+                    <?php } ?>
                 </select>
+
                 <label for="pais" class="form-label">Ciudad</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="ciudad">
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Panamá</option>
-                    <option value="2">Caracas</option>
-                    <option value="3">Bogota</option>
+                    
                 </select>
+
                 <label for="pais" class="form-label">Provincia</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="provincia">
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Panamá</option>
-                    <option value="2">Venezuela</option>
-                    <option value="3">Colombia</option>
+                    
                 </select>
                 <div class="mb-3">
                     <label for="ocupacion" class="form-label">Ocupacion</label>
@@ -137,5 +133,40 @@
     <script src="public/js/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="public/js/main.js"></script>
 </body>
+
+<script>
+    var arrayIdProvincia = new Array();
+    var arrayNomProvincia = new Array();
+    var arrayIdPais = new Array();
+    var i = 1;
+    // Inicializamos 3 arreglos con los datos de los Ids de las provincias y distritos; ademas, del nombre de los distritos
+    <?php
+    $n = 0;
+    foreach ($provincia as $p) {
+        echo "arrayIdProvincia[$n]=$p->id_provincia;";
+        echo "arrayNomProvincia[$n]='$p->nom_provincia';";
+        echo "arrayIdPais[$n]=$p->id_pais;";
+        $n++;
+    }
+    ?>
+    var n = "<?php echo $n; ?>"; //total de registros
+
+    function SelectProvincia() {
+        var indice = 0;
+        var valor = 0;
+        //asignamos a la variable valor el valor de la lista de menú seleccionado
+        valor = document.registro.pais.value;
+        document.registro.provincia.length = 0; //Limpiamos la lista de menu distrito
+        for (x = 0; x < n; x++) {
+
+            if (valor == arrayIdPais[x]) {
+                //asigna a la lista de menú sub_areas los nuevos valores segun la selección del menú areas
+                document.registro.provincia[indice] = new Option(arrayNomProvincia[x], arrayIdProvincia[x]);
+                indice = indice + 1;
+            }
+        }
+
+    }
+</script>
 
 </html>

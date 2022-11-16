@@ -324,8 +324,10 @@ class Usuarios
 	{
 		try {
 
-			$sql = "INSERT INTO Administrador(id_administrador,nombre, apellido, telefono, sexo, correo, contraseña, id_residencia, id_ocupacion, id_ieee, id_wpa)
-					VALUES('?','?','?','?','?','?','?','?','?','?')";
+			$sql = "INSERT INTO Administrador(nombre, apellido, telefono, sexo, correo, contraseña, id_residencia, id_ocupacion, id_ieee, id_wpa)
+					VALUES(?,?,?,?,?,?,?,?,?,?)
+					INSERT INTO residencia(id_pais, id_provincia, id_ciudad)
+					VALUES(?,?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -357,7 +359,7 @@ class Usuarios
 	{
 		try {
 			$sql = "DELETE FROM Administrador
-					WHERE id_administrador = '?'";
+					WHERE id_administrador = ? ";
 
 			$this->pdo->prepare($sql)
 				->execute(

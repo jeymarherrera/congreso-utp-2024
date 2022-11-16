@@ -53,17 +53,17 @@
                 <input id="finishDate" class="form-control" type="date" name="fechaFin"/>
                 <br><label for="pais" class="form-label">Sala</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="sala">
-                    <option selected>Seleccione una opción</option>
+                    <!-- <option selected>Seleccione una opción</option>
                     <option value="1">0011</option>
                     <option value="2">0012</option>
-                    <option value="3">0013</option>
+                    <option value="3">0013</option> -->
                 </select>
                 <label for="pais" class="form-label">Congreso</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="congreso">
-                    <option selected>Seleccione una opción</option>
+                    <!-- <option selected>Seleccione una opción</option>
                     <option value="1">Congreso 2024</option>
                     <option value="2">Congreso 2024</option>
-                    <option value="3">Congreso 2024</option>
+                    <option value="3">Congreso 2024</option> -->
                 </select>
                 <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>

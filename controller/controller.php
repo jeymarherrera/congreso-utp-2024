@@ -13,6 +13,7 @@ require_once 'model/Inicio/Itinerario.php';
 require_once 'model/Inicio/Registro.php';
 require_once 'model/Panel/Articulos.php';
 require_once 'model/Panel/Membresias.php';
+require_once 'model/Panel/Ubicacion.php';
 class Controller
 {
     private $modelUsuario1;
@@ -25,6 +26,7 @@ class Controller
     private $modelArticulo;
     private $modelMembresia1;
     private $modelMembresia2;
+    private $modelUbicacion;
     
     public function __CONSTRUCT(){
         $this->modelUsuario1 = new Usuario();
@@ -37,6 +39,7 @@ class Controller
         $this->modelArticulo = new Articulos();
         $this->modelMembresia1 = new Membresias();
         $this->modelMembresia2 = new Membresias();
+        $this->modelUbicacion = new Ubicacion();
     }
 
     public function Index(){
@@ -179,8 +182,8 @@ class Controller
     {
         $sala = new Salas();
  
-        $sala->numero = $_REQUEST['numero'];
-        $sala->cantidad = $_REQUEST['cantidad'];
+        $sala->num_sala = $_REQUEST['numero'];
+        $sala->cantidad_asientos = $_REQUEST['cantidad'];
       
         $this->resp= $this->modelSala1->RegistrarSala($sala);
 
@@ -204,6 +207,14 @@ class Controller
     } 
 
     public function nuevoAdministrador(){
+        $pais = new Ubicacion();
+        $pais = $this->modelUbicacion->ConsultarPais();
+
+        $provincia = new Ubicacion();
+        $provincia = $this->modelUbicacion->ConsultarProvincia();
+
+        $ciudad = new Ubicacion();
+        $ciudad = $this->modelUbicacion->ConsultarCiudad();
         require("view/agregar-admin.php");
     } 
 
@@ -417,8 +428,8 @@ class Controller
         $congreso->titulo = $_REQUEST['titulo'];
         $congreso->cantidad_boletos = $_REQUEST['cantidad'];
         $congreso->horas_minimas = $_REQUEST['horas'];  
-        $congreso->fecha_inicio = $_REQUEST['fechaIni'] = date("y-m-d");
-        $congreso->fecha_fin = $_REQUEST['fechaFin'] = date("y-m-d");
+        $congreso->fecha_inicio = $_REQUEST['fechaIni'];
+        $congreso->fecha_fin = $_REQUEST['fechaFin'] ;
       
         $this->resp= $this->modelCongreso->CrearCongreso($congreso);
 

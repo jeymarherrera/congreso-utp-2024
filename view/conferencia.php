@@ -82,7 +82,7 @@
                         ?>
                     </tbody>
                     
-                    <tbody>
+                    <!-- <tbody>
                         <tr>
                             <td>01</td>
                             <td>La Innovación.</td>
@@ -95,7 +95,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>
@@ -142,7 +142,7 @@
                         ?>
                     </tbody>
 
-                    <tbody>
+                    <!-- <tbody>
                         <tr>
                             <td>Marcos Mendoza</td>
                             <td>La Innovación de los datos.</td>
@@ -163,7 +163,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>

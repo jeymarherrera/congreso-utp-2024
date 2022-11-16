@@ -35,7 +35,7 @@ class Salas
 		try {
 
 			$sql = "INSERT INTO Sala(num_sala, cantidad_asientos)
-			VALUES ('?','?')";
+			VALUES (?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(

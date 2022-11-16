@@ -37,6 +37,10 @@
             </div>
         </div>
     </div>
+
+    <p class="text-center m-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
     <!-- congresos -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
@@ -100,7 +104,7 @@
                         ?>
                     </tbody>
 
-                    <tbody>
+                   <!--  <tbody>
                         <tr>
                             <td>20-70-5165</td>
                             <td>Jeymar</td>
@@ -155,7 +159,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>
