@@ -40,7 +40,7 @@ class Conferencias
 		try {
 
 			$sql = "INSERT INTO Conferencia (titulo, cantidad_ponencias, fecha_inicio, fecha_fin, id_sala, id_congreso)
-				VALUES ('?','?','?', '?', ?)";
+				VALUES (?,?,?, ?, ?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
