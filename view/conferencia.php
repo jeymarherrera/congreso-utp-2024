@@ -38,6 +38,10 @@
             </div>
         </div>
     </div>
+
+    <p class="text-center m-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
     <!-- congresos -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
@@ -55,7 +59,7 @@
                             <th scope="col">Fecha y Hora de Finalización</th>
                             <th scope="col">Sala</th>
                             <th scope="col">Congreso</th>
-                            <th scope="col">Areas de Interes</th>
+                            <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -67,13 +71,15 @@
                         foreach ($listaConferencia as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->id_conferencia; ?></td>
                                 <td><?php echo $lista->titulo; ?></td>
-                                <td><?php echo $lista->cantidad; ?></td>
-                                <td><?php echo $lista->hotaMin; ?></td>
-                                <td><?php echo $lista->fechaIni; ?></td>
-                                <td><?php echo $lista->FechaFin; ?></td>
-                                <td><?php echo $lista->Areas; ?></td>
+                                <td><?php echo $lista->cantidad_ponencias; ?></td>
+                                <td><?php echo $lista->fecha_inicio; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
+                                <td><?php echo $lista->id_sala; ?></td>
+                                <td><?php echo $lista->id_congreso ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
@@ -81,21 +87,7 @@
                         }
                         ?>
                     </tbody>
-                    
-                    <!-- <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>La Innovación.</td>
-                            <td>5</td>
-                            <td>01-10-2024 10:00</td>
-                            <td>01-10-2024 13:00</td>
-                            <td>0011</td>
-                            <td>Congreso Internacional de Ingeniería, Ciencias y Tecnología</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                    </tbody> -->
+
                 </table>
             </div>
         </div>
@@ -115,7 +107,7 @@
                             <th scope="col">Fecha y Hora de Inicio</th>
                             <th scope="col">Fecha y Hora de Finalización</th>
                             <th scope="col">Conferencia a presentar</th>
-                            <th scope="col">Areas de Interes</th>
+                            <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -134,6 +126,8 @@
                                 <td><?php echo $lista->fechaIni; ?></td>
                                 <td><?php echo $lista->FechaFin; ?></td>
                                 <td><?php echo $lista->Areas; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
@@ -141,29 +135,6 @@
                         }
                         ?>
                     </tbody>
-
-                    <!-- <tbody>
-                        <tr>
-                            <td>Marcos Mendoza</td>
-                            <td>La Innovación de los datos.</td>
-                            <td>01-10-2024 10:00</td>
-                            <td>01-10-2024 11:00</td>
-                            <td>La Innovacion</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Manuel Marquez</td>
-                            <td>La Innovación de las tecnologias.</td>
-                            <td>01-10-2024 12:00</td>
-                            <td>01-10-2024 13:00</td>
-                            <td>La Innovacion</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                    </tbody> -->
                 </table>
             </div>
         </div>

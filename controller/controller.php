@@ -99,6 +99,7 @@ class Controller
     public function CrearConferencia(){
         $listaConferencia = new Conferencias();
         $listaConferencia = $this->modelConferencia1->ObtenerTodasLasConferencias();
+
         $listaPonencias = new Conferencias();
         $listaPonencias = $this->modelConferencia2->ObtenerTodasLasPonencias();
         require("view/conferencia.php");
@@ -109,12 +110,11 @@ class Controller
         $conferencia = new Conferencias();
         
         $conferencia->titulo = $_REQUEST['titulo'];
-        $conferencia->cantidad = $_REQUEST['cantidad'];
-        $conferencia->horas = $_REQUEST['horas'];  
-        $conferencia->fechaIni = $_REQUEST['fechaIni'];
-        $conferencia->fechaFin = $_REQUEST['fechaFin'];    
-        $conferencia->fechaIni = $_REQUEST['sala'];
-        $conferencia->fechaFin = $_REQUEST['congreso'];   
+        $conferencia->cantidad_ponencias = $_REQUEST['cantidad'];
+        $conferencia->fecha_inicio = $_REQUEST['fechaIni'];
+        $conferencia->fecha_fin = $_REQUEST['fechaFin'];    
+        $conferencia->id_sala = $_REQUEST['sala'];
+        $conferencia->id_congreso = $_REQUEST['congreso'];
       
         $this->resp= $this->modelConferencia1->CrearConferencia($conferencia);
 
@@ -180,7 +180,12 @@ class Controller
 
     public function RegistrarSala()
     {
+
         $sala = new Salas();
+        $sala2 = new Salas();
+
+        $sala2 = $this->modelSala1->ObtenerTodasLasSalas();
+        
  
         $sala->num_sala = $_REQUEST['numero'];
         $sala->cantidad_asientos = $_REQUEST['cantidad'];
@@ -437,6 +442,12 @@ class Controller
     }
 
     public function nuevaConferencia(){
+        $sala = new Salas();
+        $sala = $this->modelSala1->ObtenerTodasLasSalas();
+
+        $congreso = new Congreso();
+        $congreso = $this->modelCongreso->ObtenerTodosLosCongresos();
+
         require("view/agregar-conferencia.php");
     }
 

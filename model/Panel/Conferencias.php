@@ -40,16 +40,17 @@ class Conferencias
 		try {
 
 			$sql = "INSERT INTO Conferencia (titulo, cantidad_ponencias, fecha_inicio, fecha_fin, id_sala, id_congreso)
-				VALUES (?,?,?, ?, ?)";
+				VALUES (?,?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
 						$data->titulo,
-						$data->cantidad,
-						$data->horas,
-						$data->fechaIni,
-						$data->fecha_fin
+						$data->cantidad_ponencias,
+						$data->fecha_inicio,
+						$data->fecha_fin,
+						$data->id_sala,
+						$data->id_congreso
 					)
 				);
 			$this->msg = "¡Conferencia creada con éxito!&t=text-success";
