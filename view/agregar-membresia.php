@@ -37,7 +37,7 @@
             <h6 class="mb-4">Ingrese los datos de la nueva membresia</h6>
             <form>
                 <label for="pais" class="form-label">Tipo de Membresia</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" required>
                     <option selected>Seleccione una opción</option>
                     <option value="1">IEEE</option>
                     <option value="2">WPA</option>

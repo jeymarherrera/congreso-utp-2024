@@ -38,12 +38,12 @@
             <form method="POST" action="?op=registrarSala">
                 <div class="mb-3">
                     <label for="number" class="form-label">Número de Sala</label>
-                    <input type="number" class="form-control" id="number" name="numero">
+                    <input type="number" class="form-control" id="number" name="numero" required>
                 </div>
                 
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Asientos</label>
-                    <input type="number" class="form-control" id="quantity" name="cantidad">
+                    <input type="number" class="form-control" id="quantity" name="cantidad" required>
                 </div><br>
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </form>

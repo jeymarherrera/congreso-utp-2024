@@ -38,7 +38,7 @@
             <form method="POST" action="?op=CrearArea">
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
-                    <input type="name" class="form-control" id="name" name="titulo">
+                    <input type="name" class="form-control" id="name" name="titulo" required>
                 </div>      
                 <br>
                 <button type="submit" class="btn btn-primary">Agregar</button>

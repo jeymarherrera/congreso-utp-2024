@@ -83,7 +83,7 @@
                         ?>
                     </tbody>
 
-                    <tbody>
+                    <!-- <tbody>
                         <tr>
                             <td>01-324-2323</td>
                             <td>Jeymar</td>
@@ -114,7 +114,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>
