@@ -39,22 +39,22 @@
             <form method="POST" action="?op=crearCongreo">
                 <div class="mb-3">
                     <label for="name" class="form-label">Título</label>
-                    <input type="name" class="form-control" id="name" name="titulo">
+                    <input type="name" class="form-control" id="name" name="titulo" required>
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Boletos</label>
-                    <input type="number" class="form-control" id="quantity" name="cantidad">
+                    <input type="number" class="form-control" id="quantity" name="cantidad" required>
                 </div>
                 <div class="mb-3">
                     <label for="hours" class="form-label">Horas Mínimas de Asistencia</label>
-                    <input type="number" class="form-control" id="hours" name="horas">
+                    <input type="number" class="form-control" id="hours" name="horas" required>
                 </div>
                 <div class="mb-3">
                     <label for="startDate">Seleccione la fecha de iniciación</label>
-                    <input id="startDate" class="form-control" type="date" name="fechaIni" />
+                    <input id="startDate" class="form-control" type="date" name="fechaIni" required/>
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminación</label>
-                <input id="finishDate" class="form-control" type="date" name="fechaFin" />
+                <input id="finishDate" class="form-control" type="date" name="fechaFin" required/>
                 <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>

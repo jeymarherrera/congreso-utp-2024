@@ -38,18 +38,18 @@
             <form method="POST" action="?op=RegistrarConferencista">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
-                    <input type="name" class="form-control" id="name" name="nombre">
+                    <input type="name" class="form-control" id="name" name="nombre" required>
                 </div>
                 <div class="mb-3">
                     <label for="lastname" class="form-label">Apellido</label>
-                    <input type="lstname" class="form-control" id="lastname" name="apellido">
+                    <input type="lstname" class="form-control" id="lastname" name="apellido" required>
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Telefono</label>
-                    <input type="phone" class="form-control" id="phone" name="telefono">
+                    <input type="phone" class="form-control" id="phone" name="telefono" required>
                 </div>
                 <p>Seleccione su sexo</p>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline" required>
                     <input class="form-check-input" type="radio" name="sexo" id="male" value="male">
                     <label class="form-check-label" for="male">Hombre</label>
                 </div>
@@ -59,28 +59,28 @@
                 </div>
                 <div class="mb-3">
                     <br><label for="email" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="email" name="correo">
+                    <input type="email" class="form-control" id="email" name="correo" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="contrasena">
+                    <input type="password" class="form-control" id="password" name="contrasena" required>
                 </div>
                 <label for="pais" class="form-label">País de Residencia</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="pais">
+                <select class="form-select mb-3" aria-label="Default select example" name="pais" required>
                     <option selected>Seleccione una opción</option>
                     <option value="1">Panamá</option>
                     <option value="2">Venezuela</option>
                     <option value="3">Colombia</option>
                 </select>
                 <label for="pais" class="form-label">Ciudad</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="ciudad">
+                <select class="form-select mb-3" aria-label="Default select example" name="ciudad" required>
                     <option selected>Seleccione una opción</option>
                     <option value="1">Panamá</option>
                     <option value="2">Caracas</option>
                     <option value="3">Bogota</option>
                 </select>
                 <label for="pais" class="form-label">Provincia</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="provincia">
+                <select class="form-select mb-3" aria-label="Default select example" name="provincia" required>
                     <option selected>Seleccione una opción</option>
                     <option value="1">Panamá</option>
                     <option value="2">Venezuela</option>
@@ -88,15 +88,15 @@
                 </select>
                 <div class="mb-3">
                     <label for="ocupacion" class="form-label">Ocupacion</label>
-                    <input type="text" class="form-control" id="ocupacion" name="ocupacion">
+                    <input type="text" class="form-control" id="ocupacion" name="ocupacion" required>
                 </div>
                 <div class="mb-3">
                     <label for="entidad" class="form-label">Entidad/Institución/Empresa</label>
-                    <input type="text" class="form-control" id="entidad" name="entidad">
+                    <input type="text" class="form-control" id="entidad" name="entidad" required>
                 </div>
                 <p>¿Es miembro de la IEEE?</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="member" id="ieee-si" value="si">
+                    <input class="form-check-input" type="radio" name="member" id="ieee-si" value="si" required>
                     <label class="form-check-label" for="positive">Sí</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -105,7 +105,7 @@
                 </div>
                 <p>¿Es miembro de la WPA?</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="member2" id="wpa-si" value="si">
+                    <input class="form-check-input" type="radio" name="member2" id="wpa-si" value="si" required>
                     <label class="form-check-label" for="positive">Sí</label>
                 </div>
                 <div class="form-check form-check-inline">

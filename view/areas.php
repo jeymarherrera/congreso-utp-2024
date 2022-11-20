@@ -37,6 +37,10 @@
             </div>
         </div>
     </div>
+
+    <p class="text-center mt-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
     <!-- congresos -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
@@ -44,7 +48,7 @@
                 <h6 class="mb-0">Áreas de Interés agregadas</h6>
             </div>
             <div class="table-responsive">
-                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <table id="areas" class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
                             <th scope="col">ID</th>
@@ -59,10 +63,9 @@
                         foreach ($listaAreas as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_area ?></td>
+                                <td id="id_area"><?php echo $lista->id_area ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarArea">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <echo?> <td id="id_area"><a class="btn btn-sm btn-primary" href="?op=eliminarArea">Eliminar</a></td>  </echo>
                             </tr>
                         <?php
                             $n++;
@@ -90,5 +93,45 @@
     <script src="public/js/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="public/js/main.js"></script>
 </body>
+
+
+<script type="text/javascript">
+/* function obtener_id() {
+    if (!document.getElementsByTagName || !document.createTextNode) return;
+    var rows = document.getElementById('areas').getElementsByTagName('tr');
+    for (i = 0; i < rows.length; i++) {
+        rows[i].onclick = function() {
+		var result = this.getElementsByTagName('td')[0].innerHTML;
+        // header(window.location.href = window.location.ref + "?proceso=" + $_Proceso);
+
+            alert(result);
+        }
+    }
+}
+
+function obtener() {
+    var rows = document.getElementById('areas').getElementsByTagName('tr');
+    var idArea;
+    for (i = 0; i < rows.length; i++) {
+        rows[i].onclick = function() {
+		var id_area = this.getElementsByTagName('td')[0].innerHTML;
+        idArea = id_area;
+            alert(id_area);
+        }
+    }
+    return idArea;
+}*/
+
+</script>
+
+<script> //var Var_JavaScript = obtener();    // declaración de la variable </script>  
+    <?php
+        //$var_PHP = "<script> document.writeln(Var_JavaScript); </script>"; // igualar el valor de la variable JavaScript a PHP 
+
+    //echo $var_PHP   // muestra el resultado 
+
+    ?> 
+
+
 
 </html>
