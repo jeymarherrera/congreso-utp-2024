@@ -37,6 +37,10 @@
             </div>
         </div>
     </div>
+
+    <p class="text-center m-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
     <!-- congresos -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
@@ -61,40 +65,18 @@
                         foreach ($listaSalas as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
-                                <td><?php echo $lista->numeroSala; ?></td>
-                                <td><?php echo $lista->cantidad; ?></td>
+                                <td><?php echo $lista->id_sala; ?></td>
+                                <td><?php echo $lista->num_sala; ?></td>
+                                <td><?php echo $lista->cantidad_asientos; ?></td>
+                                
+                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>0011</td>
-                            <td>50</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>0012</td>
-                            <td>65</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>0013</td>
-                            <td>45</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="" data-toggle="modal" data-target="#modalDelete">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

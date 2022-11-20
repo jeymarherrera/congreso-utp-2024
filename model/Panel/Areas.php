@@ -50,7 +50,7 @@ class Areas
 	{
 		try {
 			$sql = "DELETE FROM Areas
-					WHERE id_area = '?' ";
+					WHERE id_area = ? ";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -60,7 +60,7 @@ class Areas
 				);
 			$this->msg = "¡El area ha sido eliminada!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar &t=text-danger";
+			$this->msg = "Error al eliminar &t=text-danger".$data->id_area." error".$data->id_area;
 		}
 		return $this->msg;
 	}

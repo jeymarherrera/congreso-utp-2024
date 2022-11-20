@@ -39,31 +39,31 @@
             <form>
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
-                    <input type="name" class="form-control" id="name">
+                    <input type="name" class="form-control" id="name" required>
                 </div>
                 <div class="mb-3">
                     <label for="hours" class="form-label">Horas Minimas</label>
-                    <input type="number" class="form-control" id="hours">
+                    <input type="number" class="form-control" id="hours" required>
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Ponencias</label>
-                    <input type="number" class="form-control" id="quantity">
+                    <input type="number" class="form-control" id="quantity" required>
                 </div>
                 <div class="mb-3">
                 <label for="startDate">Seleccione la fecha de iniciacion</label>
-                <input id="startDate" class="form-control" type="date" />
+                <input id="startDate" class="form-control" type="date" required/>
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminacion</label>
-                <input id="finishDate" class="form-control" type="date" />
+                <input id="finishDate" class="form-control" type="date" required/>
                 <br><label for="pais" class="form-label">Sala</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" required>
                     <option selected>Seleccione una opción</option>
                     <option value="1">0011</option>
                     <option value="2">0012</option>
                     <option value="3">0013</option>
                 </select>
                 <label for="pais" class="form-label">Congreso</label>
-                <select class="form-select mb-3" aria-label="Default select example">
+                <select class="form-select mb-3" aria-label="Default select example" required>
                     <option selected>Seleccione una opción</option>
                     <option value="1">Congreso 2024</option>
                     <option value="2">Congreso 2024</option>

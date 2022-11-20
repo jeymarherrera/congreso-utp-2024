@@ -36,34 +36,35 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos de la nueva conferencia</h6>
-            <form method="POST" action="?op=CrearConferencia">
+            <form name="registro" method="POST" action="?op=CrearConferencia">
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
-                    <input type="name" class="form-control" id="name" name="titulo">
+                    <input type="name" class="form-control" id="name" name="titulo" required>
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Ponencias</label>
-                    <input type="number" class="form-control" id="quantity" name="cantidad">
+                    <input type="number" class="form-control" id="quantity" name="cantidad" required>
                 </div>
                 <div class="mb-3">
-                <label for="startDate">Seleccione la fecha de iniciacion</label>
-                <input id="startDate" class="form-control" type="date" name="fechaIni"/>
+                    <label for="startDate">Seleccione la fecha de iniciacion</label>
+                    <input id="startDate" class="form-control" type="date" name="fechaIni" required/>
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminacion</label>
-                <input id="finishDate" class="form-control" type="date" name="fechaFin"/>
+                <input id="finishDate" class="form-control" type="date" name="fechaFin" required/>
                 <br><label for="pais" class="form-label">Sala</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="sala">
+
+                <select class="form-select mb-3" aria-label="Default select example" id="sala" name="sala" required>
                     <option selected>Seleccione una opción</option>
-                    <option value="1">0011</option>
-                    <option value="2">0012</option>
-                    <option value="3">0013</option>
+                    <?php foreach ($sala as $s) { ?>
+                        <option value="<?php echo $s->id_sala; ?>"><?php echo $s->num_sala; ?></option>
+                    <?php } ?>
                 </select>
                 <label for="pais" class="form-label">Congreso</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="congreso">
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Congreso 2024</option>
-                    <option value="2">Congreso 2024</option>
-                    <option value="3">Congreso 2024</option>
+                <select class="form-select mb-3" aria-label="Default select example" id="congreso" name="congreso" required>
+                <option selected>Seleccione una opción</option>
+                    <?php foreach ($congreso as $c) { ?>
+                        <option value="<?php echo $c->id_congreso; ?>"><?php echo $c->titulo; ?></option>
+                    <?php } ?>
                 </select>
                 <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>

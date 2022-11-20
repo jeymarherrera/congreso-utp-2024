@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <p class="text-center <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+    <p class="text-center mt-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
 
     <!-- congresos -->
     <div class="container-fluid pt-4 px-4">

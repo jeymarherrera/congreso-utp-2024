@@ -37,7 +37,7 @@ class Congreso
 		try {
 
 			$sql = "INSERT INTO congreso (titulo, cantidad_boletos, horas_minimas, fecha_inicio, fecha_fin)
-				VALUES ('?','?','?', '?', '?')";
+				VALUES (?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -45,13 +45,13 @@ class Congreso
 						$data->titulo,
 						$data->cantidad_boletos,
 						$data->horas_minimas,
-						$data->fecha_inicio = date("Ymd"),
-						$data->fecha_fin =  date("Ymd")
+						$data->fecha_inicio,
+						$data->fecha_fin 
 					)
 				);
 			$this->msg = "¡Congreso creado con éxito!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "¡Error de creación!&t=text-danger&a=".$data->titulo.$data->cantidad_boletos.$data->horas_minimas.$data->fecha_inicio.$data->fecha_fin;
+			$this->msg = "¡Error de creación!&t=text-danger&a=".$e->getMessage();
 		}
 		return $this->msg;
 	}

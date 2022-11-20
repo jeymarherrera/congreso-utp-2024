@@ -63,33 +63,14 @@
                         foreach ($listaIee as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
-                                <td><?php echo $lista->codigo; ?></td>
+                                <td><?php echo $lista->id_IEEE; ?></td>
+                                <td><?php echo $lista->cod_membresia; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>312425654</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>23435646</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>54657657</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -122,33 +103,14 @@
                         foreach ($listaWpa as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
-                                <td><?php echo $lista->fecha; ?></td>
+                                <td><?php echo $lista->id_WPA; ?></td>
+                                <td><?php echo $lista->cod_membresia; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>312425654</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>23435646</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>54657657</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

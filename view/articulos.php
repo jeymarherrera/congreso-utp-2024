@@ -75,7 +75,7 @@
                         ?>
                     </tbody>
 
-                    <tbody>
+                    <!-- <tbody>
                         <tr>
                             <td>01</td>
                             <td>312425654</td>
@@ -103,7 +103,7 @@
                             <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>
