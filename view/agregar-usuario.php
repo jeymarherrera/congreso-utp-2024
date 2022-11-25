@@ -31,11 +31,15 @@
     require_once 'view/template/dashboard-header.php';
     ?>
 
-<!-- formulario -->
+    <!-- formulario -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos del conferencista invitado</h6>
             <form method="POST" action="?op=RegistrarConferencista">
+                <div class="mb-3">
+                    <label for="cedula" class="form-label">Cédula</label>
+                    <input type="name" class="form-control" id="cedula" name="cedula" required>
+                </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="name" class="form-control" id="name" name="nombre" required>
@@ -50,11 +54,11 @@
                 </div>
                 <p>Seleccione su sexo</p>
                 <div class="form-check form-check-inline" required>
-                    <input class="form-check-input" type="radio" name="sexo" id="male" value="male">
+                    <input class="form-check-input" type="radio" name="sexo" id="male" value="m">
                     <label class="form-check-label" for="male">Hombre</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sexo" id="female" value="female">
+                    <input class="form-check-input" type="radio" name="sexo" id="female" value="f">
                     <label class="form-check-label" for="female">Mujer</label>
                 </div>
                 <div class="mb-3">
@@ -66,33 +70,48 @@
                     <input type="password" class="form-control" id="password" name="contrasena" required>
                 </div>
                 <label for="pais" class="form-label">País de Residencia</label>
+
                 <select class="form-select mb-3" aria-label="Default select example" name="pais" required>
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Panamá</option>
-                    <option value="2">Venezuela</option>
-                    <option value="3">Colombia</option>
+                    <option disabled>Seleccione su país</option>
+                    <?php foreach ($listaPais as $p) { ?>
+                        <option value="<?php echo $p->id_pais; ?>"><?php echo $p->nombre_pais; ?></option>
+                    <?php } ?>
                 </select>
+
                 <label for="pais" class="form-label">Ciudad</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="ciudad" required>
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Panamá</option>
-                    <option value="2">Caracas</option>
-                    <option value="3">Bogota</option>
+                    <option disabled>Seleccione su ciudad</option>
+                    <?php foreach ($listaCiudad as $c) { ?>
+                        <option value="<?php echo $c->id_ciudad; ?>"><?php echo $c->nombre_ciudad; ?></option>
+                    <?php } ?>
                 </select>
+
                 <label for="pais" class="form-label">Provincia</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="provincia" required>
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Panamá</option>
-                    <option value="2">Venezuela</option>
-                    <option value="3">Colombia</option>
+                    <option disabled>Seleccione su provincia</option>
+                    <?php foreach ($listaProvincia as $p) { ?>
+                        <option value="<?php echo $p->id_provincia; ?>"><?php echo $p->nombre; ?></option>
+                    <?php } ?>
                 </select>
+
                 <div class="mb-3">
                     <label for="ocupacion" class="form-label">Ocupacion</label>
-                    <input type="text" class="form-control" id="ocupacion" name="ocupacion" required>
+                    <select class="form-select mb-3" aria-label="Default select example" name="ocupacion" required>
+                        <option disabled>Seleccione su ocupación</option>
+                        <?php foreach ($listaOcupacion as $o) { ?>
+                            <option value="<?php echo $o->id_ocupacion; ?>"><?php echo $o->nombre; ?></option>
+                        <?php } ?>
+                    </select>
+                    <!-- <input type="text" class="form-control" id="ocupacion" name="ocupacion" required> -->
                 </div>
                 <div class="mb-3">
                     <label for="entidad" class="form-label">Entidad/Institución/Empresa</label>
-                    <input type="text" class="form-control" id="entidad" name="entidad" required>
+                    <select class="form-select mb-3" aria-label="Default select example" name="entidad" required>
+                        <option disabled>Seleccione su entidad</option>
+                        <?php foreach ($listaEntidad as $e) { ?>
+                            <option value="<?php echo $e->id_entidad; ?>"><?php echo $e->nombre; ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <p>¿Es miembro de la IEEE?</p>
                 <div class="form-check form-check-inline">

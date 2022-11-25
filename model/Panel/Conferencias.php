@@ -4,6 +4,12 @@ class Conferencias
 	private $pdo;
 	private $msg;
 
+	public $id_conferencista;
+	public $titulo;
+	public $fecha_inicio;
+	public $fecha_fin;
+	public $id_conferencia;
+
 	public function __CONSTRUCT()
 	{
 		try {
@@ -16,7 +22,10 @@ class Conferencias
 	public function ObtenerTodasLasConferencias()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT * FROM Conferencia");
+			$stm = $this->pdo->prepare("select id_conferencia, c.titulo, cantidad_ponencias, c.fecha_inicio, c.fecha_fin, s.num_sala, co.titulo as congreso
+			from Conferencia c
+			inner join sala as s on c.id_sala = s.id_sala
+			inner join Congreso co on c.id_congreso = co.id_congreso");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -27,7 +36,23 @@ class Conferencias
 	public function ObtenerTodasLasPonencias()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT * FROM Conferencia");
+			$stm = $this->pdo->prepare("select CONCAT( co.nombre,' ', co.apellido) as Nombre, con.titulo as titulo, c.fecha_inicio ,c.fecha_fin, c.titulo as ponencia
+			from Conferencista_Conferencia c
+			inner join Conferencista co
+			on c.id_conferencista = co.id_conferencista
+			inner join Conferencia con
+			on con.id_conferencia = c.id_conferencia");
+			$stm->execute();
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
+	public function ObtenerTodosLosPonentes()
+	{
+		try {
+			$stm = $this->pdo->prepare("SELECT * FROM conferencista");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -64,22 +89,22 @@ class Conferencias
 	{
 		try {
 
-			$sql = "INSERT INTO Conferencia (titulo, cantidad_ponencias, fecha_inicio, fecha_fin, id_sala, id_congreso)
-				VALUES ('?','?','?', '?', ?)";
+			$sql = "INSERT INTO Conferencista_Conferencia (id_conferencista, titulo, fecha_inicio, fecha_fin, id_conferencia)
+				VALUES (?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
+						$data->id_conferencista,
 						$data->titulo,
-						$data->cantidad,
-						$data->horas,
-						$data->fechaIni,
-						$data->fecha_fin
+						$data->fecha_inicio,
+						$data->fecha_fin,
+						$data->id_conferencia
 					)
 				);
 			$this->msg = "¡Ponencia creada con éxito!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "¡Error de creación!&t=text-danger";
+			$this->msg = "¡Ponencia no creada!&t=text-danger";
 		}
 		return $this->msg;
 	}

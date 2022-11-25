@@ -55,4 +55,5 @@ class Congreso
 		}
 		return $this->msg;
 	}
+
 }

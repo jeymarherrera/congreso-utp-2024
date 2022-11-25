@@ -14,6 +14,7 @@ require_once 'model/Inicio/Registro.php';
 require_once 'model/Panel/Articulos.php';
 require_once 'model/Panel/Membresias.php';
 require_once 'model/Panel/Ubicacion.php';
+require_once 'model/Panel/Entidades.php';
 
 class Controller
 {
@@ -22,26 +23,30 @@ class Controller
     private $modelCongreso;
     private $modelConferencia1;
     private $modelConferencia2;
+    private $modelEvento;
     private $modelArea1;
     private $modelSala1;
     private $modelArticulo;
     private $modelMembresia1;
     private $modelMembresia2;
     private $modelUbicacion;
+    private $modelEntidad;
 
     public function __CONSTRUCT()
     {
-        $this->modelUsuario1 = new Usuario();
+        $this->modelUsuario1 = new Registro();
         $this->modelUsuario2 = new Usuarios();
         $this->modelCongreso = new Congreso();
         $this->modelConferencia1 = new Conferencias();
         $this->modelConferencia2 = new Conferencias();
+        $this->modelEvento = new Eventos();
         $this->modelArea1 = new Areas();
         $this->modelSala1 = new Salas();
         $this->modelArticulo = new Articulos();
         $this->modelMembresia1 = new Membresias();
         $this->modelMembresia2 = new Membresias();
         $this->modelUbicacion = new Ubicacion();
+        $this->modelEntidad = new Entidades();
     }
 
     public function Index()
@@ -67,6 +72,20 @@ class Controller
 
     public function CrearCuenta()
     {
+        $listaEntidad = new Entidades();
+        $listaEntidad = $this->modelEntidad->ObtenerTodasLasEntidades();
+
+        $listaOcupacion = new Entidades();
+        $listaOcupacion = $this->modelEntidad->ObtenerTodasLasOcupacion();
+
+        $listaPais = new Ubicacion();
+        $listaPais = $this->modelUbicacion->ConsultarPais();
+
+        $listaProvincia = new Ubicacion();
+        $listaProvincia = $this->modelUbicacion->ConsultarProvincia();
+
+        $listaCiudad = new Ubicacion();
+        $listaCiudad = $this->modelUbicacion->ConsultarCiudad();
         require("view/registro.php");
     }
 
@@ -77,7 +96,95 @@ class Controller
 
     public function RegistrarUsuario()
     {
-        # code...
+        $usuario = new Usuario();
+
+        if (!isset($_GET['tiposuario'])) {
+            $tipoUsuario = $_GET['tipoUsuario'];
+
+            if ($tipoUsuario == "Autor") {
+                $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
+                $usuario->nombre = $_REQUEST['nombre'];
+                $usuario->apellido  = $_REQUEST['apellido'];
+
+                // $usuario->telefono  = $_REQUEST['paper1'];
+                // $usuario->sexo  = $_REQUEST['paper_2'];
+                // $usuario->correo = $_REQUEST['paper_3'];
+
+                $usuario->telefono  = $_REQUEST['telefono'];
+                $usuario->sexo  = $_REQUEST['sexo'];
+                $usuario->correo = $_REQUEST['correo'];
+
+                $usuario->id_ocupacion = $_REQUEST['ocupacion'];
+                $usuario->id_entidad = $_REQUEST['institucion'];
+                $usuario->id_ieee = $_REQUEST['memb'];
+                $usuario->id_wpa = $_REQUEST['wpa'];
+                $usuario->id_pago = $_REQUEST['tipoPago'];
+                $usuario->fecha = $_REQUEST['fecha'];
+                //$usuario->id_tipo = $_REQUEST['nombreTarj'];
+                $usuario->metodo = $_REQUEST['tipoPago'];
+                $usuario->descuento = $_REQUEST[''];
+                $usuario->cena = $_REQUEST['cenas'];
+                $usuario->comision = 75;
+                $usuario->comision_pago = 3.75;
+                $usuario->monto_total = 79.25;
+                $usuario->estado = $_REQUEST[''];
+
+
+                $usuario->gafete = $_REQUEST[''];
+                $usuario->id_residencia = $_REQUEST[''];
+
+                $this->resp = $this->modelUsuario1->RegistrarAutor($usuario);
+
+                header('Location: ?op=crear&msg=' . $this->resp);
+
+            } elseif ($tipoUsuario == "Estudiante UTP" || "Estudiante nacional" || "Estudiante internacional") {
+                $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
+                $usuario->nombre = $_REQUEST['nombre'];
+                $usuario->apellido  = $_REQUEST['apellido'];
+                $usuario->telefono  = $_REQUEST['telefono'];
+                $usuario->cod_estudiante  = $_REQUEST['cedula'];
+                $usuario->sexo  = $_REQUEST['sexo'];
+                $usuario->correo = $_REQUEST['correo'];
+                $usuario->id_ocupacion = $_REQUEST['ocupacion'];
+                $usuario->id_entidad = $_REQUEST['institucion'];
+                $usuario->id_ieee = $_REQUEST['memb'];
+                $usuario->id_wpa = $_REQUEST['wpa'];
+                $usuario->id_pago = $_REQUEST['tipoPago'];
+                $usuario->fecha = $_REQUEST['fecha'];
+                //$usuario->id_tipo = $_REQUEST['nombreTarj'];
+                $usuario->metodo = $_REQUEST['tipoPago'];
+                $usuario->descuento = $_REQUEST[''];
+                $usuario->cena = $_REQUEST['cenas'];
+                $usuario->comision = 75;
+                $usuario->comision_pago = 3.75;
+                $usuario->monto_total = 79.25;
+                $usuario->estado = $_REQUEST[''];
+
+
+                $usuario->gafete = $_REQUEST[''];
+                $usuario->id_residencia = $_REQUEST[''];
+            }
+        }
+
+       /*  $usuario->id_estudiante = $_REQUEST['idEst'];
+        $usuario->cod_estudiante = $_REQUEST[''];
+        $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
+        $usuario->nombre = $_REQUEST['nombre'];
+        $usuario->apellido  = $_REQUEST['apellido'];
+        $usuario->telefono  = $_REQUEST['telefono'];
+        $usuario->sexo  = $_REQUEST['sexo'];
+        $usuario->correo = $_REQUEST['correo'];
+        $usuario->gafete = $_REQUEST[''];
+        $usuario->id_residencia = $_REQUEST[''];
+        $usuario->id_ocupacion = $_REQUEST['ocupacion'];
+        $usuario->id_entidad = $_REQUEST['institucion'];
+        $usuario->id_ieee = $_REQUEST['memb'];
+        $usuario->id_wpa = $_REQUEST['wpa'];
+        $usuario->id_pago = $_REQUEST['tipoPago']; */
+
+        $this->resp = $this->model->Registrar($usuario);
+
+        header('Location: ?op=crear&msg=' . $this->resp);
     }
 
     public function Login()
@@ -95,7 +202,6 @@ class Controller
 
         $listaUsuario = new Usuarios();
         $listaRegistros = new Usuarios();
-        // $listaUsuario = $this->modelUsuario2->ObtenerTodosLosUsuarios(); 
         $listaRegistros = $this->modelUsuario2->ObtenerTodosLosRegistros();
 
         require("view/dashboard.php");
@@ -133,7 +239,22 @@ class Controller
         header('Location: ?op=conferencias&msg=' . $this->resp);
     }
 
-    public function RegistrarPonencia()
+    public function RegistrarPonenciaProfesional()
+    {
+        $ponencia = new Conferencias();
+
+        $ponencia->id_conferencista = $_REQUEST['ponente'];
+        $ponencia->titulo = $_REQUEST['titulo'];
+        $ponencia->fecha_inicio = $_REQUEST['fecha_inicio'];
+        $ponencia->fecha_fin = $_REQUEST['fecha_fin'];
+        $ponencia->id_conferencia = $_REQUEST['id_conferencia'];
+
+        $this->resp = $this->modelConferencia2->CrearPonencia($ponencia);
+
+        header('Location: ?op=conferencias&msg=' . $this->resp);
+    }
+
+    public function RegistrarPonenciaAutor()
     {
         $ponencia = new Conferencias();
 
@@ -160,14 +281,14 @@ class Controller
         require("view/areas.php");
     }
 
-    public function EliminarArea()
+    public function EliminarArea($idArea)
     {
-        include'view/areas.php';
+        include 'view/areas.php';
         $area = new Areas();
 
-        $area->id_area = $_REQUEST['id'];
+        //$area = $idSala;
 
-        $this->resp = $this->modelArea1->EliminarArea($area);
+        $this->resp = $this->modelArea1->EliminarArea($idArea);
 
 
         header('Location: ?op=areas&msg=' . $this->resp);
@@ -289,28 +410,28 @@ class Controller
         $listaProfesionales = new Usuarios();
         $listaProfesionales = $this->modelUsuario2->ObtenerTodosLosProfesionales();
         $listaEstudiantes = new Usuarios();
-        $listaEstudiantes = $this->modelUsuario2->ObtenerTodosLosProfesionales();
+        $listaEstudiantes = $this->modelUsuario2->ObtenerTodosLosEstudiantes();
         require("view/usuarios.php");
     }
 
     public function RegistrarConferencista()
-    {
+    {        
         $conferencista = new Conferencias();
 
-        //$admin->cedula = $_REQUEST['cedula'];  
+        $conferencista->id_conferencista = $_REQUEST['cedula'];  
         $conferencista->nombre = $_REQUEST['nombre'];
         $conferencista->apellido = $_REQUEST['apellido'];
         $conferencista->telefono = $_REQUEST['telefono'];
-        $conferencista->cantidad = $_REQUEST['sexo'];
+        $conferencista->sexo = $_REQUEST['sexo'];
         $conferencista->correo = $_REQUEST['correo'];
-        $conferencista->contrasena = $_REQUEST['contrasena'];
-        $conferencista->pais = $_REQUEST['pais'];
-        $conferencista->ciudad = $_REQUEST['ciudad'];
-        $conferencista->provincia = $_REQUEST['provincia'];
-        $conferencista->ocupacion = $_REQUEST['ocupacion'];
-        $conferencista->entidad = $_REQUEST['entidad'];
-        $conferencista->member = $_REQUEST['member'];
-        $conferencista->member2 = $_REQUEST['member2'];
+        $conferencista->contraseña = $_REQUEST['contrasena'];
+        $conferencista->id_pais = $_REQUEST['pais'];
+        $conferencista->id_ciudad = $_REQUEST['ciudad'];
+        $conferencista->id_provincia = $_REQUEST['provincia'];
+        $conferencista->id_ocupacion = $_REQUEST['ocupacion'];
+        $conferencista->id_entidad = $_REQUEST['entidad'];
+        // $conferencista->member = $_REQUEST['member'];
+        // $conferencista->member2 = $_REQUEST['member2'];
 
         $this->resp = $this->modelUsuario2->RegistrarConferencista($conferencista);
 
@@ -446,8 +567,23 @@ class Controller
 
     public function nuevoInvitado()
     {
+        $listaPais = new Ubicacion();
+        $listaPais = $this->modelUbicacion->ConsultarPais();
+
+        $listaProvincia = new Ubicacion();
+        $listaProvincia = $this->modelUbicacion->ConsultarProvincia();
+
+        $listaCiudad = new Ubicacion();
+        $listaCiudad = $this->modelUbicacion->ConsultarCiudad();
+
+        $listaEntidad = new Entidades();
+        $listaEntidad = $this->modelEntidad->ObtenerTodasLasEntidades();
+
+        $listaOcupacion = new Entidades();
+        $listaOcupacion = $this->modelEntidad->ObtenerTodasLasOcupacion();
         require("view/agregar-usuario.php");
     }
+
 
     public function nuevoCongreso()
     {
@@ -487,7 +623,18 @@ class Controller
 
     public function nuevaPonencia()
     {
-        require("view/agregar-ponencias.php");
+        require("view/agregar-ponencias-autor.php");
+    }
+
+    public function NuevaPonenciaPro()
+    {
+        $listaPonente = new Conferencias();
+        $listaPonente = $this->modelConferencia1->ObtenerTodosLosPonentes();
+
+        $listaConferencia = new Conferencias();
+        $listaConferencia = $this->modelConferencia2->ObtenerTodasLasConferencias();
+
+        require("view/agregar-ponencias-profesional.php");
     }
 
     public function nuevaArea()

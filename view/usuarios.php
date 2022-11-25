@@ -37,6 +37,10 @@
             </div>
         </div>
     </div>
+
+    <p class="text-center mt-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
     <!-- conferencistas -->
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
@@ -64,7 +68,7 @@
                             <th scope="col">Entidad</th>
                             <th scope="col">Miembro IEEE</th>
                             <th scope="col">Miembro WPA</th>
-                            <th scope="col">Areas de Interes</th>
+                            <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Notificar</th>
                             <th scope="col">Gafete</th>
                             <th scope="col">Editar</th>
@@ -78,20 +82,19 @@
                         foreach ($listaConferencista as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->cedula; ?></td>
-                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->id_conferencista; ?></td>
+                                <td><?php echo $lista->nombre_c; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
-                                <td><?php echo $lista->provincia; ?></td>
-                                <td><?php echo $lista->ocupacion; ?></td>
-                                <td><?php echo $lista->entidad; ?></td>
-                                <td><?php echo $lista->iee; ?></td>
-                                <td><?php echo $lista->wpa; ?></td>
-                                <td><?php echo $lista->areas; ?></td>
+                                <td><?php echo $lista->nombre_pais; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->nombre_p; ?></td>
+                                <td><?php echo $lista->nombre_o; ?></td>
+                                <td><?php echo $lista->nombre_e; ?></td>
+                                <td><?php echo $lista->cod_ieee; ?></td>
+                                <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafete">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
@@ -102,69 +105,6 @@
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>20-70-5165</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-4534</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jey@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-6546</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -198,7 +138,7 @@
                             <th scope="col">Entidad</th>
                             <th scope="col">Miembro IEEE</th>
                             <th scope="col">Miembro WPA</th>
-                            <th scope="col">Areas de Interes</th>
+                            <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Gafete</th>
                             <th scope="col">Articulos</th>
                             <th scope="col">Editar</th>
@@ -212,20 +152,19 @@
                         foreach ($listaAutores as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->cedula; ?></td>
-                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->id_Autor; ?></td>
+                                <td><?php echo $lista->nombre_a; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
-                                <td><?php echo $lista->provincia; ?></td>
-                                <td><?php echo $lista->ocupacion; ?></td>
-                                <td><?php echo $lista->entidad; ?></td>
-                                <td><?php echo $lista->iee; ?></td>
-                                <td><?php echo $lista->wpa; ?></td>
-                                <td><?php echo $lista->areas; ?></td>
+                                <td><?php echo $lista->nombre_pais; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->nombre_p; ?></td>
+                                <td><?php echo $lista->nombre_o; ?></td>
+                                <td><?php echo $lista->nombre_e; ?></td>
+                                <td><?php echo $lista->cod_ieee; ?></td>
+                                <td><?php echo $lista->cod_wpa; ?></td>                                
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteAutor">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
@@ -236,69 +175,6 @@
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>20-70-5165</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-4534</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jey@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-6546</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -332,7 +208,7 @@
                             <th scope="col">Entidad</th>
                             <th scope="col">Miembro IEEE</th>
                             <th scope="col">Miembro WPA</th>
-                            <th scope="col">Areas de Interes</th>
+                            <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Gafete</th>
                             <th scope="col">Certificados</th>
                             <th scope="col">Editar</th>
@@ -347,20 +223,19 @@
                         foreach ($listaProfesionales as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->cedula; ?></td>
-                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->id_profesional; ?></td>
+                                <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
-                                <td><?php echo $lista->provincia; ?></td>
-                                <td><?php echo $lista->ocupacion; ?></td>
-                                <td><?php echo $lista->entidad; ?></td>
-                                <td><?php echo $lista->iee; ?></td>
-                                <td><?php echo $lista->wpa; ?></td>
-                                <td><?php echo $lista->areas; ?></td>
+                                <td><?php echo $lista->nombre_pais; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->nombre_p; ?></td>
+                                <td><?php echo $lista->nombre_o; ?></td>
+                                <td><?php echo $lista->nombre_e; ?></td>
+                                <td><?php echo $lista->cod_ieee; ?></td>
+                                <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteProfesional">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoProf">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
@@ -371,69 +246,6 @@
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>20-70-5165</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-4534</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jey@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-6546</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -468,7 +280,7 @@
                             <th scope="col">Entidad</th>
                             <th scope="col">Miembro IEEE</th>
                             <th scope="col">Miembro WPA</th>
-                            <th scope="col">Areas de Interes</th>
+                            <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Gafete</th>
                             <th scope="col">Certificados</th>
                             <th scope="col">Editar</th>
@@ -483,20 +295,20 @@
                         foreach ($listaEstudiantes as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->cedula; ?></td>
-                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->cod_estudiante; ?></td>
+                                <td><?php echo $lista->nombre_estudiante; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
-                                <td><?php echo $lista->provincia; ?></td>
-                                <td><?php echo $lista->ocupacion; ?></td>
-                                <td><?php echo $lista->entidad; ?></td>
-                                <td><?php echo $lista->iee; ?></td>
-                                <td><?php echo $lista->wpa; ?></td>
-                                <td><?php echo $lista->areas; ?></td>
+                                <td><?php echo $lista->nombre_pais; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->nombre_p; ?></td>
+                                <td><?php echo $lista->nombre_o; ?></td>
+                                <td><?php echo $lista->nombre_e; ?></td>
+                                <td><?php echo $lista->cod_ieee; ?></td>
+                                <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoEstudiante">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
@@ -507,72 +319,6 @@
                             $n++;
                         }
                         ?>
-                    </tbody>
-
-                    <tbody>
-                        <tr>
-                            <td>20-70-5165</td>
-                            <td>210-2023-323</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-4534</td>
-                            <td>210-6456-645</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jey@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-6546</td>
-                            <td>210-4534-455</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jherrera@gmail.com</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

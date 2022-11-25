@@ -68,30 +68,32 @@ class Usuarios
 	{
 		try {
 
-			$sql = "INSERT INTO conferencista(id_conferencista,nombre, apellido, telefono, sexo, correo, contraseña, id_residencia, id_ocupacion, id_ieee, id_wpa)
-					VALUES('?','?','?','?','?','?','?','?','?','?')";
+			$sql = "INSERT INTO conferencista(id_conferencista, nombre, apellido, telefono, sexo, correo, contraseña, id_pais, id_ciudad, id_provincia, id_ocupacion, id_entidad)
+					VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
+						$data->id_conferencista,
 						$data->nombre,
 						$data->apellido,
 						$data->telefono,
 						$data->sexo,
 						$data->correo,
-						$data->contrasena,
-						$data->id_residencia,
+						$data->contraseña,
+						$data->id_pais,
+						$data->id_ciudad,
+						$data->id_provincia,
 						$data->id_ocupacion,
-						$data->id_ieee,
-						$data->id_wpa,
+						$data->id_entidad
 					)
 				);
-			$this->msg = "El registro se ha guardado exitosamente!&t=text-success";
+			$this->msg = "¡Conferencsita registrado con éxito!&t=text-success";
 		} catch (Exception $e) {
 			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
-				$this->msg = "Correo electrónico ya está registrado en el sistema&t=text-danger";
+				$this->msg = "La cédula ya está registrada en el sistema&t=text-danger";
 			} else {
-				$this->msg = "Error al guardar los datos&t=text-danger";
+				$this->msg = "Error al registrar el conferencista&t=text-danger";
 			}
 		}
 		return $this->msg;
@@ -100,12 +102,18 @@ class Usuarios
 	public function ObtenerTodosLosConferencistas()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_conferencista, conf.nombre, apellido, telefono, sexo, correo, nombre_pais, nombre_ciudad, prov.nombre, id_ocupacion,id_entidad, id_ieee, id_wpa
-			FROM Conferencista As conf INNER JOIN 
-			Residencia As res On res.id_residencia = conf.id_residencia INNER JOIN
-			Pais On res.id_pais = Pais.id_pais INNER JOIN
-			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
-			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
+			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			from Conferencista con
+			inner join Pais pa
+			on con.id_pais = pa.id_pais
+			inner join Provincia p
+			on p.id_provincia = con.id_provincia
+			inner join Ciudad c
+			on c.id_ciudad = con.id_ciudad
+			inner join Ocupacion o
+			on o.id_ocupacion = con.id_ocupacion
+			inner join Entidad e
+			on e.id_entidad = con.id_entidad");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -117,7 +125,7 @@ class Usuarios
 	{
 		try {
 			$sql = "DELETE FROM Conferencista
-					WHERE id_conferencista = '?'";
+					WHERE id_conferencista = ?";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -135,7 +143,7 @@ class Usuarios
 	public function ObtenerGafete()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT gafete FROM Conferencista WHERE id_conferencista = '?' ");
+			$stm = $this->pdo->prepare("SELECT gafete FROM Conferencista WHERE id_conferencista = ? ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -146,12 +154,18 @@ class Usuarios
 	public function ObtenerTodosLosAutores()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_autor, conf.nombre, apellido, telefono, sexo, correo, nombre_pais, nombre_ciudad, prov.nombre, id_ocupacion,id_entidad, id_ieee, id_wpa
-			FROM Autor As conf INNER JOIN 
-			Residencia As res On res.id_residencia = conf.id_residencia INNER JOIN
-			Pais On res.id_pais = Pais.id_pais INNER JOIN
-			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
-			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
+			$stm = $this->pdo->prepare("SELECT id_autor, a.nombre as nombre_a, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			from Autor a
+			inner join Pais pa
+			on a.id_pais = pa.id_pais
+			inner join Provincia p
+			on p.id_provincia = a.id_provincia
+			inner join Ciudad c
+			on c.id_ciudad = a.id_ciudad
+			inner join Ocupacion o
+			on o.id_ocupacion = a.id_ocupacion
+			inner join Entidad e
+			on e.id_entidad = a.id_entidad");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -163,7 +177,7 @@ class Usuarios
 	{
 		try {
 			$sql = "DELETE FROM Autor
-					WHERE id_Autor = '?'";
+					WHERE id_Autor = ?";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -181,7 +195,7 @@ class Usuarios
 	public function ObtenerGafeteAutor()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT gafete FROM Autor WHERE id_autor = '?' ");
+			$stm = $this->pdo->prepare("SELECT gafete FROM Autor WHERE id_autor = ? ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -192,12 +206,18 @@ class Usuarios
 	public function ObtenerTodosLosProfesionales()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_profesional, prof.nombre, apellido, telefono, sexo, correo, nombre_pais, nombre_ciudad, prov.nombre, id_ocupacion,id_entidad, id_ieee, id_wpa
-			FROM profesional As prof INNER JOIN 
-			Residencia As res On res.id_residencia = prof.id_residencia INNER JOIN
-			Pais On res.id_pais = Pais.id_pais INNER JOIN
-			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
-			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
+			$stm = $this->pdo->prepare("SELECT id_profesional, prof.nombre as nombre_p, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			from Profesional prof
+			inner join Pais pa
+			on prof.id_pais = pa.id_pais
+			inner join Provincia p
+			on p.id_provincia = prof.id_provincia
+			inner join Ciudad c
+			on c.id_ciudad = prof.id_ciudad
+			inner join Ocupacion o
+			on o.id_ocupacion = prof.id_ocupacion
+			inner join Entidad e
+			on e.id_entidad = prof.id_entidad");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -209,7 +229,7 @@ class Usuarios
 	{
 		try {
 			$sql = "DELETE FROM Profesional
-					WHERE id_profesional = '?'";
+					WHERE id_profesional = ?";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -227,7 +247,7 @@ class Usuarios
 	public function ObtenerGafeteProfesional()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT gafete FROM Profesional WHERE id_profesional = '?' ");
+			$stm = $this->pdo->prepare("SELECT gafete FROM Profesional WHERE id_profesional = ? ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -238,7 +258,7 @@ class Usuarios
 	public function ObtenerCertificadoProfesional()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_profesional, nombre, apellido, correo, certificado FROM Profesional WHERE id_profesional '?' ");
+			$stm = $this->pdo->prepare("SELECT id_profesional, nombre, apellido, correo, certificado FROM Profesional WHERE id_profesional ? ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -249,12 +269,19 @@ class Usuarios
 	public function ObtenerTodosLosEstudiantes()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_estudiante, est.nombre, apellido, telefono, sexo, correo, nombre_pais, nombre_ciudad, prov.nombre, id_ocupacion,id_entidad, id_ieee, id_wpa
-			FROM Estudiante As est INNER JOIN 
-			Residencia As res On res.id_residencia = est.id_residencia INNER JOIN
-			Pais On res.id_pais = Pais.id_pais INNER JOIN
-			Provincia As prov On res.id_provincia = prov.id_provincia INNER JOIN
-			Ciudad As ciu On res.id_ciudad = ciu.id_ciudad");
+			$stm = $this->pdo->prepare("
+			SELECT id_estudiante, cod_estudiante, est.nombre as nombre_estudiante, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			from Estudiante est
+			inner join Pais pa
+			on est.id_pais = pa.id_pais
+			inner join Provincia p
+			on p.id_provincia = est.id_provincia
+			inner join Ciudad c
+			on c.id_ciudad = est.id_ciudad
+			inner join Ocupacion o
+			on o.id_ocupacion = est.id_ocupacion
+			inner join Entidad e
+			on e.id_entidad = est.id_entidad");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -266,7 +293,7 @@ class Usuarios
 	{
 		try {
 			$sql = "DELETE FROM Estudiante
-					WHERE id_estudiante = '?'";
+					WHERE id_estudiante = ?";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -284,7 +311,7 @@ class Usuarios
 	public function ObtenerGafeteEstudiante(Usuario $data)
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT gafete FROM Estudiante WHERE id_estudiante = '?' ");
+			$stm = $this->pdo->prepare("SELECT gafete FROM Estudiante WHERE id_estudiante = ? ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -295,7 +322,7 @@ class Usuarios
 	public function ObtenerCertificadoEstudiante()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_estudiante, nombre, apellido, correo, certificado FROM Estudiante WHERE id_estudiante = '?' ");
+			$stm = $this->pdo->prepare("SELECT id_estudiante, nombre, apellido, correo, certificado FROM Estudiante WHERE id_estudiante = ? ");
 			$stm->execute();
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {

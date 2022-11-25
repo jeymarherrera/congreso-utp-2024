@@ -34,7 +34,7 @@
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
                 <a href="?op=newConferencia"><button class="btn btn-primary w-100 m-2" type="button">Crear nueva conferencia</button></a>
-                <a href="?op=newPonencia"><button class="btn btn-primary w-100 m-2" type="button">Crear nueva ponencia</button></a>
+                <a href="?op=newPonenciaPro"><button class="btn btn-primary w-100 m-2" type="button">Crear nueva ponencia</button></a>
             </div>
         </div>
     </div>
@@ -76,8 +76,8 @@
                                 <td><?php echo $lista->cantidad_ponencias; ?></td>
                                 <td><?php echo $lista->fecha_inicio; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><?php echo $lista->id_sala; ?></td>
-                                <td><?php echo $lista->id_congreso ?></td>
+                                <td><?php echo $lista->num_sala; ?></td>
+                                <td><?php echo $lista->congreso ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
@@ -119,13 +119,11 @@
                         foreach ($listaPonencias as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->Nombre; ?></td>
+                                <td><?php echo $lista->ponencia; ?></td>
+                                <td><?php echo $lista->fecha_inicio; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
                                 <td><?php echo $lista->titulo; ?></td>
-                                <td><?php echo $lista->cantidad; ?></td>
-                                <td><?php echo $lista->hotaMin; ?></td>
-                                <td><?php echo $lista->fechaIni; ?></td>
-                                <td><?php echo $lista->FechaFin; ?></td>
-                                <td><?php echo $lista->Areas; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>

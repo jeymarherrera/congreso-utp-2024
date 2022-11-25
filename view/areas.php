@@ -65,7 +65,7 @@
                             <tr>
                                 <td id="id_area"><?php echo $lista->id_area ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
-                                <echo?> <td id="id_area"><a class="btn btn-sm btn-primary" href="?op=eliminarArea">Eliminar</a></td>  </echo>
+                                 <td id="id_area"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_area.'&op=eliminarArea' ?>">Eliminar</a></td>
                             </tr>
                         <?php
                             $n++;
