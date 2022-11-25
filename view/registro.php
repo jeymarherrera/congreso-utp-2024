@@ -47,15 +47,20 @@
             </div>
 
             <?php
-      require_once 'view/template/header.php';
-      ?>
+            require_once 'view/template/header.php';
+            ?>
         </div>
     </header>
 
     <div class="container py-5 h-100">
         <h1 style="margin-top:15%; margin-bottom:3%; text-align: center;">Registro</h1>
+
+
+        <p class="text-center mt-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
         <div class="card shadow-2-strong well well-sm mb-5 " style="border-radius: 1rem;  align-self: center; ">
-            <form style="background-color: #EAEDF1;" id="registro" name="registro" class="form-horizontal card-body p-5" method="post" action="./?op=registrar">
+            <form style="background-color: #EAEDF1;" id="registro" name="registro" class="form-horizontal card-body p-5" method="get" action="./?op=registrar">
                 <div style="background-color: white; margin:-15px;" id="tipoUsuario">
                     <div class="alert alert-info mt-">
                         <i class="fa fa-info-circle"></i>
@@ -63,7 +68,7 @@
                     </div>
                     <div>
                         <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoUsuario" id="tipos" value="" class="chosen-select" onchange='SelectChanged();' required>
-                            <option value="">Soy un...</option>
+                            <option disabled>Soy un...</option>
                             <option id="tipoUsuario" value="Autor">Autor</option>
                             <option id="estudiante1" value="Estudiante UTP">Estudiante UTP</option>
                             <option id="estudiante2" value="Estudiante nacional">Estudiante nacional</option>
@@ -103,7 +108,7 @@
                             <option id="no" value="no">No</option>
                         </select>
                         <div>
-                            <input id="MEM" name="mem" type="text" placeholder="Código de membresia*" class="form-control  col-10" style="width: 400px; display:none;" required>
+                            <input id="MEM" name="mem" type="text" placeholder="Código de membresia*" class="form-control  col-10" style="width: 400px; display:none;" >
                         </div>
                     </div>
 
@@ -128,7 +133,7 @@
                             <option id="no" value="no">No</option>
                         </select>
                         <div>
-                            <input id="paper2_" name="paper2_" type="text" placeholder="Código segundo paper aprobado *" class="form-control  col-10" style="width: 400px; display:none;" required>
+                            <input id="paper2_" name="paper2_" type="text" placeholder="Código segundo paper aprobado *" class="form-control  col-10" style="width: 400px; display:none;" >
                         </div>
                     </div>
 
@@ -139,7 +144,7 @@
                             <option id="no" value="no">No</option>
                         </select>
                         <div>
-                            <input id="paper3_" name="paper3_" type="text" placeholder="Código tercer paper aprobado *" class="form-control  col-10" style="width: 400px; display:none;" required>
+                            <input id="paper3_" name="paper3_" type="text" placeholder="Código tercer paper aprobado *" class="form-control  col-10" style="width: 400px; display:none;" >
                         </div>
                     </div>
 
@@ -158,6 +163,15 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <select style="height: 40px; width: 400px;" name="pais" id="pais" class="chosen-select  col-10" required="">
+                            <option disabled>Seleccione su país</option>
+                            <?php foreach ($listaPais as $p) { ?>
+                                <option value="<?php echo $p->id_pais; ?>"><?php echo $p->nombre_pais; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <!-- <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select style="height: 40px; width: 400px;" name="pais" id="pais" value="" class="chosen-select  col-10" required>
                             <option value="Elegir" id="">Pais</option>
                             <option value="Afganistán" id="AF">Afganistán</option>
@@ -398,9 +412,9 @@
                             <option value="Zambia" id="ZM">Zambia</option>
                             <option value="Zimbabue" id="ZW">Zimbabue</option>
                         </select>
-                    </div>
+                    </div> -->
 
-                    <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <!-- <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select style="height: 40px; width: 400px;" name="provincia" id="provincia" value="" class="chosen-select  col-10" required>
                             <option value="">Provincia *</option>
                             <option value="Bocas del Toro">Bocas del Toro</option>
@@ -418,18 +432,41 @@
                             <option value="Naso Tjër Di">Naso Tjër Di</option>
                             <option value="Ngäbe-Buglé">Ngäbe-Buglé</option>
                         </select>
+                    </div> -->
+
+                    <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <select style="height: 40px; width: 400px;" name="provincia" id="provincia" class="chosen-select  col-10" required="">
+                            <option disabled>Seleccione su provincia</option>
+                            <?php foreach ($listaProvincia as $p) { ?>
+                                <option value="<?php echo $p->id_provincia; ?>"><?php echo $p->nombre; ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <select style="height: 40px; width: 400px;" name="ciudad" id="ciudad" class="chosen-select  col-10" required="">
+                            <option disabled>Seleccione su ciudad</option>
+                            <?php foreach ($listaCiudad as $c) { ?>
+                                <option value="<?php echo $c->id_ciudad; ?>"><?php echo $c->nombre_ciudad; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <!-- <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div>
                             <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad *" class="form-control col-10" style="width: 400px;" required>
                         </div>
-                    </div>
+                    </div> -->
+
+                    
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <div>
-                            <input id="institucion" name="institucion" type="" placeholder="Institución/Entidad/Universidad*" value="" class="form-control col-10" style="width: 400px;" required>
-                        </div>
+                        <select style="height: 40px; width: 400px;" name="institucion" id="institucion" class="chosen-select  col-10" required="">
+                            <option disabled>Seleccione su entidad</option>
+                            <?php foreach ($listaEntidad as $e) { ?>
+                                <option value="<?php echo $e->id_entidad; ?>"><?php echo $e->nombre; ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -446,7 +483,7 @@
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div>
-                            <input id="idEst" name="idEst" type="text" placeholder="ID estudiante *" class="form-control col-10" style="width: 400px;" required>
+                            <input id="idEst" name="idEst" type="text" placeholder="ID estudiante *" class="form-control col-10" style="width: 400px;" >
                         </div>
                     </div>
 
@@ -456,8 +493,18 @@
                         </div>
                     </div>
 
+
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="ocupacion" id="ocupacion" value="" class="chosen-select  col-10" required="">
+                        <select style="height: 40px; width: 400px;" name="ocupacion" id="ocupacion" class="chosen-select  col-10" required="">
+                            <option disabled>Seleccione su ocupación</option>
+                            <?php foreach ($listaOcupacion as $o) { ?>
+                                <option value="<?php echo $o->id_ocupacion; ?>"><?php echo $o->nombre; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                   <!--  <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <select style="height: 40px; width: 400px;" name="ocupacion" id="ocupacion" class="chosen-select  col-10" required="">
                             <option value="">Ocupación *</option>
                             <option value="Docente">Docente</option>
                             <option value="Investigador">Investigador</option>
@@ -465,18 +512,18 @@
                             <option value="Estudiante">Estudiante</option>
                             <option value="Administrativo">Administrativo</option>
                         </select>
-                    </div>
+                    </div> -->
 
                     <div class="form-group mb-2 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div>
-                            <input type="radio" id="cena" name="cenas" value="Asistiré a la cena de clausura + $ 10.00 US">
+                            <input value="10" type="radio" id="cena" name="cenas" value="Asistiré a la cena de clausura + $ 10.00 US">
                             <label for="Asistiré a la cena de clausura + $ 10.00 US">Asistiré a la cena de clausura + $ 10.00 US</label>
                         </div>
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div>
-                            <input type="radio" id="cena2" name="cenas" value="Asistiré a la cena de clausura + $ 10.00 US">
+                            <input value="50" type="radio" id="cena2" name="cenas" value="Asistiré a la cena de clausura + $ 10.00 US">
                             <label for="Asistiré con un acompañante a la cena de clausura + $ 50.00 US">Asistiré con un acompañante a la cena de clausura + $ 50.00 US</label>
                         </div>
                     </div>
@@ -571,72 +618,58 @@
         </div>
         </fieldset>
 
-        <div class="alert alert-success">
-            <i class="fa fa-info-circle"></i>
-            <span id="mensaje_precompra">Haga click en Inscribirme y Pagar, seguido ingrese la información de su tarjeta. Al terminar haga click en Pagar.<br><strong>Recuerde:</strong>Su registro sólo será efectivo cuando confirmemos su pago.</span>
+        <div class="form-horizontal card-body p-5" style="background-color: #EAEDF1;">
+            <div style="background-color: whhite;">
+                <div id="tipoPago">
+                    <div class="alert alert-info mt-">
+                        <i class="fa fa-info-circle"></i>
+                        <strong>Importante: </strong><br>Por favor seleccione una forma de pago.<br><strong>* Al terminar haga click en Inscribirme y Pagar para finalizar su inscripción..</strong>
+                    </div>
+                    <div>
+                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoPago" id="tipos" value="" class="chosen-select" onchange='SelectChanged();' required>
+                            <option>Forma de pago</option>
+                            <option id="tarjeta" value="tarjeta">Tarjeta débito / crédito</option>
+                            <option id="efectivo" value="efectivo">Efectivo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin: 0 auto; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div class="text-center mt-5 mb-4">
+                        <img src="public/img/visalogo.png" alt="" width="100">
+                        <img src="public/img/masterc.png" alt="" width="100">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <label for="nombre">Nombre de Propietario</label><br>
+                            <input id="nombreTarjeta" name="nombreTarj" type="text" placeholder="Maria Mariano" class="form-control col-10">
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <label for="NumTarjeta">Número de la Tarjeta</label><br>
+                            <input id="numTarjeta" name="numTarjeta" type="number" placeholder="Ej: 0000111122223333" class="form-control col-10">
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <label for="cvv">Número de CVV</label><br>
+                            <input type="number" name="cvv" id="cvv" placeholder="Ej: 123" class="form-control col-10">
+                        </div>
+
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                            <label for="fecha">Fecha de Vencimiento</label><br>
+                            <input type="month" name="fecha" id="fechaVencimiento" class="form-control col-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div class="form-group mt-5 mb-2">
             <div class="col-md-12 text-center">
                 <button style="text-align: center;" data-bs-target="#staticBackdrop" id="btnRegistrar" type="submit">Inscribirme y pagar</button>
             </div>
-            <!-- Modal -->
-           <!--  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <div class="modal-header" style="background: #B766C4;">
-                            <h5 class="modal-title" id="staticBackdropLabel">Pago de registro</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body row">
-                            <form action="">
-                                <div class="text-center mb-5">
-                                    <img src="public/img/visalogo.png" alt="" width="100">
-                                    <img src="public/img/masterc.png" alt="" width="100">
-                                </div>
-
-                                <div class="form-group mb-2 col-sm-2 col-md-2 col-lg-6 col-xl-6">
-                                    <div>
-                                        <label for="nombre">Nombre de Propietario</label><br>
-                                        <input id="nombreTarjeta" name="nombre" type="text" placeholder="Maria Mariano" class="form-control col-10" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group mb-2 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <div>
-                                        <label for="NumTarjeta">Número de la Tarjeta</label><br>
-                                        <input id="numTarjeta" name="NumTarjeta" type="number" placeholder="Ej: 0000111122223333" class="form-control col-10" required>
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group mb-2 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <div>
-                                        <label for="cvv">Número de CVV</label><br>
-                                        <input type="number" name="cvv" id="cvv" placeholder="Ej: 123" class="form-control col-10" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group mb-2 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <div>
-                                        <label for="fecha">Fecha de Vencimiento</label><br>
-                                        <input type="month" name="fecha" id="fechaVencimiento" class="form-control col-10" required>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer row m-2 align-items-center">
-                            <div class="row col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <button type="button" class="btn btn-danger btn-lg" data-bs-dismiss="modal">Cancelar</button>
-                            </div>
-                            <div class="row col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <a href="?op=">
-                                    <button type="button" class="btn btn-primary btn-lg">Pagar</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
         </form>
     </div>

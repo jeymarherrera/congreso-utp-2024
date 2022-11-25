@@ -80,20 +80,20 @@
                         foreach ($listaAdmin as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->id_administrador; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->contrasena; ?></td>
-                                <td><?php echo $lista->pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
-                                <td><?php echo $lista->provincia; ?></td>
-                                <td><?php echo $lista->ocupacion; ?></td>
-                                <td><?php echo $lista->entidad; ?></td>
-                                <td><?php echo $lista->iee; ?></td>
-                                <td><?php echo $lista->wpa; ?></td>
+                                <td><?php echo $lista->contraseña; ?></td>
+                                <td><?php echo $lista->id_pais; ?></td>
+                                <td><?php echo $lista->id_ciudad; ?></td>
+                                <td><?php echo $lista->id_provincia; ?></td>
+                                <td><?php echo $lista->id_ocupacion; ?></td>
+                                <td><?php echo $lista->id_entidad; ?></td>
+                                <td><?php echo $lista->cod_iee; ?></td>
+                                <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=eliminarAdmin">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>

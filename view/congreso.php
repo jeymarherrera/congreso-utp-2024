@@ -76,7 +76,7 @@
                                 <td><?php echo $lista->horas_minimas; ?></td>
                                 <td><?php echo $lista->fecha_inicio; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="<?php ?>">Editar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>

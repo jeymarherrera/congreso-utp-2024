@@ -46,7 +46,7 @@ class Areas
 		return $this->msg;
 	}
 
-	public function EliminarArea(Areas $data)
+	public function EliminarArea($idArea)
 	{
 		try {
 			$sql = "DELETE FROM Areas
@@ -55,12 +55,12 @@ class Areas
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->id_area
+						$idArea
 					)
 				);
 			$this->msg = "¡El area ha sido eliminada!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar &t=text-danger".$data->id_area." error".$data->id_area;
+			$this->msg = "Error al eliminar &t=text-danger".$idArea;
 		}
 		return $this->msg;
 	}

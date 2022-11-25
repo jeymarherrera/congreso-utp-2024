@@ -139,12 +139,32 @@ jQuery(document).ready(function( $ ) {
 
 
 function SelectChanged() {
-  const tipoUsuario = document.registro.tipoUsuario.value;
+  var tipoUsuario = document.registro.tipoUsuario.value;
+  var tipoPago = document.registro.tipoPago.value;
   var span = document.getElementById("subtotal");
   var span2 = document.getElementById("porcentaje");
   var span3 = document.getElementById("procesamiento");
   var span4 = document.getElementById("total");
   document.getElementById('TipoEstudiante').innerHTML = tipoUsuario;
+
+  switch (tipoPago) {
+    case "tarjeta":
+      document.getElementById('nombreTarjeta').disabled =false
+      document.getElementById('numTarjeta').disabled = false
+      document.getElementById('cvv').disabled = false
+      document.getElementById('fecha').disabled = false
+      break;
+    
+    case "efectivo":
+      document.getElementById('nombreTarjeta').disabled = true
+      document.getElementById('numTarjeta').disabled = true
+      document.getElementById('cvv').disabled = true
+      document.getElementById('fecha').disabled = true
+      break;
+
+    default:
+      break;
+  }
 
   switch (tipoUsuario) {
     case 'Estudiante UTP':
@@ -168,7 +188,7 @@ function SelectChanged() {
       document.getElementById('ocupacion').style.display = 'none'
       document.getElementById('wpa').style.display = 'none'
       document.getElementById('institucion').disabled = true
-      document.getElementById('institucion').value = "Universidad Tecnológica de Panamá"
+      document.getElementById('institucion').value = 1 //"Universidad Tecnológica de Panamá"
 
       span.textContent = "USD 75";
       span2.textContent = "USD 3.75";
@@ -306,14 +326,21 @@ function SelectChanged() {
 }
 
 function TipoPago() { 
-  const tipoPago = document.Pago.tipoPago.value;
+  var tipoPago = document.registro.tipoPago.value;
 
   switch (tipoPago) {
-    case tarjeta:
-      
+    case "tarjeta":
+      document.getElementById('nombreTarjeta').disabled =false
+      document.getElementById('NumTarjeta').disabled = false
+      document.getElementById('cvv').disabled = false
+      document.getElementById('fecha').disabled = false
       break;
     
-    case efectivo:
+    case "efectivo":
+      document.getElementById('nombreTarjeta').disabled = true
+      document.getElementById('NumTarjeta').disabled = true
+      document.getElementById('cvv').disabled = true
+      document.getElementById('fecha').disabled = true
       break;
 
     default:

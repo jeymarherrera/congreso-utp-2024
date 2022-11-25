@@ -28,7 +28,7 @@ if (isset($_GET['op'])) {
     $controller->Pagar();
   }
   elseif ($opcion == "registrar") {
-    # code...
+    $controller->RegistrarUsuario();
   }
   elseif ($opcion== "login") {
     $controller->Login();
@@ -54,8 +54,11 @@ if (isset($_GET['op'])) {
   elseif ($opcion == "CrearConferencia") {
     $controller->RegistrarConferencia();
   }
-  elseif ($opcion == "CrearPonencia") {
-    $controller->RegistrarPonencia();
+  elseif ($opcion == "CrearPonenciaAutor") {
+    $controller->RegistrarPonenciaAutor();
+  }
+  elseif ($opcion == "CrearPonenciaProf") {
+    $controller->RegistrarPonenciaProfesional();
   }
   elseif ($opcion== "eventos") {
     $controller->CrearEvento();
@@ -67,7 +70,8 @@ if (isset($_GET['op'])) {
     $controller->RegistrarArea();
   }
   elseif ($opcion == "eliminarArea") {
-    $controller->EliminarArea();
+    $idSala = $_GET['id'];
+    $controller->EliminarArea($idSala);
   }
   elseif ($opcion== "salas") {
     $controller->AgregarSala();
@@ -152,6 +156,9 @@ if (isset($_GET['op'])) {
   }
   elseif ($opcion== "newPonencia") {
     $controller->nuevaPonencia();
+  }
+  elseif ($opcion == "newPonenciaPro") {
+    $controller->NuevaPonenciaPro();
   }
   elseif ($opcion== "newArea") {
     $controller->nuevaArea();
