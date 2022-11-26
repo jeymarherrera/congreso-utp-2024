@@ -27,12 +27,6 @@
   <link href="public/css/dashboard.css" rel="stylesheet">
 </head>
 
-<?php
-
-/*if (count($_POST)!=0) {
-  $_ADM->verify($_POST["email"], $_POST["password"]);
-}*/
-?>
 
 <body>
   <!-- Header -->
@@ -42,14 +36,19 @@
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+          <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image"> -->
+          <img src="public/img/login.webp" class="img-fluid" alt="Sample image">
+
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <!-- CAMBIAR EL TIPO DE METODO AL GUARDAR EN LA BASE -->
-          <form method="POST" action="./?op=panel">
+          <form method="POST" action="./?op=acceder">
             <div class="section-header">
               <h2 style="text-align:center">Accede al Sistema</h2>
             </div>
+            <p class="text-center m-4 <?php if (isset($_GET['msg'])) echo $_GET['t']; ?>"> <?php if (isset($_GET['msg'])) echo $_GET['msg']; ?> </p>
+
+
             <!-- AREA CORREO -->
             <div class="form-outline mb-4">
               <!-- Cambiar tipo luego de la presentacion -->
@@ -58,7 +57,7 @@
 
             <!-- AREA CONTRASENA -->
             <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg" name="password" placeholder="Contraseña" />
+              <input type="password" id="form3Example4" class="form-control form-control-lg" name="contrasena" placeholder="Contraseña" />
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button class="btn btn-lg btn-primary w-100 m-2" type="submit">Entrar</button>
                 <div class="d-flex justify-content-center links">

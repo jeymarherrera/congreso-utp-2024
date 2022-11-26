@@ -5,6 +5,7 @@ class Areas
 	private $msg;
 
 	public $nombre;
+	public $id_area;
 
 	public function __CONSTRUCT()
 	{
@@ -31,7 +32,7 @@ class Areas
 		try {
 
 			$sql = "INSERT INTO Area (nombre)
-				VALUES ('?')";
+				VALUES (?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -41,27 +42,21 @@ class Areas
 				);
 			$this->msg = "¡Área creada con éxito!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "¡Error de creación!&t=text-danger";
+			$this->msg = "¡Error de creación!&t=text-danger".$data->nombre;
 		}
 		return $this->msg;
 	}
 
-	public function EliminarArea($idArea)
+	public function EliminarArea($data)
 	{
 		try {
-			$sql = "DELETE FROM Areas
-					WHERE id_area = ? ";
-
-			$this->pdo->prepare($sql)
-				->execute(
-					array(
-						$idArea
-					)
-				);
-			$this->msg = "¡El area ha sido eliminada!&t=text-success";
+			$sql = "DELETE FROM Area WHERE id_area = ? ";
+			$this->pdo->prepare($sql)->execute(array($data));
+			$this->msg = "¡El area ha sido eliminada!&t=text-success".$data;
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar &t=text-danger".$idArea;
+			$this->msg = "Error al eliminar &t=text-danger".$data;
 		}
 		return $this->msg;
 	}
+
 }

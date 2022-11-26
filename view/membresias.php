@@ -63,8 +63,8 @@
                         foreach ($listaIee as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_IEEE; ?></td>
-                                <td><?php echo $lista->cod_membresia; ?></td>
+                                <td><?php echo $n; ?></td>
+                                <td><?php echo $lista->cod_IEEE; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                             </tr>
                         <?php
@@ -103,8 +103,8 @@
                         foreach ($listaWpa as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_WPA; ?></td>
-                                <td><?php echo $lista->cod_membresia; ?></td>
+                                <td><?php echo $n; ?></td>
+                                <td><?php echo $lista->cod_WPA; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                             </tr>
                         <?php

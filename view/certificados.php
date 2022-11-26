@@ -68,7 +68,7 @@
                         foreach ($listaCertificados as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->cedula; ?></td>
+                                <td><?php echo $lista->id_estudiante; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->correo; ?></td>

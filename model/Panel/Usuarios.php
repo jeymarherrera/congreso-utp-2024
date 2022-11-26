@@ -18,7 +18,9 @@ class Usuarios
 	public $correo;
 	public $contrasena;
 	public $gafete;
-	public $id_residencia;
+	public $id_pais;
+	public $id_ciudad;
+	public $id_provincia;
 	public $id_ocupacion;
 	public $id_entidad;
 	public $id_ieee;
@@ -121,7 +123,7 @@ class Usuarios
 		}
 	}
 
-	public function EliminarConferencista(Usuario $data)
+	public function EliminarConferencista($id)
 	{
 		try {
 			$sql = "DELETE FROM Conferencista
@@ -130,7 +132,7 @@ class Usuarios
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->id_administrador
+						$id
 					)
 				);
 			$this->msg = "¡El conferencista ha sido eliminado!&t=text-success";
@@ -173,7 +175,7 @@ class Usuarios
 		}
 	}
 
-	public function EliminarAutor(Usuario $data)
+	public function EliminarAutor($id)
 	{
 		try {
 			$sql = "DELETE FROM Autor
@@ -182,7 +184,7 @@ class Usuarios
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->id_administrador
+						$id
 					)
 				);
 			$this->msg = "¡El autor ha sido eliminado!&t=text-success";
@@ -225,7 +227,7 @@ class Usuarios
 		}
 	}
 
-	public function EliminarProfesional(Usuario $data)
+	public function EliminarProfesional($id)
 	{
 		try {
 			$sql = "DELETE FROM Profesional
@@ -234,7 +236,7 @@ class Usuarios
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->id_profesional
+						$id
 					)
 				);
 			$this->msg = "¡El profesional ha sido eliminado!&t=text-success";
@@ -289,7 +291,7 @@ class Usuarios
 		}
 	}
 
-	public function EliminarEstudiante(Usuario $data)
+	public function EliminarEstudiante($id)
 	{
 		try {
 			$sql = "DELETE FROM Estudiante
@@ -298,7 +300,7 @@ class Usuarios
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->id_profesional
+						$id
 					)
 				);
 			$this->msg = "¡El estudiante ha sido eliminado!&t=text-success";
@@ -351,30 +353,30 @@ class Usuarios
 	{
 		try {
 
-			$sql = "INSERT INTO Administrador(nombre, apellido, telefono, sexo, correo, contraseña, id_residencia, id_ocupacion, id_ieee, id_wpa)
-					VALUES(?,?,?,?,?,?,?,?,?,?)
-					INSERT INTO residencia(id_pais, id_provincia, id_ciudad)
-					VALUES(?,?,?)";
+			$sql = "INSERT INTO Administrador(id_administrador, nombre, apellido, telefono, sexo, correo, contraseña, id_pais, id_ciudad, id_provincia, id_ocupacion, id_entidad)
+					VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
+						$data->id_administrador,
 						$data->nombre,
 						$data->apellido,
 						$data->telefono,
 						$data->sexo,
 						$data->correo,
 						$data->contrasena,
-						$data->id_residencia,
+						$data->id_pais,
+						$data->id_ciudad,
+						$data->id_provincia,
 						$data->id_ocupacion,
-						$data->id_ieee,
-						$data->id_wpa,
+						$data->id_entidad
 					)
 				);
 			$this->msg = "El registro se ha guardado exitosamente!&t=text-success";
 		} catch (Exception $e) {
 			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
-				$this->msg = "Correo electrónico ya está registrado en el sistema&t=text-danger";
+				$this->msg = "La cedula ya esta registrada en el sistema&t=text-danger";
 			} else {
 				$this->msg = "Error al guardar los datos&t=text-danger";
 			}
@@ -382,7 +384,7 @@ class Usuarios
 		return $this->msg;
 	}
 
-	public function EliminarAdmin(Usuario $data)
+	public function EliminarAdmin($id_admin)
 	{
 		try {
 			$sql = "DELETE FROM Administrador
@@ -391,7 +393,7 @@ class Usuarios
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->id_administrador
+						$id_admin
 					)
 				);
 			$this->msg = "¡El administrador ha sido eliminado!&t=text-success";
@@ -404,7 +406,18 @@ class Usuarios
 	public function ObtenerTodosLosAdmin()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT * FROM administrador");
+			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			from Administrador a
+			inner join Pais pa
+			on a.id_pais = pa.id_pais
+			inner join Provincia p
+			on p.id_provincia = a.id_provincia
+			inner join Ciudad c
+			on c.id_ciudad = a.id_ciudad
+			inner join Ocupacion o
+			on o.id_ocupacion = a.id_ocupacion
+			inner join Entidad e
+			on e.id_entidad = a.id_entidad");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
