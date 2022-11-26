@@ -56,4 +56,16 @@ class Congreso
 		return $this->msg;
 	}
 
+	public function EliminarCongreso($data)
+	{
+		try {
+			$sql = "DELETE FROM Congreso WHERE id_congreso = ? ";
+			$this->pdo->prepare($sql)->execute(array($data));
+			$this->msg = "¡El congreso ha sido eliminado!&t=text-success".$data;
+		} catch (Exception $e) {
+			$this->msg = "Error al eliminar &t=text-danger".$data;
+		}
+		return $this->msg;
+	}
+
 }

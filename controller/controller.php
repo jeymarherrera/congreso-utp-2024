@@ -20,6 +20,7 @@ class Controller
 {
     private $modelUsuario1;
     private $modelUsuario2;
+    private $modelUsuario3;
     private $modelCongreso;
     private $modelConferencia1;
     private $modelConferencia2;
@@ -36,6 +37,7 @@ class Controller
     {
         $this->modelUsuario1 = new Registro();
         $this->modelUsuario2 = new Usuarios();
+        $this->modelUsuario3 = new usuario();
         $this->modelCongreso = new Congreso();
         $this->modelConferencia1 = new Conferencias();
         $this->modelConferencia2 = new Conferencias();
@@ -192,6 +194,30 @@ class Controller
         require("view/signin.php");
     }
 
+    public function Ingresar(){
+        $ingresarUsuario = new usuario();
+        
+        $ingresarUsuario->correo = $_REQUEST['correo'];  
+        $ingresarUsuario->contrasena = $_REQUEST['contrasena'];    
+
+        //Verificamos si existe en la base de datos
+        if ($resultado= $this->modelUsuario3->ObtenerTodosLosAdmin($ingresarUsuario))
+        {
+            $_SESSION["acceso"] = true;
+            $_SESSION["id"] = $resultado->id_administrador;
+            //$_SESSION["nivel"] = $resultado->nivel;
+            $_SESSION["user"] = $resultado->nombre." ".$resultado->apellido;
+            
+            echo '<meta http-equiv="refresh" content="0;url=?op=permitido">';
+            //header('Location:https://fisc-ds7.000webhostapp.com/?op=permitido');
+
+        }
+        else
+        {
+            header('Location: ?op=login&msg=Su contraseña o usuario está incorrecto');
+        }
+    }
+
     public function Recover()
     {
         require("view/recover.php");
@@ -211,6 +237,13 @@ class Controller
         $listaCongresos = new Congreso();
         $listaCongresos = $this->modelCongreso->ObtenerTodosLosCongresos();
         require("view/congreso.php");
+    }
+
+    public function EliminarCongreso($id_congreo)
+    {
+        $this->resp = $this->modelCongreso->EliminarCongreso($id_congreo);
+
+        header('Location: ?op=congresos&msg=' . $this->resp);
     }
 
     public function CrearConferencia()
@@ -281,16 +314,11 @@ class Controller
         require("view/areas.php");
     }
 
-    public function EliminarArea($idArea)
+    public function EliminarArea($id_area)
     {
-        include 'view/areas.php';
-        $area = new Areas();
+        $this->resp = $this->modelArea1->EliminarArea($id_area);
 
-        //$area = $idSala;
-
-        $this->resp = $this->modelArea1->EliminarArea($idArea);
-
-
+        // echo '<meta http-equiv="refresh" content="0;url=?op=areas">';
         header('Location: ?op=areas&msg=' . $this->resp);
     }
 
@@ -298,7 +326,7 @@ class Controller
     {
         $area = new Areas();
 
-        $area->nombre = $_POST['titulo'];
+        $area->nombre = $_REQUEST['titulo'];
 
         $this->resp = $this->modelArea1->crearArea($area);
 
@@ -358,11 +386,17 @@ class Controller
         $pais = new Ubicacion();
         $pais = $this->modelUbicacion->ConsultarPais();
 
-        $provincia = new Ubicacion();
-        $provincia = $this->modelUbicacion->ConsultarProvincia();
+        $listaProvincia = new Ubicacion();
+        $listaProvincia = $this->modelUbicacion->ConsultarProvincia();
 
-        $ciudad = new Ubicacion();
-        $ciudad = $this->modelUbicacion->ConsultarCiudad();
+        $listaCiudad = new Ubicacion();
+        $listaCiudad = $this->modelUbicacion->ConsultarCiudad();
+
+        $listaEntidad = new Entidades();
+        $listaEntidad = $this->modelEntidad->ObtenerTodasLasEntidades();
+
+        $listaOcupacion = new Entidades();
+        $listaOcupacion = $this->modelEntidad->ObtenerTodasLasOcupacion();
         require("view/agregar-admin.php");
     }
 
@@ -370,33 +404,27 @@ class Controller
     {
         $admin = new Usuario();
 
-        $admin->cedula = $_REQUEST['cedula'];
+        $admin->id_administrador = $_REQUEST['cedula'];
         $admin->nombre = $_REQUEST['nombre'];
         $admin->apellido = $_REQUEST['apellido'];
         $admin->telefono = $_REQUEST['telefono'];
-        $admin->cantidad = $_REQUEST['sexo'];
+        $admin->sexo = $_REQUEST['sexo'];
         $admin->correo = $_REQUEST['correo'];
         $admin->contrasena = $_REQUEST['contrasena'];
-        $admin->pais = $_REQUEST['pais'];
-        $admin->ciudad = $_REQUEST['ciudad'];
-        $admin->provincia = $_REQUEST['provincia'];
-        $admin->ocupacion = $_REQUEST['ocupacion'];
-        $admin->entidad = $_REQUEST['entidad'];
-        $admin->member = $_REQUEST['member'];
-        $admin->member2 = $_REQUEST['member2'];
+        $admin->id_pais = $_REQUEST['pais'];
+        $admin->id_ciudad = $_REQUEST['ciudad'];
+        $admin->id_provincia = $_REQUEST['provincia'];
+        $admin->id_ocupacion = $_REQUEST['ocupacion'];
+        $admin->id_entidad = $_REQUEST['entidad'];
 
         $this->resp = $this->modelUsuario2->RegistrarAdmin($admin);
 
         header('Location: ?op=admin&msg=' . $this->resp);
     }
 
-    public function EliminarAdmin()
+    public function EliminarAdmin($id_admin)
     {
-        $admin = new Usuario();
-
-        $admin->id_administrador = $_REQUEST['cedula'];
-
-        $this->resp = $this->modelUsuario2->EliminarAdmin($admin);
+        $this->resp = $this->modelUsuario2->EliminarAdmin($id_admin);
 
         header('Location: ?op=admin&msg=' . $this->resp);
     }
@@ -438,13 +466,9 @@ class Controller
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
 
-    public function EliminarConferencista()
+    public function EliminarConferencista($id)
     {
-        $conferencista = new Usuario();
-
-        $conferencista->id_administrador = $_REQUEST['cedula'];
-
-        $this->resp = $this->modelUsuario2->EliminarConferencista($conferencista);
+        $this->resp = $this->modelUsuario2->EliminarConferencista($id);
 
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
@@ -460,13 +484,9 @@ class Controller
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
 
-    public function EliminarAutor()
+    public function EliminarAutor($id)
     {
-        $autor = new Usuario();
-
-        $autor->id_autor = $_REQUEST['cedula'];
-
-        $this->resp = $this->modelUsuario2->EliminarAutor($autor);
+        $this->resp = $this->modelUsuario2->EliminarAutor($id);
 
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
@@ -482,13 +502,9 @@ class Controller
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
 
-    public function EliminarProfesional()
+    public function EliminarProfesional($id)
     {
-        $profesional = new Usuario();
-
-        $profesional->id_profesional = $_REQUEST['cedula'];
-
-        $this->resp = $this->modelUsuario2->EliminarProfesional($profesional);
+        $this->resp = $this->modelUsuario2->EliminarProfesional($id);
 
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
@@ -515,13 +531,9 @@ class Controller
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
 
-    public function EliminarEstudiante()
+    public function EliminarEstudiante($id)
     {
-        $estudiante = new Usuario();
-
-        $estudiante->id_estudiante = $_REQUEST['cedula'];
-
-        $this->resp = $this->modelUsuario2->EliminarEstudiante($estudiante);
+        $this->resp = $this->modelUsuario2->EliminarEstudiante($id);
 
         header('Location: ?op=invitados&msg=' . $this->resp);
     }

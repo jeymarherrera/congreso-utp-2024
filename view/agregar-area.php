@@ -1,3 +1,10 @@
+<?php
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +42,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos de la nueva area de interes</h6>
-            <form method="POST" action="?op=CrearArea">
+            <form method="POST" action="?op=crearArea">
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
                     <input type="name" class="form-control" id="name" name="titulo" required>

@@ -5,26 +5,13 @@ class Usuario
 	private $pdo;
 	private $msg;
 
-	public $id_estudiante;
-	public $id_administrador;
-	public $id_conferencista;
-	public $id_autor;
-	public $id_profesional;
-	public $cod_estudiante;
-	public $tipo_usuario;
 	public $nombre;
 	public $apellido;
-	public $telefono;
-	public $sexo;
+	public $nivel;
 	public $correo;
 	public $contrasena;
-	public $gafete;
-	public $id_residencia;
-	public $id_ocupacion;
-	public $id_entidad;
-	public $id_ieee;
-	public $id_wpa;
-	public $id_pago;
+	public $resultado;
+	public $id_administrador;
 
 
 	public function __CONSTRUCT()
@@ -50,6 +37,19 @@ class Usuario
 			die($e->getMessage());
 		}
 	}
+
+	public function ObtenerTodosLosAdmin(Usuario $data)
+	{
+		try {
+			$stm = $this->pdo->prepare("SELECT * FROM administrador
+			WHERE correo = ? AND contraseña = ?");
+			$stm->execute(array($data->correo, $data->contrasena));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	
 
 	
 }

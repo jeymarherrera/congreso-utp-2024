@@ -1,3 +1,10 @@
+<?php
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,7 +105,7 @@
                                 <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafete">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarConferencista">Eliminar</a></td>
+                                <td id="id_conferencista"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_conferencista.'&op=eliminarConferencista' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
@@ -168,7 +175,7 @@
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteAutor">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarAutor">Eliminar</a></td>
+                                <td id="id_autor"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_autor.'&op=eliminarAutor' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
@@ -239,7 +246,7 @@
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteProfesional">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoProf">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarProfesional">Eliminar</a></td>
+                                <td id="id_profesional"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_profesional.'&op=eliminarAProfesional' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
@@ -312,7 +319,7 @@
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoEstudiante">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarEstudiante">Eliminar</a></td>
+                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php

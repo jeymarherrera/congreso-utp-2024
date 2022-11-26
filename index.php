@@ -10,166 +10,128 @@ if (isset($_GET['op'])) {
   $opcion = $_GET['op'];
 
   if ($opcion == "home") {
-      $controller->Index();
-  } 
-  elseif ($opcion== "conferencista"){        
+    $controller->Index();
+  } elseif ($opcion == "conferencista") {
     $controller->Conferencista();
-  }
-  elseif ($opcion== "itinerario"){        
+  } elseif ($opcion == "itinerario") {
     $controller->Itinerario();
-  }
-  elseif ($opcion== "eca") {
+  } elseif ($opcion == "eca") {
     $controller->ECA();
-  }
-   elseif ($opcion== "crear") {
+  } elseif ($opcion == "crear") {
     $controller->CrearCuenta();
-  }
-  elseif ($opcion == "pago") {
+  } elseif ($opcion == "pago") {
     $controller->Pagar();
-  }
-  elseif ($opcion == "registrar") {
+  } elseif ($opcion == "registrar") {
     $controller->RegistrarUsuario();
-  }
-  elseif ($opcion== "login") {
+  } elseif ($opcion == "login") {
     $controller->Login();
-  }
-  elseif ($opcion== "recuperar") {
-    $controller->Recover();
-  }
-  elseif ($opcion== "panel") {
+  } elseif ($opcion == "acceder") {
+    $controller->Ingresar();
+  } elseif ($opcion == "permitido") {
     $controller->Panel();
-  }
-  elseif ($opcion== "evento") {
+  } elseif ($opcion == "error") {
+    require("view/404.php");
+  } elseif ($opcion == "salir") {
+    session_destroy();
+    $controller->Index();
+  } elseif ($opcion == "recuperar") {
+    $controller->Recover();
+  } elseif ($opcion == "panel") {
+    $controller->Panel();
+  } elseif ($opcion == "evento") {
     $controller->CrearEvento();
-  }
-  elseif ($opcion== "congresos") {
+  } elseif ($opcion == "congresos") {
     $controller->CrearCongreso();
-  }
-  elseif ($opcion == "crearCongreo") {
+  } elseif ($opcion == "crearCongreo") {
     $controller->RegistrarCongreso();
-  }
-  elseif ($opcion== "conferencias") {
+  } elseif ($opcion == "eliminarCongreso") {
+    $id_congreo = $_GET['id'];
+    $controller->EliminarCongreso($id_congreo);
+  } elseif ($opcion == "conferencias") {
     $controller->CrearConferencia();
-  }
-  elseif ($opcion == "CrearConferencia") {
+  } elseif ($opcion == "CrearConferencia") {
     $controller->RegistrarConferencia();
-  }
-  elseif ($opcion == "CrearPonenciaAutor") {
+  } elseif ($opcion == "CrearPonenciaAutor") {
     $controller->RegistrarPonenciaAutor();
-  }
-  elseif ($opcion == "CrearPonenciaProf") {
+  } elseif ($opcion == "CrearPonenciaProf") {
     $controller->RegistrarPonenciaProfesional();
-  }
-  elseif ($opcion== "eventos") {
+  } elseif ($opcion == "eventos") {
     $controller->CrearEvento();
-  }
-  elseif ($opcion== "areas") {
+  } elseif ($opcion == "areas") {
     $controller->AgregarArea();
-  }
-  elseif ($opcion == "crearArea") {
+  } elseif ($opcion == "crearArea") {
     $controller->RegistrarArea();
-  }
-  elseif ($opcion == "eliminarArea") {
-    $idSala = $_GET['id'];
-    $controller->EliminarArea($idSala);
-  }
-  elseif ($opcion== "salas") {
+  } elseif ($opcion == "eliminarArea") {
+    $id_area = $_GET['id'];
+    $controller->EliminarArea($id_area);
+  } elseif ($opcion == "salas") {
     $controller->AgregarSala();
-  }
-  elseif ($opcion == "registrarSala") {
+  } elseif ($opcion == "registrarSala") {
     $controller->RegistrarSala();
-  }
-  elseif ($opcion== "reportes") {
+  } elseif ($opcion == "reportes") {
     $controller->GenerarReportes();
-  }
-  elseif ($opcion== "certificados") {
+  } elseif ($opcion == "certificados") {
     $controller->GenerarCertificados();
-  }
-  elseif ($opcion== "admin") {
+  } elseif ($opcion == "admin") {
     $controller->AgregarAdmin();
-  }
-  elseif ($opcion== "newAdmin") {
+  } elseif ($opcion == "newAdmin") {
     $controller->nuevoAdministrador();
-  }
-  elseif ($opcion == "registrarAdmin") {
+  } elseif ($opcion == "registrarAdmin") {
     $controller->RegistrarAdmin();
-  }
-  elseif ($opcion == "eliminarAdmin") {
-    $controller->EliminarAdmin();
-  }
-  elseif ($opcion== "invitados") {
+  } elseif ($opcion == "eliminarAdmin") {
+    $id_admin = $_GET['id'];
+    $controller->EliminarAdmin($id_admin);
+  } elseif ($opcion == "invitados") {
     $controller->AgregarInvitado();
-  }
-  elseif ($opcion == "RegistrarConferencista") {
+  } elseif ($opcion == "RegistrarConferencista") {
     $controller->RegistrarConferencista();
-  }
-  elseif ($opcion == "eliminarConferencista") {
-    $controller->EliminarConferencista();
-  }
-  elseif ($opcion == "verGafete") {
+  } elseif ($opcion == "eliminarConferencista") {
+    $id = $_GET['id'];
+    $controller->EliminarConferencista($id);
+  } elseif ($opcion == "verGafete") {
     $controller->verGafete();
-  }
-  elseif ($opcion == "eliminarAutor") {
-    $controller->EliminarAutor();
-  }
-  elseif ($opcion == "verGafeteAutor") {
+  } elseif ($opcion == "eliminarAutor") {
+    $id = $_GET['id'];
+    $controller->EliminarAutor($id);
+  } elseif ($opcion == "verGafeteAutor") {
     $controller->verGafeteAutor();
-  }
-  elseif ($opcion == "eliminarProfesional") {
-    $controller->EliminarProfesional();
-  }
-  elseif ($opcion == "verGafeteProfesional") {
+  } elseif ($opcion == "eliminarProfesional") {
+    $id = $_GET['id'];
+    $controller->EliminarProfesional($id);
+  } elseif ($opcion == "verGafeteProfesional") {
     $controller->verGafeteProfesional();
-  }
-  elseif ($opcion == "verCertificadoProf") {
+  } elseif ($opcion == "verCertificadoProf") {
     $controller->verCertificadoProfesional();
-  }
-  elseif ($opcion == "eliminarEstudiante") {
-    $controller->EliminarEstudiante();
-  }
-  elseif ($opcion == "verGafeteEstudiante") {
+  } elseif ($opcion == "eliminarEstudiante") {
+    $id = $_GET['id'];
+    $controller->EliminarEstudiante($id);
+  } elseif ($opcion == "verGafeteEstudiante") {
     $controller->verGafeteEstudiante();
-  }
-  elseif ($opcion == "verCertificadoEstudiante") {
+  } elseif ($opcion == "verCertificadoEstudiante") {
     $controller->verCertificadoEstudiante();
-  }
-  elseif ($opcion== "articulos") {
+  } elseif ($opcion == "articulos") {
     $controller->AgregarArticulo();
-  }
-  elseif ($opcion== "membresias") {
+  } elseif ($opcion == "membresias") {
     $controller->AgregarMembresia();
-  }
-  elseif ($opcion== "newInvitado") {
+  } elseif ($opcion == "newInvitado") {
     $controller->nuevoInvitado();
-  }
-  elseif ($opcion== "newSala") {
+  } elseif ($opcion == "newSala") {
     $controller->nuevaSala();
-  }
-  elseif ($opcion== "newCongreso") {
+  } elseif ($opcion == "newCongreso") {
     $controller->nuevoCongreso();
-  }
-  elseif ($opcion== "newConferencia") {
+  } elseif ($opcion == "newConferencia") {
     $controller->nuevaConferencia();
-  }
-  elseif ($opcion== "newEvento") {
+  } elseif ($opcion == "newEvento") {
     $controller->nuevoEvento();
-  }
-  elseif ($opcion== "newPonencia") {
+  } elseif ($opcion == "newPonencia") {
     $controller->nuevaPonencia();
-  }
-  elseif ($opcion == "newPonenciaPro") {
+  } elseif ($opcion == "newPonenciaPro") {
     $controller->NuevaPonenciaPro();
-  }
-  elseif ($opcion== "newArea") {
+  } elseif ($opcion == "newArea") {
     $controller->nuevaArea();
-  }
-  elseif ($opcion== "newMembresia") {
+  } elseif ($opcion == "newMembresia") {
     $controller->nuevaMembresia();
   }
-  
-} 
-else {
+} else {
   $controller->Index();
 }
-
-?>

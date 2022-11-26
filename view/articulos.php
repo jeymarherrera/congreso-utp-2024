@@ -1,3 +1,10 @@
+<?php
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

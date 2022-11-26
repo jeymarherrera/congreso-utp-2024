@@ -1,3 +1,10 @@
+<?php
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +84,7 @@
                                 <td><?php echo $lista->fecha_inicio; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="<?php ?>">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                                <td id="id_congreso"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_congreso.'&op=eliminarCongreso' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php

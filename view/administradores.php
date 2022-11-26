@@ -1,3 +1,11 @@
+<?php
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,21 +89,21 @@
                         ?>
                             <tr>
                                 <td><?php echo $lista->id_administrador; ?></td>
-                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->nombre_a; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->contraseña; ?></td>
-                                <td><?php echo $lista->id_pais; ?></td>
-                                <td><?php echo $lista->id_ciudad; ?></td>
-                                <td><?php echo $lista->id_provincia; ?></td>
-                                <td><?php echo $lista->id_ocupacion; ?></td>
-                                <td><?php echo $lista->id_entidad; ?></td>
-                                <td><?php echo $lista->cod_iee; ?></td>
+                                <td><?php echo $lista->nombre_pais; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->nombre_p; ?></td>
+                                <td><?php echo $lista->nombre_o; ?></td>
+                                <td><?php echo $lista->nombre_e; ?></td>
+                                <td><?php echo $lista->cod_ieee; ?></td>
                                 <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=eliminarAdmin">Eliminar</a></td>
+                                <td id="id_admin"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_administrador.'&op=eliminarAdmin' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php

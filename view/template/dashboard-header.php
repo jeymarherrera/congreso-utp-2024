@@ -9,8 +9,8 @@
 
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Nombre Admin</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0"><?php echo $_SESSION["user"] ?></h6>
+                        <!-- <span>Admin</span> -->
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -83,11 +83,14 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-user me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Admin</span>
+                            
+                            <!-- <span class="d-none d-lg-inline-flex">Admin</span> -->
+                            <span class="d-none d-lg-inline-flex"><?php echo $_SESSION["user"] ?></span></a>
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Configurar</a>
-                            <a href="?op=login" class="dropdown-item">Cerrar Sesión</a>
+                            <a href="?op=salir" class="dropdown-item">Cerrar Sesión</a>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,10 @@
+<?php
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,11 +61,11 @@
                 </div>
                 <p>Seleccione su sexo</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sexo" id="male" value="male" required>
+                    <input class="form-check-input" type="radio" name="sexo" id="male" value="m" required>
                     <label class="form-check-label" for="male">Masculino</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sexo" id="female" value="female">
+                    <input class="form-check-input" type="radio" name="sexo" id="female" value="f">
                     <label class="form-check-label" for="female">Femenino</label>
                 </div>
                 <div class="mb-3">
@@ -79,20 +86,38 @@
 
                 <label for="pais" class="form-label">Ciudad</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="ciudad" required>
-                    
+                    <option disabled>Seleccione su ciudad</option>
+                    <?php foreach ($listaCiudad as $c) { ?>
+                        <option value="<?php echo $c->id_ciudad; ?>"><?php echo $c->nombre_ciudad; ?></option>
+                    <?php } ?>
                 </select>
 
                 <label for="pais" class="form-label">Provincia</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="provincia" required>
-                    
+                    <option disabled>Seleccione su provincia</option>
+                    <?php foreach ($listaProvincia as $p) { ?>
+                        <option value="<?php echo $p->id_provincia; ?>"><?php echo $p->nombre; ?></option>
+                    <?php } ?>
                 </select>
                 <div class="mb-3">
                     <label for="ocupacion" class="form-label">Ocupacion</label>
-                    <input type="text" class="form-control" id="ocupacion" name="ocupacion" required>
+                    <select class="form-select mb-3" aria-label="Default select example" name="ocupacion" required>
+                        <option disabled>Seleccione su ocupación</option>
+                        <?php foreach ($listaOcupacion as $o) { ?>
+                            <option value="<?php echo $o->id_ocupacion; ?>"><?php echo $o->nombre; ?></option>
+                        <?php } ?>
+                    </select>
+                    <!-- <input type="text" class="form-control" id="ocupacion" name="ocupacion" required> -->
                 </div>
                 <div class="mb-3">
                     <label for="entidad" class="form-label">Entidad/Institución/Empresa</label>
-                    <input type="text" class="form-control" id="entidad" name="entidad" required>
+                    <select class="form-select mb-3" aria-label="Default select example" name="entidad" required>
+                        <option disabled>Seleccione su entidad</option>
+                        <?php foreach ($listaEntidad as $e) { ?>
+                            <option value="<?php echo $e->id_entidad; ?>"><?php echo $e->nombre; ?></option>
+                        <?php } ?>
+                    </select>
+                    <!-- <input type="text" class="form-control" id="entidad" name="entidad" required> -->
                 </div>
                 <p>¿Es miembro de la IEEE?</p>
                 <div class="form-check form-check-inline">
