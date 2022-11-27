@@ -159,7 +159,7 @@ if ($_SESSION["acceso"] != true)
                         foreach ($listaAutores as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_Autor; ?></td>
+                                <td><?php echo $lista->id_autor; ?></td>
                                 <td><?php echo $lista->nombre_a; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
