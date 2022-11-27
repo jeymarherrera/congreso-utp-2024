@@ -67,13 +67,13 @@
                         <strong>Importante: </strong><br>Por favor cerciórese de usar el tipo de ticket que le corresponde.<br><strong>* Cada usuario tiene un costo diferente.</strong>
                     </div>
                     <div>
-                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoUsuario" id="tipos" class="chosen-select" onchange='SelectChanged();' required>
+                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoUsuario" id="tipos" class="chosen-select"  onchange='SelectChanged();' required>
                             <option disabled>Soy un...</option>
                             <option id="tipoUsuario" value="Autor">Autor</option>
                             <option id="estudiante1" value="Estudiante UTP">Estudiante UTP</option>
                             <option id="estudiante2" value="Estudiante nacional">Estudiante nacional</option>
                             <option id="estudiante3" value="Estudiante internacional">Estudiante internacional</option>
-                            <option id="funcionario" value="Funcionario UTP">Funcionario UTP</option>
+                            <option id="funcionario"  value="Funcionario UTP">Funcionario UTP</option>
                             <option id="profesional1" value="Profesional nacional">Profesional nacional</option>
                             <option id="profesional2" value="Profesional internacional">Profesional internacional</option>
                         </select>
@@ -322,20 +322,19 @@
                             <span class="price styleSecondColor" display:="" block="">
                                 <div class="row ">
                                     <span class="subtotal tit col-sm-6 col-md-6 col-lg-8 col-xl-8">SUBTOTAL</span>
-                                    <span id="subtotal" value="89" class="subtotal val col-sm-6 col-md-6 col-lg-4 col-xl-4">USD 75</span><br>
+                                    <span id="subtotal" class="subtotal val col-sm-6 col-md-6 col-lg-4 col-xl-4"></span><br>
                                 </div>
-
                                 <div id="0_pp" class="row">
                                     <span class="desc col-sm-6 col-md-6 col-lg-8 col-xl-8">Comisión procesamiento pago 5%</span>
-                                    <span id="porcentaje" class="val col-sm-6 col-md-6 col-lg-4 col-xl-4">USD 3.75</span><br>
+                                    <span id="porcentaje" class="val col-sm-6 col-md-6 col-lg-4 col-xl-4"></span><br>
                                 </div>
                                 <div id="0_pv" class="row">
                                     <span class="desc col-sm-6 col-md-6 col-lg-8 col-xl-8">Comisión procesamiento pago</span>
-                                    <span id="procesamiento" class="val col-sm-6 col-md-6 col-lg-4 col-xl-4">USD 0.50</span><br>
+                                    <span id="procesamiento" class="val col-sm-6 col-md-6 col-lg-4 col-xl-4"></span><br>
                                 </div>
                                 <div class="row">
                                     <span class="total tit col-sm-6 col-md-6 col-lg-8 col-xl-8">TOTAL</span>
-                                    <span id="total" class="total val col-sm-6 col-md-6 col-lg-4 col-xl-4">USD <span class="number">79.25</span></span>
+                                    <span id="total" class="total val col-sm-6 col-md-6 col-lg-4 col-xl-4"><span class="number"></span></span>
                                 </div>
                         </div>
                     </div>
@@ -392,6 +391,7 @@
 
         <div class="form-group mt-5 mb-2">
             <div class="col-md-12 text-center">
+                <input type="button" value="Referencia" class="button" id="ad" />
                 <button style="text-align: center;" data-bs-target="#staticBackdrop" id="btnRegistrar" type="submit">Inscribirme y pagar</button>
             </div>
         </div>
@@ -476,5 +476,6 @@
     <!-- JS -->
     <script src="public/js/main.js"></script>
 </body>
+
 
 </html>
