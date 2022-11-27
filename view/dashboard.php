@@ -84,7 +84,6 @@ if ($_SESSION["acceso"] != true) {
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Registros Recientes</h6>
-                <a href="">Mostrar Todo</a>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">

@@ -89,7 +89,6 @@
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Configurar</a>
                             <a href="?op=salir" class="dropdown-item">Cerrar Sesión</a>
                         </div>
                     </div>

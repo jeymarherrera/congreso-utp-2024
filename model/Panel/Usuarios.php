@@ -91,7 +91,7 @@ class Usuarios
 						$data->id_entidad
 					)
 				);
-			$this->msg = "¡Conferencsita registrado con éxito!&t=text-success";
+			$this->msg = "¡Conferencista registrado con éxito!&t=text-success";
 		} catch (Exception $e) {
 			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
 				$this->msg = "La cédula ya está registrada en el sistema&t=text-danger";
