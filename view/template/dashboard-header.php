@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="?op=panel" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Panel</a>
+                    <a href="?op=panel" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Panel</a>
                     <a href="?op=congresos" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Congresos</a>
                     <a href="?op=conferencias" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Conferencias</a>
                     <a href="?op=eventos" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Eventos</a>
