@@ -56,8 +56,9 @@ class Usuarios
 	public function ObtenerTodosLosRegistros()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT fecha, metodo, tipo.monto, descuento, cena, comision, comision_pago, monto_total, estado
-			FROM Pago, Tipo");
+			/* $stm = $this->pdo->prepare("SELECT id_pago, fecha, metodo, tipo.monto, descuento, cena, comision, comision_pago, monto_total, estado
+			FROM Pago, Tipo"); */
+			$stm = $this->pdo->prepare("SELECT * FROM pago");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {

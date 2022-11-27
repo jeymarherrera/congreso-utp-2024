@@ -100,7 +100,41 @@ class Controller
     {
         $usuario = new Usuario();
 
-        if (!isset($_GET['tiposuario'])) {
+        $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
+        $usuario->nombre = $_REQUEST['nombre'];
+        $usuario->apellido  = $_REQUEST['apellido'];
+        $usuario->cedula = $_REQUEST['cedula'];
+        $usuario->contrasena = $_REQUEST['contrasena'];
+        $usuario->id_ieee = $_REQUEST['mem'];
+        $usuario->id_wpa = $_REQUEST['wpa'];
+
+        // $usuario->telefono  = $_REQUEST['paper1'];
+        // $usuario->sexo  = $_REQUEST['paper_2'];
+        // $usuario->correo = $_REQUEST['paper_3'];
+        $usuario->sexo  = $_REQUEST['sexo'];
+        $usuario->telefono  = $_REQUEST['telefono'];
+        $usuario->id_pais  = $_REQUEST['pais'];
+        $usuario->id_provincia  = $_REQUEST['provincia'];
+        $usuario->id_ciudad = $_REQUEST['ciudad'];
+        $usuario->correo = $_REQUEST['correo'];
+        $usuario->id_ocupacion = $_REQUEST['ocupacion'];
+        $usuario->id_entidad = $_REQUEST['institucion'];
+        $usuario->cod_estudiante = $_REQUEST['idEst'];
+
+
+        //$usuario->id_pago = $_REQUEST['tipoPago'];
+        //$usuario->fecha = $_REQUEST['fecha'];
+        $usuario->metodo = $_REQUEST['tipoPago'];
+        //$usuario->descuento = $_REQUEST[''];
+        $usuario->cena = $_REQUEST['cenas'];
+        $usuario->comision = 75;
+        $usuario->comision_pago = 3.75;
+        $usuario->monto_total = 79.25;
+        $usuario->estado = 1;
+
+
+
+        /* if (!isset($_GET['tiposuario'])) {
             $tipoUsuario = $_GET['tipoUsuario'];
 
             if ($tipoUsuario == "Autor") {
@@ -166,9 +200,9 @@ class Controller
                 $usuario->gafete = $_REQUEST[''];
                 $usuario->id_residencia = $_REQUEST[''];
             }
-        }
+        } */
 
-       /*  $usuario->id_estudiante = $_REQUEST['idEst'];
+        /*  $usuario->id_estudiante = $_REQUEST['idEst'];
         $usuario->cod_estudiante = $_REQUEST[''];
         $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
         $usuario->nombre = $_REQUEST['nombre'];
@@ -184,7 +218,7 @@ class Controller
         $usuario->id_wpa = $_REQUEST['wpa'];
         $usuario->id_pago = $_REQUEST['tipoPago']; */
 
-        $this->resp = $this->model->Registrar($usuario);
+        $this->resp = $this->modelUsuario1->Registro($usuario);
 
         header('Location: ?op=crear&msg=' . $this->resp);
     }
@@ -194,26 +228,24 @@ class Controller
         require("view/signin.php");
     }
 
-    public function Ingresar(){
+    public function Ingresar()
+    {
         $ingresarUsuario = new usuario();
-        
-        $ingresarUsuario->correo = $_REQUEST['correo'];  
-        $ingresarUsuario->contrasena = $_REQUEST['contrasena'];    
+
+        $ingresarUsuario->correo = $_REQUEST['correo'];
+        $ingresarUsuario->contrasena = $_REQUEST['contrasena'];
 
         //Verificamos si existe en la base de datos
-        if ($resultado= $this->modelUsuario3->ObtenerTodosLosAdmin($ingresarUsuario))
-        {
+        if ($resultado = $this->modelUsuario3->ObtenerTodosLosAdmin($ingresarUsuario)) {
             $_SESSION["acceso"] = true;
             $_SESSION["id"] = $resultado->id_administrador;
             //$_SESSION["nivel"] = $resultado->nivel;
-            $_SESSION["user"] = $resultado->nombre." ".$resultado->apellido;
-            
+            $_SESSION["user"] = $resultado->nombre . " " . $resultado->apellido;
+
             echo '<meta http-equiv="refresh" content="0;url=?op=permitido">';
             //header('Location:https://fisc-ds7.000webhostapp.com/?op=permitido');
 
-        }
-        else
-        {
+        } else {
             header('Location: ?op=login&msg=Su contraseña o usuario está incorrecto');
         }
     }
@@ -272,6 +304,13 @@ class Controller
         header('Location: ?op=conferencias&msg=' . $this->resp);
     }
 
+    public function eliminarConferencia($id)
+    {
+        $this->resp = $this->modelConferencia1->EliminarConferencia($id);
+
+        header('Location: ?op=conferencias&msg=' . $this->resp);
+    }
+
     public function RegistrarPonenciaProfesional()
     {
         $ponencia = new Conferencias();
@@ -286,6 +325,8 @@ class Controller
 
         header('Location: ?op=conferencias&msg=' . $this->resp);
     }
+
+    
 
     public function RegistrarPonenciaAutor()
     {
@@ -358,6 +399,13 @@ class Controller
         $sala->cantidad_asientos = $_REQUEST['cantidad'];
 
         $this->resp = $this->modelSala1->RegistrarSala($sala);
+
+        header('Location: ?op=salas&msg=' . $this->resp);
+    }
+
+    public function EliminarSala($id)
+    {
+        $this->resp = $this->modelSala1->EliminarSala($id);
 
         header('Location: ?op=salas&msg=' . $this->resp);
     }
@@ -443,10 +491,10 @@ class Controller
     }
 
     public function RegistrarConferencista()
-    {        
+    {
         $conferencista = new Conferencias();
 
-        $conferencista->id_conferencista = $_REQUEST['cedula'];  
+        $conferencista->id_conferencista = $_REQUEST['cedula'];
         $conferencista->nombre = $_REQUEST['nombre'];
         $conferencista->apellido = $_REQUEST['apellido'];
         $conferencista->telefono = $_REQUEST['telefono'];
@@ -647,6 +695,13 @@ class Controller
         $listaConferencia = $this->modelConferencia2->ObtenerTodasLasConferencias();
 
         require("view/agregar-ponencias-profesional.php");
+    }
+
+    public function eliminarPonenciaPro($id)
+    {
+        $this->resp = $this->modelConferencia1->EliminarPonenteProf($id);
+
+        header('Location: ?op=conferencias&msg=' . $this->resp);
     }
 
     public function nuevaArea()

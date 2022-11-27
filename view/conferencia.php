@@ -86,8 +86,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->num_sala; ?></td>
                                 <td><?php echo $lista->congreso ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <td id="id_conferencia"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_conferencia.'&op=eliminarConferencia' ?>">Eliminar</a></td>
                             </tr>
                         <?php
                             $n++;
@@ -132,8 +131,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->fecha_fin; ?></td>
                                 <td><?php echo $lista->titulo; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <td id="id_ponencia"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->ponencia.'&op=eliminarPonencia' ?>">Eliminar</a></td>
                             </tr>
                         <?php
                             $n++;

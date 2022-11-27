@@ -74,7 +74,7 @@
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
