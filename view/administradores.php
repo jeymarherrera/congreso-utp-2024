@@ -103,7 +103,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->cod_ieee; ?></td>
                                 <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                                <td id="id_admin"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_administrador.'&op=eliminarAdmin' ?>">Eliminar</a></td>
+                                <td id="id_admin"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_administrador.'&op=eliminarAdmin'?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
@@ -111,63 +111,6 @@ if ($_SESSION["acceso"] != true)
                         }
                         ?>
                     </tbody>
-
-                   <!--  <tbody>
-                        <tr>
-                            <td>20-70-5165</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>123456</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-4534</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jey@gmail.com</td>
-                            <td>123456</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>20-70-6546</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>6044-1464</td>
-                            <td>Femenino</td>
-                            <td>jherrera@gmail.com</td>
-                            <td>123456</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Panama</td>
-                            <td>Funcionario UTP</td>
-                            <td>Universidad Tecnologica de Panama</td>
-                            <td>Si</td>
-                            <td>No</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                    </tbody> -->
                 </table>
             </div>
         </div>

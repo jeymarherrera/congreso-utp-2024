@@ -49,6 +49,25 @@ class Conferencias
 		}
 	}
 
+	public function EliminarPonenteProf($id)
+	{
+		try {
+			$sql = "DELETE FROM  Conferencista_Conferencia
+					WHERE titulo = ?";
+
+			$this->pdo->prepare($sql)
+				->execute(
+					array(
+						$id
+					)
+				);
+			$this->msg = "¡La ponencia ha sido eliminada!&t=text-success";
+		} catch (Exception $e) {
+			$this->msg = "Error al eliminar&t=text-danger";
+		}
+		return $this->msg;
+	}
+
 	public function ObtenerTodosLosPonentes()
 	{
 		try {
@@ -81,6 +100,25 @@ class Conferencias
 			$this->msg = "¡Conferencia creada con éxito!&t=text-success";
 		} catch (Exception $e) {
 			$this->msg = "¡Error de creación!&t=text-danger";
+		}
+		return $this->msg;
+	}
+
+	public function EliminarConferencia($id)
+	{
+		try {
+			$sql = "DELETE FROM  Conferencia
+					WHERE id_conferencia = ?";
+
+			$this->pdo->prepare($sql)
+				->execute(
+					array(
+						$id
+					)
+				);
+			$this->msg = "¡La conferencia ha sido eliminada!&t=text-success";
+		} catch (Exception $e) {
+			$this->msg = "Error al eliminar&t=text-danger";
 		}
 		return $this->msg;
 	}

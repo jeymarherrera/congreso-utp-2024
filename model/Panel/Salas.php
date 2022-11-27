@@ -50,4 +50,23 @@ class Salas
 		}
 		return $this->msg;
 	}
+
+	public function EliminarSala($id)
+	{
+		try {
+			$sql = "DELETE FROM  sala
+					WHERE id_sala = ?";
+
+			$this->pdo->prepare($sql)
+				->execute(
+					array(
+						$id
+					)
+				);
+			$this->msg = "¡La sala ha sido eliminada!&t=text-success";
+		} catch (Exception $e) {
+			$this->msg = "Error al eliminar&t=text-danger";
+		}
+		return $this->msg;
+	}
 }

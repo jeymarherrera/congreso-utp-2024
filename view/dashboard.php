@@ -1,6 +1,5 @@
 <?php
-if ($_SESSION["acceso"] != true)
-{
+if ($_SESSION["acceso"] != true) {
     header('Location: ?op=error');
 }
 ?>
@@ -54,7 +53,9 @@ if ($_SESSION["acceso"] != true)
                     <i class="fa fa-chart-bar fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Total de Ingresos</p>
-                        <h6 class="mb-0">$11664</h6>
+                        <h6 class="mb-0"><?php $total = 0; foreach ($listaRegistros as $lista) {
+                           $total += $lista->monto_total;
+                        } echo '$'.$total; ?></h6>
                     </div>
                 </div>
             </div>
@@ -72,7 +73,7 @@ if ($_SESSION["acceso"] != true)
                     <i class="fa fa-chart-pie fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Total de Registros</p>
-                        <h6 class="mb-0">166</h6>
+                        <h6 class="mb-0"><?php echo count($listaRegistros); ?></h6>
                     </div>
                 </div>
             </div>
@@ -110,17 +111,17 @@ if ($_SESSION["acceso"] != true)
                         foreach ($listaRegistros as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id; ?></td>
+                                <td><?php echo $lista->id_pago; ?></td>
                                 <td><?php echo $lista->fecha; ?></td>
-                                <td><?php echo $lista->metodoPago; ?></td>
-                                <td><?php echo $lista->monto; ?></td>
-                                <td><?php echo $lista->descuento; ?></td>
-                                <td><?php echo $lista->cena; ?></td>
-                                <td><?php echo $lista->comision; ?></td>
-                                <td><?php echo $lista->comisionPago; ?></td>
-                                <td><?php echo $lista->total; ?></td>
-                                <td><?php echo $lista->estado; ?></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <td><?php echo $lista->metodo; ?></td>
+                                <td><?php echo number_format($lista->monto, 2); ?></td>
+                                <td><?php echo number_format($lista->descuento, 2); ?></td>
+                                <td><?php echo number_format($lista->cena, 2); ?></td>
+                                <td><?php echo number_format($lista->comision, 2); ?></td>
+                                <td><?php echo number_format($lista->comision_pago, 2); ?></td>
+                                <td><?php echo number_format($lista->monto_total, 2); ?></td>
+                                <td><?php echo $lista->estado = 1; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                             </tr>
                         <?php
                             $n++;
@@ -129,7 +130,7 @@ if ($_SESSION["acceso"] != true)
                     </tbody>
 
 
-                    <tbody>
+                    <!-- <tbody>
                         <tr>
                             <td>01</td>
                             <td>25/09/2024</td>
@@ -195,7 +196,7 @@ if ($_SESSION["acceso"] != true)
                             <td>PAGADO</td>
                             <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>

@@ -51,10 +51,16 @@ if (isset($_GET['op'])) {
     $controller->CrearConferencia();
   } elseif ($opcion == "CrearConferencia") {
     $controller->RegistrarConferencia();
+  } elseif ($opcion == "eliminarConferencia") {
+    $id =$_GET['id'];
+    $controller->eliminarConferencia($id);
   } elseif ($opcion == "CrearPonenciaAutor") {
     $controller->RegistrarPonenciaAutor();
   } elseif ($opcion == "CrearPonenciaProf") {
     $controller->RegistrarPonenciaProfesional();
+  } elseif ($opcion == "eliminarPonencia") {
+    $id =$_GET['id'];
+    $controller->eliminarPonenciaPro($id);
   } elseif ($opcion == "eventos") {
     $controller->CrearEvento();
   } elseif ($opcion == "areas") {
@@ -68,6 +74,9 @@ if (isset($_GET['op'])) {
     $controller->AgregarSala();
   } elseif ($opcion == "registrarSala") {
     $controller->RegistrarSala();
+  } elseif ($opcion == "eliminarSala") {
+    $id = $_GET['id'];
+    $controller->EliminarSala($id);
   } elseif ($opcion == "reportes") {
     $controller->GenerarReportes();
   } elseif ($opcion == "certificados") {
