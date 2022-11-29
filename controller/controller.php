@@ -121,7 +121,7 @@ class Controller
         $usuario->telefono  = $_REQUEST['telefono'];
         $usuario->id_pais  = $_REQUEST['pais'];
         $usuario->id_provincia  = $_REQUEST['provincia'];
-        $usuario->id_ciudad = $_REQUEST['ciudad'];
+        $usuario->ciudad = $_REQUEST['ciudad'];
         $usuario->correo = $_REQUEST['correo'];
         $usuario->id_ocupacion = $_REQUEST['ocupacion'];
         if (isset($_REQUEST['institucion'])) {
@@ -471,6 +471,8 @@ class Controller
 
     public function VerCertificados()
     {
+        $this->resp = $this->modelUsuario2->verCertificado($id);
+        header('Location: ?op=certificados&msg=' . $this->resp);
         $listaCertificados = new Usuarios();
         $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
         require("view/generar-certificado.php");
@@ -514,7 +516,7 @@ class Controller
         $admin->correo = $_REQUEST['correo'];
         $admin->contrasena =md5($_REQUEST['contrasena']);
         $admin->id_pais = $_REQUEST['pais'];
-        $admin->id_ciudad = $_REQUEST['ciudad'];
+        $admin->ciudad = $_REQUEST['ciudad'];
         $admin->id_provincia = $_REQUEST['provincia'];
         $admin->id_ocupacion = $_REQUEST['ocupacion'];
         $admin->id_entidad = $_REQUEST['entidad'];
@@ -556,7 +558,7 @@ class Controller
         $conferencista->correo = $_REQUEST['correo'];
         $conferencista->contraseña = md5($_REQUEST['contrasena']);
         $conferencista->id_pais = $_REQUEST['pais'];
-        $conferencista->id_ciudad = $_REQUEST['ciudad'];
+        $conferencista->ciudad = $_REQUEST['ciudad'];
         $conferencista->id_provincia = $_REQUEST['provincia'];
         $conferencista->id_ocupacion = $_REQUEST['ocupacion'];
         $conferencista->id_entidad = $_REQUEST['entidad'];
@@ -586,6 +588,10 @@ class Controller
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
 
+    public function VerMensajes()
+    {
+        require("view/mensajes.php");
+    }
     public function EliminarAutor($id)
     {
         $this->resp = $this->modelUsuario2->EliminarAutor($id);

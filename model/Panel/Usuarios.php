@@ -19,7 +19,7 @@ class Usuarios
 	public $contrasena;
 	public $gafete;
 	public $id_pais;
-	public $id_ciudad;
+	public $ciudad;
 	public $id_provincia;
 	public $id_ocupacion;
 	public $id_entidad;
@@ -66,7 +66,7 @@ class Usuarios
 	{
 		try {
 
-			$sql = "INSERT INTO conferencista(id_conferencista, nombre, apellido, telefono, sexo, correo, contraseña, id_pais, id_ciudad, id_provincia, id_ocupacion, id_entidad)
+			$sql = "INSERT INTO conferencista(id_conferencista, nombre, apellido, telefono, sexo, correo, contraseña, id_pais, ciudad, id_provincia, id_ocupacion, id_entidad)
 					VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
@@ -80,7 +80,7 @@ class Usuarios
 						$data->correo,
 						$data->contraseña,
 						$data->id_pais,
-						$data->id_ciudad,
+						$data->ciudad,
 						$data->id_provincia,
 						$data->id_ocupacion,
 						$data->id_entidad
@@ -100,14 +100,12 @@ class Usuarios
 	public function ObtenerTodosLosConferencistas()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
+			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
 			from Conferencista con
 			inner join Pais pa
 			on con.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = con.id_provincia
-			inner join Ciudad c
-			on c.id_ciudad = con.id_ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = con.id_ocupacion
 			inner join Entidad e
@@ -133,7 +131,7 @@ class Usuarios
 				);
 			$this->msg = "¡El conferencista ha sido eliminado!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}
@@ -152,14 +150,12 @@ class Usuarios
 	public function ObtenerTodosLosAutores()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_autor, a.nombre as nombre_a, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_autor, a.nombre as nombre_a, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
 			from Autor a
 			inner join Pais pa
 			on a.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = a.id_provincia
-			inner join Ciudad c
-			on c.id_ciudad = a.id_ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = a.id_ocupacion
 			inner join Entidad e
@@ -185,7 +181,7 @@ class Usuarios
 				);
 			$this->msg = "¡El autor ha sido eliminado!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}
@@ -204,14 +200,12 @@ class Usuarios
 	public function ObtenerTodosLosProfesionales()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_profesional, prof.nombre as nombre_p, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_profesional, prof.nombre as nombre_p, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
 			from Profesional prof
 			inner join Pais pa
 			on prof.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = prof.id_provincia
-			inner join Ciudad c
-			on c.id_ciudad = prof.id_ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = prof.id_ocupacion
 			inner join Entidad e
@@ -237,7 +231,7 @@ class Usuarios
 				);
 			$this->msg = "¡El profesional ha sido eliminado!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}
@@ -270,7 +264,8 @@ class Usuarios
 			$sql = $this->pdo->prepare("SELECT c.id_profesional,CONCAT (p.nombre,' ',p.apellido )as nombre, correo,co.titulo ,c.total_horas,co.fecha_fin ,c.certificado
 			FROM Certificado_Prof_C c
 			inner join Profesional p on p.id_profesional = c.id_profesional
-			inner join Congreso co on co.id_congreso = c.id_congreso");
+			inner join Congreso co on co.id_congreso = c.id_congreso
+			and  c.total_horas >= co.horas_minimas");
 			$sql->execute();
 			return $sql->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -284,7 +279,8 @@ class Usuarios
 			$sql = $this->pdo->prepare("SELECT c.id_profesional,CONCAT (p.nombre,' ',p.apellido )as nombre, correo,e.titulo ,c.total_horas,e.fecha_fin ,c.certificado
 			FROM Certificado_Prof_E c
 			inner join Profesional p on p.id_profesional = c.id_profesional
-			inner join Evento e on e.id_evento = c.id_evento");
+			inner join Evento e on e.id_evento = c.id_evento
+			and  c.total_horas >= e.horas_minimas");
 			$sql->execute();
 			return $sql->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -297,7 +293,8 @@ class Usuarios
 			$sql = $this->pdo->prepare("SELECT c.id_estudiante,CONCAT (p.nombre,' ',p.apellido )as nombre, correo,e.titulo ,c.total_horas,e.fecha_fin ,c.certificado
 			FROM Certificado_Est_E c
 			inner join Profesional p on p.id_profesional = c.id_estudiante
-			inner join Evento e on e.id_evento = c.id_evento");
+			inner join Evento e on e.id_evento = c.id_evento
+			and  c.total_horas >= e.horas_minimas");
 			$sql->execute();
 			return $sql->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -310,14 +307,12 @@ class Usuarios
 	{
 		try {
 			$stm = $this->pdo->prepare("
-			SELECT id_estudiante, cod_estudiante, est.nombre as nombre_estudiante, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			SELECT id_estudiante, cod_estudiante, est.nombre as nombre_estudiante, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
 			from Estudiante est
 			inner join Pais pa
 			on est.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = est.id_provincia
-			inner join Ciudad c
-			on c.id_ciudad = est.id_ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = est.id_ocupacion
 			inner join Entidad e
@@ -341,7 +336,7 @@ class Usuarios
 				);
 			$this->msg = "¡El estudiante ha sido eliminado!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}
@@ -364,7 +359,8 @@ class Usuarios
 			$sql = $this->pdo->prepare("SELECT e.id_estudiante,CONCAT (e.nombre,' ',e.apellido )as nombre, correo,co.titulo ,c.total_horas,co.fecha_fin ,c.certificado
 			FROM Certificado_Est_C c
 			inner join Estudiante e on e.id_estudiante = e.id_estudiante
-			inner join Congreso co on co.id_congreso = c.id_congreso");
+			inner join Congreso co on co.id_congreso = c.id_congreso
+			and  c.total_horas >= co.horas_minimas");
 			$sql->execute();
 			return $sql->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -393,7 +389,7 @@ class Usuarios
 	{
 		try {
 
-			$sql = "INSERT INTO Administrador(id_administrador, nombre, apellido, telefono, sexo, correo, contraseña, id_pais, id_ciudad, id_provincia, id_ocupacion, id_entidad)
+			$sql = "INSERT INTO Administrador(id_administrador, nombre, apellido, telefono, sexo, correo, contraseña, id_pais, ciudad, id_provincia, id_ocupacion, id_entidad)
 					VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			$this->pdo->prepare($sql)
@@ -407,7 +403,7 @@ class Usuarios
 						$data->correo,
 						$data->contrasena,
 						$data->id_pais,
-						$data->id_ciudad,
+						$data->ciudad,
 						$data->id_provincia,
 						$data->id_ocupacion,
 						$data->id_entidad
@@ -438,7 +434,7 @@ class Usuarios
 				);
 			$this->msg = "¡El administrador ha sido eliminado!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}
@@ -446,14 +442,12 @@ class Usuarios
 	public function ObtenerTodosLosAdmin()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
+			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
 			from Administrador a
 			inner join Pais pa
 			on a.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = a.id_provincia
-			inner join Ciudad c
-			on c.id_ciudad = a.id_ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = a.id_ocupacion
 			inner join Entidad e

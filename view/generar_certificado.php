@@ -17,7 +17,10 @@ $date = "20/10/2024"; // Texto 2
 /// imagettftext ( resource $image , float $size , float $angle , int $x , int $y , int $color , string $fontfile , string $text )
 imagettftext($image, 80, 0, 200, 770, $color, $font_path, $name); // Colocar el texto 1 en la imagen
 imagettftext($image, 40, 0, 460, 1310, $color, $font_path, $date); // Colocar el texto 2
-header('Content-Type: image/png');
+function showImage(){
+    header('Content-Type: image/png');
+    return imagepng($this->$image);
+}
 // $salida = "certificado_congreso.pdf";
 // header('Content-Disposition: attachment; filename="' .$salida. '"');
 imagepng($image); // Enviar el contenido al navegador

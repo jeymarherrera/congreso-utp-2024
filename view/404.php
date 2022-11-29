@@ -37,7 +37,7 @@
                         <h1 class="mb-4">Página no encontrada</h1>
                         <p class="mb-4">Lo sentimos!, no cuentas con autorización para acceder a este apartado de nuestro sitio!
                         </p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="op=home">Volver a Inicio</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="?op=home">Volver a Inicio</a>
                     </div>
                 </div>
             </div>

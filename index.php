@@ -82,7 +82,10 @@ if (isset($_GET['op'])) {
   } elseif ($opcion == "certificados") {
     $controller->GenerarCertificados();
   } elseif ($opcion == "VerCertificados") {
-    $controller->VerCertificados();
+    $id = $_GET['id'];
+    $controller->VerCertificados($id);
+  } elseif ($opcion == "verMensajes") {
+    $controller->VerMensajes();
   } elseif ($opcion == "admin") {
     $controller->AgregarAdmin();
   } elseif ($opcion == "newAdmin") {

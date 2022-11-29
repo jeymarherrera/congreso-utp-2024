@@ -63,7 +63,7 @@ class Congreso
 			$this->pdo->prepare($sql)->execute(array($data));
 			$this->msg = "¡El congreso ha sido eliminado!&t=text-success".$data;
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar &t=text-danger".$data;
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa &t=text-danger".$data;
 		}
 		return $this->msg;
 	}

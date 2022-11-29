@@ -72,7 +72,7 @@
                                 <td><?php echo $lista->titulo; ?></td>
                                 <td><?php echo $lista->total_horas; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_profesional.'&op=verCertificadoProf'?>">Ver</a></td>
                             </tr>
                         <?php
                         }
@@ -117,7 +117,7 @@
                                 <td><?php echo $lista->titulo; ?></td>
                                 <td><?php echo $lista->total_horas; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoEstudiante">Ver</a></td>
                             </tr>
                         <?php
                         }

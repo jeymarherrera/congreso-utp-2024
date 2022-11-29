@@ -49,34 +49,34 @@
                             <span class="d-none d-lg-inline-flex">Mensajes</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
+                            <a href="?op=verMensajes" class="dropdown-item">
                                 <div class="d-flex align-items-center">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jeymar Herrera te ha enviado un mensaje</h6>
+                                        <h6 class="fw-normal mb-0">Aron Alvarez te ha enviado un mensaje</h6>
                                         <small>hace 15 minutos</small>
                                     </div>
                                 </div>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
+                            <a href="?op=verMensajes" class="dropdown-item">
                                 <div class="d-flex align-items-center">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jeymar Herrera te ha enviado un mensaje</h6>
-                                        <small>hace 15 minutos</small>
+                                        <h6 class="fw-normal mb-0">Marlon Sosa te ha enviado un mensaje</h6>
+                                        <small>hace 20 minutos</small>
                                     </div>
                                 </div>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
+                            <a href="?op=verMensajes" class="dropdown-item">
                                 <div class="d-flex align-items-center">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jeymar Herrera te ha enviado un mensaje</h6>
-                                        <small>hace 15 minutos</small>
+                                        <h6 class="fw-normal mb-0">Maria Camila te ha enviado un mensaje</h6>
+                                        <small>hace 45 minutos</small>
                                     </div>
                                 </div>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Ver todos los mensajes.</a>
+                            <a href="?op=verMensajes" class="dropdown-item text-center">Ver todos los mensajes.</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">

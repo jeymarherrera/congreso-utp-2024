@@ -20,7 +20,7 @@ class Registro
 	public $contrasena;
 	public $gafete;
 	public $id_pais;
-	public $id_ciudad;
+	public $ciudad;
 	public $id_provincia;
 	public $id_ocupacion;
 	public $id_entidad;
@@ -80,7 +80,7 @@ class Registro
 						$data->gafete,
 						$data->id_pais,
 						$data->id_provincia,
-						$data->id_ciudad,
+						$data->ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
 						// $data->id_ieee,
@@ -92,7 +92,7 @@ class Registro
 			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
 				$this->msg = "Correo electrónico ya está registrado en el sistema&t=text-danger";
 			} else {
-				$this->msg = "2Error al guardar los datos&t=text-danger";
+				$this->msg = "Error al guardar los datos&t=text-danger";
 			}
 		}
 
@@ -145,7 +145,7 @@ class Registro
 						$data->gafete,
 						$data->id_pais,
 						$data->id_provincia,
-						$data->id_ciudad,
+						$data->ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
 						// $data->id_ieee,
@@ -196,7 +196,7 @@ class Registro
 						$data->gafete,
 						$data->id_pais,
 						$data->id_provincia,
-						$data->id_ciudad,
+						$data->ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
 						// $data->id_ieee,

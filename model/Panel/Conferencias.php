@@ -63,7 +63,7 @@ class Conferencias
 				);
 			$this->msg = "¡La ponencia ha sido eliminada!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}
@@ -118,7 +118,7 @@ class Conferencias
 				);
 			$this->msg = "¡La conferencia ha sido eliminada!&t=text-success";
 		} catch (Exception $e) {
-			$this->msg = "Error al eliminar&t=text-danger";
+			$this->msg = "Error al eliminar, recuerde que no debe exitir ninguna relación con estos datos para obtener una eliminación exitosa&t=text-danger";
 		}
 		return $this->msg;
 	}

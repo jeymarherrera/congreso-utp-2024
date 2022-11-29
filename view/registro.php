@@ -68,7 +68,7 @@
                     </div>
                     <div>
                         <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoUsuario" id="tipos" class="chosen-select"  onchange='SelectChanged();' required>
-                            <option disabled>Soy un...</option>
+                            <option disable>Soy un...</option>
                             <option id="tipoUsuario" value="Autor">Autor</option>
                             <option id="estudiante1" value="Estudiante UTP">Estudiante UTP</option>
                             <option id="estudiante2" value="Estudiante nacional">Estudiante nacional</option>
@@ -170,7 +170,7 @@
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select style="height: 40px; width: 400px;" name="pais" id="pais" class="chosen-select  col-10" required="">
-                            <option disabled>Seleccione su país</option>
+                            <option>Seleccione su país</option>
                             <?php foreach ($listaPais as $p) { ?>
                                 <option value="<?php echo $p->id_pais; ?>"><?php echo $p->nombre_pais; ?></option>
                             <?php } ?>
@@ -179,7 +179,7 @@
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select style="height: 40px; width: 400px;" name="provincia" id="provincia" class="chosen-select  col-10" required="">
-                            <option disabled>Seleccione su provincia</option>
+                            <option>Seleccione su provincia</option>
                             <?php foreach ($listaProvincia as $p) { ?>
                                 <option value="<?php echo $p->id_provincia; ?>"><?php echo $p->nombre; ?></option>
                             <?php } ?>
@@ -187,17 +187,15 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="ciudad" id="ciudad" class="chosen-select  col-10" required="">
-                            <option disabled>Seleccione su ciudad</option>
-                            <?php foreach ($listaCiudad as $c) { ?>
-                                <option value="<?php echo $c->id_ciudad; ?>"><?php echo $c->nombre_ciudad; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                        <div>
+                            <input name="ciudad" id="ciudad" type="text" placeholder="Ciudad *" class="form-control  col-10" style="width: 400px;" required>
+                        </div>
+                    </div>            
+
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select style="height: 40px; width: 400px;" name="institucion" id="institucion" class="chosen-select  col-10" required>
-                            <option>Seleccione su entidad</option>
+                        <option value="">Seleccione su entidad</option>
                             <?php foreach ($listaEntidad as $e) { ?>
                                 <option value="<?php echo $e->id_entidad; ?>"><?php echo $e->nombre; ?></option>
                             <?php } ?>
@@ -231,7 +229,7 @@
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <select style="height: 40px; width: 400px;" name="ocupacion" id="ocupacion" class="chosen-select  col-10" required="">
-                            <option disabled>Seleccione su ocupación</option>
+                            <option>Seleccione su ocupación</option>
                             <?php foreach ($listaOcupacion as $o) { ?>
                                 <option value="<?php echo $o->id_ocupacion; ?>"><?php echo $o->nombre; ?></option>
                             <?php } ?>

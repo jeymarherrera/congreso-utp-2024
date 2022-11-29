@@ -94,7 +94,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
@@ -162,7 +162,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
@@ -213,7 +213,6 @@ if ($_SESSION["acceso"] != true)
                             <th scope="col">Miembro WPA</th>
                             <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Gafete</th>
-                            <th scope="col">Certificados</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -233,14 +232,13 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
                                 <td><?php echo $lista->cod_ieee; ?></td>
                                 <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteProfesional">Ver</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoProf">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td id="id_profesional"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_profesional.'&op=eliminarAProfesional' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
@@ -285,7 +283,6 @@ if ($_SESSION["acceso"] != true)
                             <th scope="col">Miembro WPA</th>
                             <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Gafete</th>
-                            <th scope="col">Certificados</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -306,14 +303,13 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
                                 <td><?php echo $lista->cod_ieee; ?></td>
                                 <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoEstudiante">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>

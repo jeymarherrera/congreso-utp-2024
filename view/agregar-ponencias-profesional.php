@@ -45,7 +45,7 @@ if ($_SESSION["acceso"] != true)
             <form method="POST" action="?op=CrearPonenciaProf">
                 <label for="pais" class="form-label">Ponente</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="ponente" required>
-                    <option disabled>Seleccione un ponente</option>
+                    <option>Seleccione un ponente</option>
                     <?php foreach ($listaPonente as $p) { ?>
                         <option value="<?php echo $p->id_conferencista; ?>"><?php echo $p->nombre . " " . $p->apellido; ?></option>
                     <?php } ?>
@@ -65,7 +65,7 @@ if ($_SESSION["acceso"] != true)
 
                 <br><label for="conferencia" class="form-label">Conferencia</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="id_conferencia" required>
-                    <option disabled>Seleccione un ponente</option>
+                    <option>Seleccione un ponente</option>
                     <?php foreach ($listaConferencia as $c) { ?>
                         <option value="<?php echo $c->id_conferencia; ?>"><?php echo $c->titulo; ?></option>
                     <?php } ?>

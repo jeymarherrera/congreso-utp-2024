@@ -39,16 +39,7 @@ if ($_SESSION["acceso"] != true) {
     <!-- reportes -->
     <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
-            <div class="col-sm-6 col-xl-3">
-                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-line fa-3x text-primary"></i>
-                    <div class="ms-3">
-                        <p class="mb-2">Ingresos del Día</p>
-                        <h6 class="mb-0">$1664</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-sm-12 col-xl-4">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-bar fa-3x text-primary"></i>
                     <div class="ms-3">
@@ -59,21 +50,21 @@ if ($_SESSION["acceso"] != true) {
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-sm-12 col-xl-4">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-area fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Registros del Día</p>
-                        <h6 class="mb-0">16</h6>
+                        <p class="mb-2">Total de Registros</p>
+                        <h6 class="mb-0"><?php echo count($listaRegistros); ?></h6>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-sm-12 col-xl-4">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                    <i class="fa fa-user fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total de Registros</p>
-                        <h6 class="mb-0"><?php echo count($listaRegistros); ?></h6>
+                        <p class="mb-2">Cantidad de Administradores</p>
+                        <h6 class="mb-0"></h6>
                     </div>
                 </div>
             </div>
@@ -99,7 +90,6 @@ if ($_SESSION["acceso"] != true) {
                             <th scope="col">Comisión Pago</th>
                             <th scope="col">Monto Total</th>
                             <th scope="col">Estado</th>
-                            <th scope="col">Información</th>
                         </tr>
                     </thead>
 
@@ -120,7 +110,6 @@ if ($_SESSION["acceso"] != true) {
                                 <td><?php echo number_format($lista->comision_pago, 2); ?></td>
                                 <td><?php echo number_format($lista->monto_total, 2); ?></td>
                                 <td><?php echo $lista->estado = 1; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
                             </tr>
                         <?php
                             $n++;

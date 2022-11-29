@@ -61,11 +61,11 @@ if ($_SESSION["acceso"] != true)
                 </div>
                 <p>Seleccione su sexo</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sexo" id="male" value="m" required>
+                    <input class="form-check-input" type="radio" name="sexo" id="male" value="M" required>
                     <label class="form-check-label" for="male">Masculino</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sexo" id="female" value="f">
+                    <input class="form-check-input" type="radio" name="sexo" id="female" value="F">
                     <label class="form-check-label" for="female">Femenino</label>
                 </div>
                 <div class="mb-3">
@@ -83,18 +83,13 @@ if ($_SESSION["acceso"] != true)
                         <option value="<?php echo $p->id_pais; ?>"><?php echo $p->nombre_pais; ?></option>
                     <?php } ?>
                 </select>
-
-                <label for="pais" class="form-label">Ciudad</label>
-                <select class="form-select mb-3" aria-label="Default select example" name="ciudad" required>
-                    <option disabled>Seleccione su ciudad</option>
-                    <?php foreach ($listaCiudad as $c) { ?>
-                        <option value="<?php echo $c->id_ciudad; ?>"><?php echo $c->nombre_ciudad; ?></option>
-                    <?php } ?>
-                </select>
-
+                <div class="mb-3">
+                    <label for="pais" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                </div>
                 <label for="pais" class="form-label">Provincia</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="provincia" required>
-                    <option disabled>Seleccione su provincia</option>
+                    <option>Seleccione su provincia</option>
                     <?php foreach ($listaProvincia as $p) { ?>
                         <option value="<?php echo $p->id_provincia; ?>"><?php echo $p->nombre; ?></option>
                     <?php } ?>
@@ -102,7 +97,7 @@ if ($_SESSION["acceso"] != true)
                 <div class="mb-3">
                     <label for="ocupacion" class="form-label">Ocupacion</label>
                     <select class="form-select mb-3" aria-label="Default select example" name="ocupacion" required>
-                        <option disabled>Seleccione su ocupación</option>
+                        <option>Seleccione su ocupación</option>
                         <?php foreach ($listaOcupacion as $o) { ?>
                             <option value="<?php echo $o->id_ocupacion; ?>"><?php echo $o->nombre; ?></option>
                         <?php } ?>
@@ -112,31 +107,14 @@ if ($_SESSION["acceso"] != true)
                 <div class="mb-3">
                     <label for="entidad" class="form-label">Entidad/Institución/Empresa</label>
                     <select class="form-select mb-3" aria-label="Default select example" name="entidad" required>
-                        <option disabled>Seleccione su entidad</option>
+                        <option>Seleccione su entidad</option>
                         <?php foreach ($listaEntidad as $e) { ?>
                             <option value="<?php echo $e->id_entidad; ?>"><?php echo $e->nombre; ?></option>
                         <?php } ?>
                     </select>
                     <!-- <input type="text" class="form-control" id="entidad" name="entidad" required> -->
                 </div>
-                <p>¿Es miembro de la IEEE?</p>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="member" id="ieee-si" value="si" required>
-                    <label class="form-check-label" for="positive">Sí</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="member" id="ieee-no" value="no">
-                    <label class="form-check-label" for="negative">No</label><br>
-                </div>
-                <p>¿Es miembro de la WPA?</p>
-                <div class="form-check form-check-inline" required>
-                    <input class="form-check-input" type="radio" name="member2" id="wpa-si" value="si">
-                    <label class="form-check-label" for="positive">Sí</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="member2" id="wpa-no" value="no">
-                    <label class="form-check-label" for="negative">No</label>
-                </div><br><br>
+                <br><br>
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
