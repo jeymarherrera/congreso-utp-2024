@@ -63,20 +63,18 @@
 
                     <tbody>
                         <?php
-                        $n = 1;
-                        foreach ($listaCertificados as $lista) {
+                        foreach ($listaProfesionales as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_certificado; ?></td>
+                                <td><?php echo $lista->id_profesional; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->id_congreso; ?></td>
+                                <td><?php echo $lista->titulo; ?></td>
                                 <td><?php echo $lista->total_horas; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
-                            $n++;
                         }
                         ?>
                     </tbody>
@@ -110,20 +108,18 @@
 
                     <tbody>
                         <?php
-                        $n = 1;
-                        foreach ($listaCertificados as $lista) {
+                        foreach ($listaEstudiantes as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_certificado; ?></td>
+                                <td><?php echo $lista->id_estudiante; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->id_congreso; ?></td>
+                                <td><?php echo $lista->titulo; ?></td>
                                 <td><?php echo $lista->total_horas; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
-                            $n++;
                         }
                         ?>
                     </tbody>
@@ -157,20 +153,18 @@
 
                     <tbody>
                         <?php
-                        $n = 1;
-                        foreach ($listaCertificados as $lista) {
+                        foreach ($listaProfesionalesEv as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_certificado; ?></td>
+                                <td><?php echo $lista->id_profesional; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->id_evento; ?></td>
+                                <td><?php echo $lista->titulo; ?></td>
                                 <td><?php echo $lista->total_horas; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
-                            $n++;
                         }
                         ?>
                     </tbody>
@@ -182,7 +176,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Certificados por paticipación en Eventos del Congreso de Profesionales</h6>
+                <h6 class="mb-0">Certificados por paticipación en Eventos del Congreso de Estudiantes</h6>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
@@ -203,21 +197,19 @@
                     </thead>
 
                     <tbody>
-                        <?php
-                        $n = 1;
-                        foreach ($listaCertificados as $lista) {
+                    <?php
+                        foreach ($listaEstudianteEv as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_certificado; ?></td>
+                                <td><?php echo $lista->id_estudiante; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->id_evento; ?></td>
+                                <td><?php echo $lista->titulo; ?></td>
                                 <td><?php echo $lista->total_horas; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=VerCertificados">Ver</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
-                            $n++;
                         }
                         ?>
                     </tbody>
