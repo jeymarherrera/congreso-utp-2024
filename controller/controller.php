@@ -103,9 +103,9 @@ class Controller
         $usuario->id_ieee = $_REQUEST['mem'];
         $usuario->id_wpa = $_REQUEST['wpa'];
 
-        // $usuario->telefono  = $_REQUEST['paper1'];
-        // $usuario->sexo  = $_REQUEST['paper_2'];
-        // $usuario->correo = $_REQUEST['paper_3'];
+        $usuario->telefono  = $_REQUEST['paper1'];
+        $usuario->sexo  = $_REQUEST['paper2_'];
+        $usuario->correo = $_REQUEST['paper3_'];
         $usuario->sexo  = $_REQUEST['sexo'];
         $usuario->telefono  = $_REQUEST['telefono'];
         $usuario->id_pais  = $_REQUEST['pais'];
@@ -116,18 +116,28 @@ class Controller
         $usuario->id_entidad = $_REQUEST['institucion'];
         $usuario->cod_estudiante = $_REQUEST['idEst'];
 
-
-        //$usuario->id_pago = $_REQUEST['tipoPago'];
-        //$usuario->fecha = $_REQUEST['fecha'];
         $usuario->metodo = $_REQUEST['tipoPago'];
         //$usuario->descuento = $_REQUEST[''];
         $usuario->cena = $_REQUEST['cenas'];
         $usuario->comision = 75;
         $usuario->comision_pago = 3.75;
-        $usuario->monto_total = 79.25;
+
+
+        $usuario->monto_total = 79;
         $usuario->estado = 1;
 
 
+        if ($usuario->tipo_usuario == "Estudiante UTP" || "Estudiante nacional "|| "Estudiante internacional") {
+            $this->resp = $this->modelUsuario1->Registro($usuario);
+        } elseif ($usuario->tipo_usuario == "Autor") {
+            /* $usuario->monto = 325;
+            $usuario->comision_pago = 16.25;
+            $usuario->comision = 0.50;
+            $usuario->monto_total = 341.75; */
+            $this->resp = $this->modelUsuario1->RegistrarAutor($usuario);
+        } elseif ($usuario->tipo_usuario == "Funcionario UTP"||"Profesional nacional"||"Profesional internacional") {
+            $this->resp = $this->modelUsuario1->RegistrarProfesional($usuario);
+        }
 
         /* if (!isset($_GET['tiposuario'])) {
             $tipoUsuario = $_GET['tipoUsuario'];
@@ -213,7 +223,6 @@ class Controller
         $usuario->id_wpa = $_REQUEST['wpa'];
         $usuario->id_pago = $_REQUEST['tipoPago']; */
 
-        $this->resp = $this->modelUsuario1->Registro($usuario);
 
         header('Location: ?op=crear&msg=' . $this->resp);
     }

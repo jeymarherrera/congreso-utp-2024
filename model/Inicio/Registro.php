@@ -54,8 +54,7 @@ class Registro
 	{
 		try {
 			$sql = "declare @fecha datetime	Set @fecha=GETDATE() Select CONVERT(varchar,@fecha,20) as [YYYY-MM-DD HH:MM:SS]; declare @id_pago int
-			EXEC PagoEst  @fecha, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,@id_pago
-			";
+			EXEC PagoEst  @fecha, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,@id_pago";
 
 			/* $sql = "INSERT INTO Estudiante ( cod_estudiante, tipo_estudiante, nombre, apellido, telefono, sexo, correo, gafete, id_residencia, id_ocupacion, id_entidad, id_ieee, id_wpa, id_pago)
 				VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; */
@@ -108,7 +107,7 @@ class Registro
 
 
 
-	public function RegistrarEstudiante(Usuario $data)
+	/* public function RegistrarEstudiante(Usuario $data)
 	{
 		try {
 
@@ -173,7 +172,7 @@ class Registro
 			$this->msg = "Error al guardar los datos&t=text-danger";
 		}
 		return $this->msg;
-	}
+	} */
 
 	public function ObtenerTodosLosEstudiantes(Usuario $data)
 	{
@@ -189,6 +188,56 @@ class Registro
 
 
 	public function RegistrarAutor(Usuario $data)
+	{
+		try {
+
+			$sql = "declare @fecha datetime	Set @fecha=GETDATE() Select CONVERT(varchar,@fecha,20) as [YYYY-MM-DD HH:MM:SS]; declare @id_pago int
+			EXEC PagoAutor  @fecha, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,@id_pago";
+
+			$this->pdo->prepare($sql)
+				->execute(
+					array(
+						$data->id_tipo,
+						$data->metodo,
+						$data->descuento,
+						$data->cena,
+						$data->monto,
+						$data->comision,
+						$data->comision_pago,
+						$data->monto_total,
+						$data->estado,
+						$data->cedula,
+						$data->tipo_usuario,
+						$data->nombre,
+						$data->apellido,
+						$data->telefono,
+						$data->sexo,
+						$data->correo,
+						$data->contrasena,
+						$data->gafete,
+						$data->id_pais,
+						$data->id_provincia,
+						$data->id_ciudad,
+						$data->id_ocupacion,
+						$data->id_entidad,
+						// $data->id_ieee,
+						// $data->id_wpa,
+						$data->id_pago
+					)
+				);
+			$this->msg = "Su registro se ha guardado exitosamente!&t=text-success";
+		} catch (Exception $e) {
+			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
+				$this->msg = "Correo electrónico ya está registrado en el sistema&t=text-danger";
+			} else {
+				$this->msg = "Error al guardar los datos autor &t=text-danger";
+			}
+		}
+		return $this->msg;
+	}
+
+
+	/* public function RegistrarProfesional(Usuario $data)
 	{
 		try {
 
@@ -218,35 +267,47 @@ class Registro
 			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
 				$this->msg = "Correo electrónico ya está registrado en el sistema&t=text-danger";
 			} else {
-				$this->msg = "Error al guardar los datos autor &t=text-danger";
+				$this->msg = "Error al guardar los datos&t=text-danger";
 			}
 		}
 		return $this->msg;
-	}
-
+	} */
 
 	public function RegistrarProfesional(Usuario $data)
 	{
 		try {
 
-			$sql = "INSERT INTO Autor (tipo_autor, nombre, apellido, telefono, sexo, correo, gafete, id_residencia, id_ocupacion, id_entidad, id_ieee, id_wpa, id_pago)
-				VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			$sql = "declare @fecha datetime	Set @fecha=GETDATE() Select CONVERT(varchar,@fecha,20) as [YYYY-MM-DD HH:MM:SS]; declare @id_pago int
+			EXEC PagoEst  @fecha, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,@id_pago";
 
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->tipo_autor,
+						$data->id_tipo,
+						$data->metodo,
+						$data->descuento,
+						$data->cena,
+						$data->monto,
+						$data->comision,
+						$data->comision_pago,
+						$data->monto_total,
+						$data->estado,
+						$data->cedula,
+						$data->tipo_usuario,
 						$data->nombre,
 						$data->apellido,
 						$data->telefono,
 						$data->sexo,
 						$data->correo,
+						$data->contrasena,
 						$data->gafete,
-						$data->id_residencia,
+						$data->id_pais,
+						$data->id_provincia,
+						$data->id_ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
-						$data->id_ieee,
-						$data->id_wpa,
+						// $data->id_ieee,
+						// $data->id_wpa,
 						$data->id_pago
 					)
 				);
