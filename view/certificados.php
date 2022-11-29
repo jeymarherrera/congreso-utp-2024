@@ -58,7 +58,6 @@
                             <th scope="col">Total de Horas</th>
                             <th scope="col">Generar</th>
                             <th scope="col">Imprimir</th>
-                            <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
 
@@ -74,8 +73,6 @@
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
@@ -107,7 +104,6 @@
                             <th scope="col">Total de Horas</th>
                             <th scope="col">Generar</th>
                             <th scope="col">Imprimir</th>
-                            <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
 
@@ -121,9 +117,8 @@
                                 <td><?php echo $lista->nombre; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Enviar</a></td>
+                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Ver</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
