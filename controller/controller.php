@@ -29,6 +29,7 @@ class Controller
     private $modelUsuario1;
     private $modelUsuario2;
     private $modelUsuario3;
+    private $modelUsuario4;
     private $modelCongreso;
     private $modelConferencia1;
     private $modelConferencia2;
@@ -43,6 +44,7 @@ class Controller
     {
         $this->modelUsuario1 = new Registro();
         $this->modelUsuario2 = new Usuarios();
+        $this->modelUsuario4 = new Usuarios();
         $this->modelUsuario3 = new usuario();
         $this->modelCongreso = new Congreso();
         $this->modelConferencia1 = new Conferencias();
@@ -451,6 +453,18 @@ class Controller
     {
         $listaCertificados = new Usuarios();
         $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();  
+
+        $listaProfesionales = new Usuarios();
+        $listaProfesionales = $this->modelUsuario2->ObtenerCertificadoProfesional();
+
+        $listaProfesionalesEv = new Usuarios();
+        $listaProfesionalesEv = $this->modelUsuario2->ObtenerCertificadoProfesionalEvento();
+
+        $listaEstudiantes = new Usuarios();
+        $listaEstudiantes = $this->modelUsuario4->ObtenerCertificadoEstudiante();
+
+        $listaEstudianteEv = new Usuarios();
+        $listaEstudianteEv = $this->modelUsuario2->ObtenerCertificadoEstudianteEvento();
 
         require("view/certificados.php");
     }

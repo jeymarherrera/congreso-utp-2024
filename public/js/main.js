@@ -285,7 +285,7 @@ function SelectChanged() {
       document.getElementById('paper3').style.display = 'none'
       document.getElementById('pais').style.display = 'block'
       document.getElementById('provincia').style.display = 'none'
-      document.getElementById('idEst').style.display = 'block'
+      document.getElementById('idEst').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'none'
       document.getElementById('wpa').style.display = 'block'
       document.getElementById('institucion').disabled = false

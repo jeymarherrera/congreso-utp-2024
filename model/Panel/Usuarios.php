@@ -29,26 +29,21 @@ class Usuarios
 
 	public function __CONSTRUCT()
 	{
-		try
-		{
-			$this->pdo = Db::StartUp();     
-		}
-		catch(Exception $e)
-		{
+		try {
+			$this->pdo = Db::StartUp();
+		} catch (Exception $e) {
 			die($e->getMessage());
 		}
 	}
 
 	public function ObtenerTodosLosUsuarios()
 	{
-		try 
-		{
+		try {
 			$stm = $this->pdo->prepare("SELECT * FROM usuarios");
-			          
+
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
-		} catch (Exception $e) 
-		{
+		} catch (Exception $e) {
 			die($e->getMessage());
 		}
 	}
@@ -258,7 +253,7 @@ class Usuarios
 		}
 	}
 
-	public function ObtenerCertificadoProfesional()
+	/* public function ObtenerCertificadoProfesional()
 	{
 		try {
 			$stm = $this->pdo->prepare("SELECT id_profesional, nombre, apellido, correo, certificado FROM Profesional WHERE id_profesional ? ");
@@ -267,7 +262,49 @@ class Usuarios
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
+	} */
+
+	public function ObtenerCertificadoProfesional()
+	{
+		try {
+			$sql = $this->pdo->prepare("SELECT c.id_profesional,CONCAT (p.nombre,' ',p.apellido )as nombre, correo,co.titulo ,c.total_horas,co.fecha_fin ,c.certificado
+			FROM Certificado_Prof_C c
+			inner join Profesional p on p.id_profesional = c.id_profesional
+			inner join Congreso co on co.id_congreso = c.id_congreso");
+			$sql->execute();
+			return $sql->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
 	}
+
+	public function ObtenerCertificadoProfesionalEvento()
+	{
+		try {
+			$sql = $this->pdo->prepare("SELECT c.id_profesional,CONCAT (p.nombre,' ',p.apellido )as nombre, correo,e.titulo ,c.total_horas,e.fecha_fin ,c.certificado
+			FROM Certificado_Prof_E c
+			inner join Profesional p on p.id_profesional = c.id_profesional
+			inner join Evento e on e.id_evento = c.id_evento");
+			$sql->execute();
+			return $sql->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+	public function ObtenerCertificadoEstudianteEvento()
+	{
+		try {
+			$sql = $this->pdo->prepare("SELECT c.id_estudiante,CONCAT (p.nombre,' ',p.apellido )as nombre, correo,e.titulo ,c.total_horas,e.fecha_fin ,c.certificado
+			FROM Certificado_Est_E c
+			inner join Profesional p on p.id_profesional = c.id_estudiante
+			inner join Evento e on e.id_evento = c.id_evento");
+			$sql->execute();
+			return $sql->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
 
 	public function ObtenerTodosLosEstudiantes()
 	{
@@ -312,21 +349,24 @@ class Usuarios
 	public function ObtenerGafeteEstudiante($id)
 	{
 
-		 try {
+		try {
 			$stm = $this->pdo->prepare("SELECT * FROM Estudiante WHERE id_estudiante = ?");
 			$stm->execute(array($id));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
-		} 
+		}
 	}
 
 	public function ObtenerCertificadoEstudiante()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_estudiante, nombre, apellido, correo, certificado FROM Estudiante WHERE id_estudiante = ? ");
-			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			$sql = $this->pdo->prepare("SELECT e.id_estudiante,CONCAT (e.nombre,' ',e.apellido )as nombre, correo,co.titulo ,c.total_horas,co.fecha_fin ,c.certificado
+			FROM Certificado_Est_C c
+			inner join Estudiante e on e.id_estudiante = e.id_estudiante
+			inner join Congreso co on co.id_congreso = c.id_congreso");
+			$sql->execute();
+			return $sql->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -424,6 +464,4 @@ class Usuarios
 			die($e->getMessage());
 		}
 	}
-
-
 }
