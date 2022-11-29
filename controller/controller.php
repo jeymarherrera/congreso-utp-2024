@@ -1,6 +1,15 @@
 <?php
 session_start(); // Comienzo de la sesión
 
+//Librería para enviar email
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'public/phpmailer/src/Exception.php';
+require 'public/phpmailer/src/PHPMailer.php';
+require 'public/phpmailer/src/SMTP.php';
+//-
 require_once 'model/Aplicacion/usuario.php';
 require_once 'model/Panel/Usuarios.php';
 require_once 'model/Panel/Salas.php';
@@ -95,11 +104,11 @@ class Controller
     {
         $usuario = new Usuario();
 
-        $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
+        $tipo = $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
         $usuario->nombre = $_REQUEST['nombre'];
         $usuario->apellido  = $_REQUEST['apellido'];
         $usuario->cedula = $_REQUEST['cedula'];
-        $usuario->contrasena = $_REQUEST['contrasena'];
+        $usuario->contrasena = md5($_REQUEST['contrasena']);
         $usuario->id_ieee = $_REQUEST['mem'];
         $usuario->id_wpa = $_REQUEST['wpa'];
 
@@ -113,119 +122,138 @@ class Controller
         $usuario->id_ciudad = $_REQUEST['ciudad'];
         $usuario->correo = $_REQUEST['correo'];
         $usuario->id_ocupacion = $_REQUEST['ocupacion'];
-        $usuario->id_entidad = $_REQUEST['institucion'];
+        if (isset($_REQUEST['institucion'])) {
+            $usuario->id_entidad = $_REQUEST['institucion'];
+        }
         $usuario->cod_estudiante = $_REQUEST['idEst'];
-
+        $usuario->id_tipo = '2';
         $usuario->metodo = $_REQUEST['tipoPago'];
-        //$usuario->descuento = $_REQUEST[''];
-        $usuario->cena = $_REQUEST['cenas'];
-        $usuario->comision = 75;
-        $usuario->comision_pago = 3.75;
-
-
-        $usuario->monto_total = 79;
+        $usuario->descuento = 0.00;
+        if (isset($_REQUEST['cena'])) {
+            $cena = $usuario->cena = $_REQUEST['cena'];
+        } else {
+            $cena = $usuario->cena = 0.00;
+        }
+        $monto = $usuario->monto = 75;
+        $comision = $usuario->comision = 0.50;
+        $comisionPago = $usuario->comision_pago = 3.75;
+        $usuario->monto_total = $monto + $comision + $comisionPago + $cena;
         $usuario->estado = 1;
+        $usuario->id_entidad = 1;
+
+        $informacion = $usuario->nombre . ' ' . $usuario->apellido . ' ' . $usuario->cedula;
+        $correo = $usuario->correo;
+        $this->GenerarQR($informacion);
 
 
-        if ($usuario->tipo_usuario == "Estudiante UTP" || "Estudiante nacional "|| "Estudiante internacional") {
+        //move_uploaded_file($_FILES['foto']['tmp_name'], "public/temp/test.png".$_SESSION["id"].".png");
+            
+        $usuario->gafete = imagepng(imagecreatefrompng("public/temp/test.png"));
+
+
+        //$usuario->gafete = 'public/temp/test.png';
+
+        if ($tipo == "Estudiante UTP" || $tipo == "Estudiante nacional " || $tipo == "Estudiante internacional") {
+            if ($usuario->tipo_usuario == "Estudiante UTP") {
+                $usuario->id_entidad = 1;
+            }
             $this->resp = $this->modelUsuario1->Registro($usuario);
-        } elseif ($usuario->tipo_usuario == "Autor") {
-            /* $usuario->monto = 325;
+        } elseif ($tipo == "Autor") {
+            $usuario->monto = 325;
             $usuario->comision_pago = 16.25;
             $usuario->comision = 0.50;
-            $usuario->monto_total = 341.75; */
+            $usuario->monto_total = 341.75 + $cena;
             $this->resp = $this->modelUsuario1->RegistrarAutor($usuario);
-        } elseif ($usuario->tipo_usuario == "Funcionario UTP"||"Profesional nacional"||"Profesional internacional") {
+        } elseif ($tipo == "Funcionario UTP" || $tipo== "Profesional nacional" || $tipo== "Profesional internacional") {
+            if ($tipo == "Funcionario UTP") {
+                $usuario->id_entidad = 1;
+            }
             $this->resp = $this->modelUsuario1->RegistrarProfesional($usuario);
         }
 
-        /* if (!isset($_GET['tiposuario'])) {
-            $tipoUsuario = $_GET['tipoUsuario'];
-
-            if ($tipoUsuario == "Autor") {
-                $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
-                $usuario->nombre = $_REQUEST['nombre'];
-                $usuario->apellido  = $_REQUEST['apellido'];
-
-                // $usuario->telefono  = $_REQUEST['paper1'];
-                // $usuario->sexo  = $_REQUEST['paper_2'];
-                // $usuario->correo = $_REQUEST['paper_3'];
-
-                $usuario->telefono  = $_REQUEST['telefono'];
-                $usuario->sexo  = $_REQUEST['sexo'];
-                $usuario->correo = $_REQUEST['correo'];
-
-                $usuario->id_ocupacion = $_REQUEST['ocupacion'];
-                $usuario->id_entidad = $_REQUEST['institucion'];
-                $usuario->id_ieee = $_REQUEST['memb'];
-                $usuario->id_wpa = $_REQUEST['wpa'];
-                $usuario->id_pago = $_REQUEST['tipoPago'];
-                $usuario->fecha = $_REQUEST['fecha'];
-                //$usuario->id_tipo = $_REQUEST['nombreTarj'];
-                $usuario->metodo = $_REQUEST['tipoPago'];
-                $usuario->descuento = $_REQUEST[''];
-                $usuario->cena = $_REQUEST['cenas'];
-                $usuario->comision = 75;
-                $usuario->comision_pago = 3.75;
-                $usuario->monto_total = 79.25;
-                $usuario->estado = $_REQUEST[''];
-
-
-                $usuario->gafete = $_REQUEST[''];
-                $usuario->id_residencia = $_REQUEST[''];
-
-                $this->resp = $this->modelUsuario1->RegistrarAutor($usuario);
-
-                header('Location: ?op=crear&msg=' . $this->resp);
-
-            } elseif ($tipoUsuario == "Estudiante UTP" || "Estudiante nacional" || "Estudiante internacional") {
-                $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
-                $usuario->nombre = $_REQUEST['nombre'];
-                $usuario->apellido  = $_REQUEST['apellido'];
-                $usuario->telefono  = $_REQUEST['telefono'];
-                $usuario->cod_estudiante  = $_REQUEST['cedula'];
-                $usuario->sexo  = $_REQUEST['sexo'];
-                $usuario->correo = $_REQUEST['correo'];
-                $usuario->id_ocupacion = $_REQUEST['ocupacion'];
-                $usuario->id_entidad = $_REQUEST['institucion'];
-                $usuario->id_ieee = $_REQUEST['memb'];
-                $usuario->id_wpa = $_REQUEST['wpa'];
-                $usuario->id_pago = $_REQUEST['tipoPago'];
-                $usuario->fecha = $_REQUEST['fecha'];
-                //$usuario->id_tipo = $_REQUEST['nombreTarj'];
-                $usuario->metodo = $_REQUEST['tipoPago'];
-                $usuario->descuento = $_REQUEST[''];
-                $usuario->cena = $_REQUEST['cenas'];
-                $usuario->comision = 75;
-                $usuario->comision_pago = 3.75;
-                $usuario->monto_total = 79.25;
-                $usuario->estado = $_REQUEST[''];
-
-
-                $usuario->gafete = $_REQUEST[''];
-                $usuario->id_residencia = $_REQUEST[''];
-            }
-        } */
-
-        /*  $usuario->id_estudiante = $_REQUEST['idEst'];
-        $usuario->cod_estudiante = $_REQUEST[''];
-        $usuario->tipo_usuario = $_REQUEST['tipoUsuario'];
-        $usuario->nombre = $_REQUEST['nombre'];
-        $usuario->apellido  = $_REQUEST['apellido'];
-        $usuario->telefono  = $_REQUEST['telefono'];
-        $usuario->sexo  = $_REQUEST['sexo'];
-        $usuario->correo = $_REQUEST['correo'];
-        $usuario->gafete = $_REQUEST[''];
-        $usuario->id_residencia = $_REQUEST[''];
-        $usuario->id_ocupacion = $_REQUEST['ocupacion'];
-        $usuario->id_entidad = $_REQUEST['institucion'];
-        $usuario->id_ieee = $_REQUEST['memb'];
-        $usuario->id_wpa = $_REQUEST['wpa'];
-        $usuario->id_pago = $_REQUEST['tipoPago']; */
-
-
-        header('Location: ?op=crear&msg=' . $this->resp);
+        $this->EnviarEmail($correo);
+       // header('Location: ?op=crear&msg=' . $this->resp);
     }
+
+    public function GenerarQR($informacion)
+    {
+        //Agregamos la libreria para genera códigos QR
+        include('public/phpqrcode/qrlib.php');
+
+        //Declaramos una carpeta temporal para guardar la imagenes generadas
+        $dir = 'public/temp/';
+
+        //Si no existe la carpeta la creamos
+        if (!file_exists($dir))
+            mkdir($dir);
+
+        //Declaramos la ruta y nombre del archivo a generar
+        $filename = $dir . 'test.png';
+
+        //Parametros de Condiguración
+
+        $tamaño = 7; //Tamaño de Pixel
+        $level = 'H'; //Precisión Alta
+        $framSize = 3; //Tamaño en blanco
+        $contenido = $informacion; //"http://codigosdeprogramacion.com"; //Texto
+
+        //Enviamos los parametros a la Función para generar código QR 
+        QRcode::png($contenido, $filename, $level, $tamaño, $framSize);
+
+
+       // echo '<meta http-equiv="refresh" content="0;url=?op=crear&msg=Se ha enviado un correo electrónico para confrimar su inscripción&t=text-success">';
+    }
+
+    public function EnviarEmail($correo)
+    {
+
+        $consultarEmail = new Usuario();
+
+        $restablecer = new Usuario();
+        echo $restablecer->email = $correo;
+
+        //Enviar email
+        $mail = new PHPMailer(true);
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = constant('CORREO_REMITENTE');                     //SMTP username
+        $mail->Password   = constant('CORREO_PASS');                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;
+
+        //Recipients
+        $mail->setFrom(constant('CORREO_REMITENTE'), 'CONGRESO UTP');
+        $mail->addAddress($restablecer->email);
+        //plantilla HTML
+
+        $mensajeHTML = '
+                <p align="center"> 
+                <img src="https://utp.ac.pa/documentos/2015/imagen/logo_utp_1_72.png" width="100px" height="100px" >
+                </p>
+                <p align="center">Felicidades su inscripción ha sido procesada con éxito.</p>
+                <p align="center"><b>Puede utilizar la contrase&ntilde;a y correo que ingresó en el formulario para acceder a nuestra app móvil. </p>
+
+                <p align="center"><b>El código QR adjunto será utilizado para validar su ingreso al congreso y a las diferentes presentaciones.: </b></p>
+                <p align="center">
+                </p>';
+
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Registro exitoso';
+        $mail->addAttachment('public/temp/test.png', 'test.png');
+        $mail->Body    = $mensajeHTML;
+        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $mail->send();
+        echo '<meta http-equiv="refresh" content="0;url=?op=crear&msg=Correo de inscripción enviado&t=text-success">';
+        //header('Location:?op=crear&msg=Se ha enviado un correo electrónico de confirmación&t=text-success');
+
+
+    }
+
 
     public function Login()
     {
@@ -237,7 +265,7 @@ class Controller
         $ingresarUsuario = new usuario();
 
         $ingresarUsuario->correo = $_REQUEST['correo'];
-        $ingresarUsuario->contrasena = $_REQUEST['contrasena'];
+        $ingresarUsuario->contrasena = md5($_REQUEST['contrasena']);
 
         //Verificamos si existe en la base de datos
         if ($resultado = $this->modelUsuario3->ObtenerTodosLosAdmin($ingresarUsuario)) {
@@ -330,7 +358,7 @@ class Controller
         header('Location: ?op=conferencias&msg=' . $this->resp);
     }
 
-    
+
 
     public function RegistrarPonenciaAutor()
     {
@@ -422,7 +450,8 @@ class Controller
     public function GenerarCertificados()
     {
         $listaCertificados = new Usuarios();
-        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
+        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();  
+
         require("view/certificados.php");
     }
 
@@ -469,7 +498,7 @@ class Controller
         $admin->telefono = $_REQUEST['telefono'];
         $admin->sexo = $_REQUEST['sexo'];
         $admin->correo = $_REQUEST['correo'];
-        $admin->contrasena = $_REQUEST['contrasena'];
+        $admin->contrasena =md5($_REQUEST['contrasena']);
         $admin->id_pais = $_REQUEST['pais'];
         $admin->id_ciudad = $_REQUEST['ciudad'];
         $admin->id_provincia = $_REQUEST['provincia'];
@@ -511,7 +540,7 @@ class Controller
         $conferencista->telefono = $_REQUEST['telefono'];
         $conferencista->sexo = $_REQUEST['sexo'];
         $conferencista->correo = $_REQUEST['correo'];
-        $conferencista->contraseña = $_REQUEST['contrasena'];
+        $conferencista->contraseña = md5($_REQUEST['contrasena']);
         $conferencista->id_pais = $_REQUEST['pais'];
         $conferencista->id_ciudad = $_REQUEST['ciudad'];
         $conferencista->id_provincia = $_REQUEST['provincia'];
@@ -534,11 +563,11 @@ class Controller
 
     public function verGafete()
     {
-        $conferencista = new Usuario();
+        //$conferencista = new Usuario();
 
-        $conferencista->id_administrador = $_REQUEST['cedula'];
+   
 
-        $this->resp = $this->modelUsuario2->ObtenerGafete($conferencista);
+      //  $this->resp = $this->modelUsuario2->ObtenerGafete($conferencista);
 
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
@@ -597,15 +626,12 @@ class Controller
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
 
-    public function verGafeteEstudiante()
+    public function verGafeteEstudiante($id)
     {
-        $estudiante = new Usuario();
+        $usuario = new Usuarios();
+        $usuario = $this->resp = $this->modelUsuario2->ObtenerGafeteEstudiante('8-972-1812');
 
-        $estudiante->id_estudiante = $_REQUEST['cedula'];
-
-        $this->resp = $this->modelUsuario2->ObtenerGafeteEstudiante($estudiante);
-
-        header('Location: ?op=invitados&msg=' . $this->resp);
+        header('Location: ?op=certificados&msg=' . $this->resp);
     }
 
     public function verCertificadoEstudiante()
@@ -642,6 +668,9 @@ class Controller
 
         $listaOcupacion = new Entidades();
         $listaOcupacion = $this->modelEntidad->ObtenerTodasLasOcupacion();
+
+        // $this->resp = $this->modelUsuario2->ObtenerGafeteEstudiante();
+
         require("view/agregar-usuario.php");
     }
 

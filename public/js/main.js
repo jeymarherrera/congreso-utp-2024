@@ -140,7 +140,7 @@ jQuery(document).ready(function( $ ) {
 
 function SelectChanged() {
   var tipoUsuario = document.registro.tipoUsuario.value;
-  var tipoPago = document.registro.tipoPago.value;
+  var tipoPago = document.registro.opcionPago.value;
   var span = document.getElementById("subtotal");
   var span2 = document.getElementById("porcentaje");
   var span3 = document.getElementById("procesamiento");
@@ -160,6 +160,7 @@ function SelectChanged() {
       document.getElementById('numTarjeta').disabled = true
       document.getElementById('cvv').disabled = true
       document.getElementById('fecha').disabled = true
+
       break;
 
     default:
@@ -188,8 +189,8 @@ function SelectChanged() {
       document.getElementById('ocupacion').style.display = 'none'
       document.getElementById('wpa').style.display = 'none'
       document.getElementById('institucion').disabled = true
-      document.getElementById('institucion').value = 1 //"Universidad Tecnológica de Panamá"
-
+      document.getElementById('institucion').value = 1 
+      
       span.textContent = "USD 75";
       span2.textContent = "USD 3.75";
       span3.textContent = "USD 0.50";

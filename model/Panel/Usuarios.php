@@ -105,7 +105,7 @@ class Usuarios
 	public function ObtenerTodosLosConferencistas()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
 			from Conferencista con
 			inner join Pais pa
 			on con.id_pais = pa.id_pais
@@ -295,9 +295,7 @@ class Usuarios
 	public function EliminarEstudiante($id)
 	{
 		try {
-			$sql = "DELETE FROM Estudiante
-					WHERE id_estudiante = ?";
-
+			$sql = "DELETE FROM Estudiante	WHERE id_estudiante = ?";
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
@@ -311,15 +309,16 @@ class Usuarios
 		return $this->msg;
 	}
 
-	public function ObtenerGafeteEstudiante(Usuario $data)
+	public function ObtenerGafeteEstudiante($id)
 	{
-		try {
-			$stm = $this->pdo->prepare("SELECT gafete FROM Estudiante WHERE id_estudiante = ? ");
-			$stm->execute();
+
+		 try {
+			$stm = $this->pdo->prepare("SELECT * FROM Estudiante WHERE id_estudiante = ?");
+			$stm->execute(array($id));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
-		}
+		} 
 	}
 
 	public function ObtenerCertificadoEstudiante()
@@ -407,7 +406,7 @@ class Usuarios
 	public function ObtenerTodosLosAdmin()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
 			from Administrador a
 			inner join Pais pa
 			on a.id_pais = pa.id_pais
