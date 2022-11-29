@@ -426,6 +426,13 @@ class Controller
         require("view/certificados.php");
     }
 
+    public function VerCertificados()
+    {
+        $listaCertificados = new Usuarios();
+        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
+        require("view/generar-certificado.php");
+    }
+
     public function AgregarAdmin()
     {
         $listaAdmin = new Usuarios();

@@ -51,13 +51,13 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Profesional</th>
                             <th scope="col">Correo</th>
+                            <th scope="col">Congreso</th>
                             <th scope="col">Total de Horas</th>
-                            <th scope="col">Generar</th>
-                            <th scope="col">Imprimir</th>
+                            <th scope="col">Finalizacion</th>
+                            <th scope="col">Certificado</th>
                         </tr>
                     </thead>
 
@@ -67,12 +67,13 @@
                         foreach ($listaCertificados as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->id_certificado; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
-                                <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
+                                <td><?php echo $lista->id_congreso; ?></td>
+                                <td><?php echo $lista->total_horas; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
                             $n++;
@@ -97,13 +98,13 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Estudiante</th>
                             <th scope="col">Correo</th>
+                            <th scope="col">Congreso</th>
                             <th scope="col">Total de Horas</th>
-                            <th scope="col">Generar</th>
-                            <th scope="col">Imprimir</th>
+                            <th scope="col">Finalizacion</th>
+                            <th scope="col">Certificado</th>
                         </tr>
                     </thead>
 
@@ -113,13 +114,13 @@
                         foreach ($listaCertificados as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->id_certificado; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
-                                <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Enviar</a></td>
-                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Ver</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <td><?php echo $lista->id_congreso; ?></td>
+                                <td><?php echo $lista->total_horas; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
                             $n++;
@@ -144,14 +145,13 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Profesional</th>
                             <th scope="col">Correo</th>
+                            <th scope="col">Evento</th>
                             <th scope="col">Total de Horas</th>
-                            <th scope="col">Generar</th>
-                            <th scope="col">Imprimir</th>
-                            <th scope="col">Eliminar</th>
+                            <th scope="col">Finalizacion</th>
+                            <th scope="col">Certificado</th>
                         </tr>
                     </thead>
 
@@ -161,14 +161,13 @@
                         foreach ($listaCertificados as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->id_certificado; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
-                                <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <td><?php echo $lista->id_evento; ?></td>
+                                <td><?php echo $lista->total_horas; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Ver</a></td>
                             </tr>
                         <?php
                             $n++;
@@ -193,14 +192,13 @@
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                     <thead>
                         <tr class="text-dark">
-                            <th scope="col">Cedula</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Profesional</th>
                             <th scope="col">Correo</th>
+                            <th scope="col">Evento</th>
                             <th scope="col">Total de Horas</th>
-                            <th scope="col">Generar</th>
-                            <th scope="col">Imprimir</th>
-                            <th scope="col">Eliminar</th>
+                            <th scope="col">Finalizacion</th>
+                            <th scope="col">Certificado</th>
                         </tr>
                     </thead>
 
@@ -210,14 +208,13 @@
                         foreach ($listaCertificados as $lista) {
                         ?>
                             <tr>
-                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->id_certificado; ?></td>
                                 <td><?php echo $lista->nombre; ?></td>
-                                <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
+                                <td><?php echo $lista->id_evento; ?></td>
+                                <td><?php echo $lista->total_horas; ?></td>
+                                <td><?php echo $lista->fecha_fin; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=VerCertificados">Ver</a></td>
                             </tr>
                         <?php
                             $n++;

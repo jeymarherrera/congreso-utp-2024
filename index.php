@@ -81,6 +81,8 @@ if (isset($_GET['op'])) {
     $controller->GenerarReportes();
   } elseif ($opcion == "certificados") {
     $controller->GenerarCertificados();
+  } elseif ($opcion == "VerCertificados") {
+    $controller->VerCertificados();
   } elseif ($opcion == "admin") {
     $controller->AgregarAdmin();
   } elseif ($opcion == "newAdmin") {

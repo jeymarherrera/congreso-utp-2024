@@ -25,16 +25,21 @@ class Certificados
 		}
 	}
 
-
 	public function ObtenerCertificadoProfesional()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_certificado, id_profesional, id_congreso, total_horas, certificado FROM Certificado_Prof_C WHERE id_profesional ? ");
+			$stm = $this->pdo->prepare("SELECT id_certificado as ID, concat(p.nombre, ' ',p.apellido) as Profesional, p.correo as Correo, c.titulo as Congreso, total_horas 'Total de Horas', Convert(DATE, c.fecha_fin) as Finalizacion, certificado as 'Certificado'
+			FROM Certificado_Prof_C cpc, Profesional p, Congreso c
+			WHERE p.id_profesional = cpc.id_profesional 
+			and c.id_congreso = cpc.id_congreso 
+			and cpc.total_horas > c.horas_minimas");
 			$stm->execute();
-			return $stm->fetch(PDO::FETCH_OBJ);
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
 	}
+
+	
 }
 
