@@ -94,7 +94,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
@@ -162,7 +162,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
@@ -232,7 +232,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
@@ -303,7 +303,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->ciudad; ?></td>
+                                <td><?php echo $lista->nombre_ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
