@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="?op=panel" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Panel</a>
+                    <a href="?op=panel" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Panel</a>
                     <a href="?op=congresos" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Congresos</a>
                     <a href="?op=conferencias" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Conferencias</a>
                     <a href="?op=eventos" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Eventos</a>
@@ -28,7 +28,6 @@
                         </div>
                     </div>
                     <a href="?op=articulos" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Articulos</a>
-                    <a href="?op=membresias" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Membresias</a>
                     <a href="?op=certificados" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Certificados</a>
                     <a href="?op=reportes" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Reportes</a>
                 </div>
@@ -89,7 +88,6 @@
 
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Configurar</a>
                             <a href="?op=salir" class="dropdown-item">Cerrar Sesión</a>
                         </div>
                     </div>

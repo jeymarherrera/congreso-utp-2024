@@ -21,7 +21,6 @@ require_once 'model/Panel/Areas.php';
 require_once 'model/Inicio/Itinerario.php';
 require_once 'model/Inicio/Registro.php';
 require_once 'model/Panel/Articulos.php';
-require_once 'model/Panel/Membresias.php';
 require_once 'model/Panel/Ubicacion.php';
 require_once 'model/Panel/Entidades.php';
 
@@ -37,8 +36,6 @@ class Controller
     private $modelArea1;
     private $modelSala1;
     private $modelArticulo;
-    private $modelMembresia1;
-    private $modelMembresia2;
     private $modelUbicacion;
     private $modelEntidad;
 
@@ -54,8 +51,6 @@ class Controller
         $this->modelArea1 = new Areas();
         $this->modelSala1 = new Salas();
         $this->modelArticulo = new Articulos();
-        $this->modelMembresia1 = new Membresias();
-        $this->modelMembresia2 = new Membresias();
         $this->modelUbicacion = new Ubicacion();
         $this->modelEntidad = new Entidades();
     }
@@ -460,6 +455,13 @@ class Controller
         require("view/certificados.php");
     }
 
+    public function VerCertificados()
+    {
+        $listaCertificados = new Usuarios();
+        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
+        require("view/generar-certificado.php");
+    }
+
     public function AgregarAdmin()
     {
         $listaAdmin = new Usuarios();
@@ -650,16 +652,6 @@ class Controller
         require("view/articulos.php");
     }
 
-    public function AgregarMembresia()
-    {
-        $listaIee = new Membresias();
-        $listaIee = $this->modelMembresia1->ObtenerTodasLasMembresiasIEEE();
-        $listaWpa = new Membresias();
-        $listaWpa = $this->modelMembresia2->ObtenerTodasLasMembresiasWPA();
-        require("view/membresias.php");
-    }
-
-
     public function nuevoInvitado()
     {
         $listaPais = new Ubicacion();
@@ -747,8 +739,4 @@ class Controller
         require("view/agregar-area.php");
     }
 
-    public function nuevaMembresia()
-    {
-        require("view/agregar-membresia.php");
-    }
 }

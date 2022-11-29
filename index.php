@@ -81,6 +81,8 @@ if (isset($_GET['op'])) {
     $controller->GenerarReportes();
   } elseif ($opcion == "certificados") {
     $controller->GenerarCertificados();
+  } elseif ($opcion == "VerCertificados") {
+    $controller->VerCertificados();
   } elseif ($opcion == "admin") {
     $controller->AgregarAdmin();
   } elseif ($opcion == "newAdmin") {
@@ -121,8 +123,6 @@ if (isset($_GET['op'])) {
     $controller->verCertificadoEstudiante();
   } elseif ($opcion == "articulos") {
     $controller->AgregarArticulo();
-  } elseif ($opcion == "membresias") {
-    $controller->AgregarMembresia();
   } elseif ($opcion == "newInvitado") {
     $controller->nuevoInvitado();
   } elseif ($opcion == "newSala") {
@@ -139,8 +139,6 @@ if (isset($_GET['op'])) {
     $controller->NuevaPonenciaPro();
   } elseif ($opcion == "newArea") {
     $controller->nuevaArea();
-  } elseif ($opcion == "newMembresia") {
-    $controller->nuevaMembresia();
   }
 } else {
   $controller->Index();
