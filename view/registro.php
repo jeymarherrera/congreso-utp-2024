@@ -196,8 +196,8 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="institucion" id="institucion" class="chosen-select  col-10" required="">
-                            <option disabled>Seleccione su entidad</option>
+                        <select style="height: 40px; width: 400px;" name="institucion" id="institucion" class="chosen-select  col-10" required>
+                            <option>Seleccione su entidad</option>
                             <?php foreach ($listaEntidad as $e) { ?>
                                 <option value="<?php echo $e->id_entidad; ?>"><?php echo $e->nombre; ?></option>
                             <?php } ?>
@@ -349,7 +349,7 @@
                         <strong>Importante: </strong><br>Por favor seleccione una forma de pago.<br><strong>* Al terminar haga click en Inscribirme y Pagar para finalizar su inscripción..</strong>
                     </div>
                     <div>
-                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoPago" id="tipopAGO" class="chosen-select" required>
+                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoPago" id="opcionPago" class="chosen-select" required="">
                             <option>Forma de pago</option>
                             <option id="tarjeta" value="tarjeta">Tarjeta débito / crédito</option>
                             <option id="efectivo" value="efectivo">Efectivo</option>
@@ -391,7 +391,6 @@
 
         <div class="form-group mt-5 mb-2">
             <div class="col-md-12 text-center">
-                <input type="button" value="Referencia" class="button" id="ad" />
                 <button style="text-align: center;" data-bs-target="#staticBackdrop" id="btnRegistrar" type="submit">Inscribirme y pagar</button>
             </div>
         </div>

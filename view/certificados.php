@@ -75,46 +75,12 @@
                                 <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
                                 <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
-                                <td><span class="text-success"><?php ?></span></td>
                             </tr>
                         <?php
                             $n++;
                         }
                         ?>
                     </tbody>
-
-                    <!-- <tbody>
-                        <tr>
-                            <td>01-324-2323</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>50</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>02-564-4535</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>70</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                        <tr>
-                            <td>03-7657-3244</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>85</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
-                        </tr>
-                    </tbody> -->
                 </table>
             </div>
         </div>

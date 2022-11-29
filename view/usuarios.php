@@ -73,8 +73,6 @@ if ($_SESSION["acceso"] != true)
                             <th scope="col">Provincia</th>
                             <th scope="col">Ocupacion</th>
                             <th scope="col">Entidad</th>
-                            <th scope="col">Miembro IEEE</th>
-                            <th scope="col">Miembro WPA</th>
                             <!-- <th scope="col">Areas de Interes</th> -->
                             <th scope="col">Notificar</th>
                             <th scope="col">Gafete</th>
@@ -100,8 +98,6 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
-                                <td><?php echo $lista->cod_ieee; ?></td>
-                                <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Notificar</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="?op=verGafete">Ver</a></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>

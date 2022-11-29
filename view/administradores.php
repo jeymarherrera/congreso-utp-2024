@@ -75,8 +75,6 @@ if ($_SESSION["acceso"] != true)
                             <th scope="col">Provincia</th>
                             <th scope="col">Ocupacion</th>
                             <th scope="col">Entidad</th>
-                            <th scope="col">Miembro IEEE</th>
-                            <th scope="col">Miembro WPA</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -100,8 +98,6 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
-                                <td><?php echo $lista->cod_ieee; ?></td>
-                                <td><?php echo $lista->cod_wpa; ?></td>
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td id="id_admin"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_administrador.'&op=eliminarAdmin'?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
