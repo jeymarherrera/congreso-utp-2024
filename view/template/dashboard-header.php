@@ -28,7 +28,6 @@
                         </div>
                     </div>
                     <a href="?op=articulos" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Articulos</a>
-                    <a href="?op=membresias" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Membresias</a>
                     <a href="?op=certificados" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Certificados</a>
                     <a href="?op=reportes" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Reportes</a>
                 </div>

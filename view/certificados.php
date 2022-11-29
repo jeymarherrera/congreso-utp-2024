@@ -33,7 +33,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <div class="m-n2">
-                <button class="btn btn-primary w-100 m-2" type="button">Generar Certificados</button>
+                <button class="btn btn-primary w-100 m-2" type="button">Enviar Certificados</button>
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h6 class="mb-0">Usuarios</h6>
+                <h6 class="mb-0">Certificados por paticipación del Congreso de Profesionales</h6>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Buscar">
                 </form>
@@ -82,39 +82,153 @@
                         }
                         ?>
                     </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-                    <!-- <tbody>
-                        <tr>
-                            <td>01-324-2323</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>50</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Certificados por paticipación del Congreso de Estudiantes</h6>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Buscar">
+                </form>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Total de Horas</th>
+                            <th scope="col">Generar</th>
+                            <th scope="col">Imprimir</th>
+                            <th scope="col">Eliminar</th>
                         </tr>
-                        <tr>
-                            <td>02-564-4535</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>70</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaCertificados as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
+                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Certificados por paticipación en Eventos del Congreso de Profesionales</h6>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Buscar">
+                </form>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Total de Horas</th>
+                            <th scope="col">Generar</th>
+                            <th scope="col">Imprimir</th>
+                            <th scope="col">Eliminar</th>
                         </tr>
-                        <tr>
-                            <td>03-7657-3244</td>
-                            <td>Jeymar</td>
-                            <td>Herrera</td>
-                            <td>jeymarherrera@gmail.com</td>
-                            <td>85</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
-                            <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaCertificados as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
+                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Certificados por paticipación en Eventos del Congreso de Profesionales</h6>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Buscar">
+                </form>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Total de Horas</th>
+                            <th scope="col">Generar</th>
+                            <th scope="col">Imprimir</th>
+                            <th scope="col">Eliminar</th>
                         </tr>
-                    </tbody> -->
+                    </thead>
+
+                    <tbody>
+                        <?php
+                        $n = 1;
+                        foreach ($listaCertificados as $lista) {
+                        ?>
+                            <tr>
+                                <td><?php echo $lista->id_estudiante; ?></td>
+                                <td><?php echo $lista->nombre; ?></td>
+                                <td><?php echo $lista->apellido; ?></td>
+                                <td><?php echo $lista->correo; ?></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Generar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="">Imprimir</a></td>
+                                <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
+                                <td><span class="text-success"><?php ?></span></td>
+                            </tr>
+                        <?php
+                            $n++;
+                        }
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
