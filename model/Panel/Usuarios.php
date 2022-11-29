@@ -100,12 +100,14 @@ class Usuarios
 	public function ObtenerTodosLosConferencistas()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
+			$stm = $this->pdo->prepare("SELECT id_conferencista, con.nombre as nombre_c, apellido, telefono,  sexo, correo,nombre_pais, c.nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
 			from Conferencista con
 			inner join Pais pa
 			on con.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = con.id_provincia
+			inner join ciudad c
+			on c.id_ciudad = con.id_ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = con.id_ocupacion
 			inner join Entidad e
@@ -150,12 +152,14 @@ class Usuarios
 	public function ObtenerTodosLosAutores()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_autor, a.nombre as nombre_a, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_autor, a.nombre as nombre_a, apellido, telefono,  sexo, correo,nombre_pais, c.nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
 			from Autor a
 			inner join Pais pa
 			on a.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = a.id_provincia
+			inner join ciudad c
+			on c.id_ciudad = a.ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = a.id_ocupacion
 			inner join Entidad e
@@ -200,12 +204,14 @@ class Usuarios
 	public function ObtenerTodosLosProfesionales()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_profesional, prof.nombre as nombre_p, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_profesional, prof.nombre as nombre_p, apellido, telefono,  sexo, correo,nombre_pais, c.nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
 			from Profesional prof
 			inner join Pais pa
 			on prof.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = prof.id_provincia
+			inner join ciudad c
+			on c.id_ciudad = prof.ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = prof.id_ocupacion
 			inner join Entidad e
@@ -306,13 +312,14 @@ class Usuarios
 	public function ObtenerTodosLosEstudiantes()
 	{
 		try {
-			$stm = $this->pdo->prepare("
-			SELECT id_estudiante, cod_estudiante, est.nombre as nombre_estudiante, apellido, telefono,  sexo, correo,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
+			$stm = $this->pdo->prepare("SELECT id_estudiante, cod_estudiante, est.nombre as nombre_estudiante, apellido, telefono,  sexo, correo,nombre_pais, c.nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e, cod_ieee, cod_wpa
 			from Estudiante est
 			inner join Pais pa
 			on est.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = est.id_provincia
+			inner join ciudad c
+			on c.id_ciudad = est.ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = est.id_ocupacion
 			inner join Entidad e
@@ -442,12 +449,14 @@ class Usuarios
 	public function ObtenerTodosLosAdmin()
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
+			$stm = $this->pdo->prepare("SELECT id_administrador, a.nombre as nombre_a, apellido, telefono,  sexo, correo, contraseña,nombre_pais, c.nombre_ciudad, p.nombre as nombre_p, o.nombre as nombre_o, e.nombre as nombre_e
 			from Administrador a
 			inner join Pais pa
 			on a.id_pais = pa.id_pais
 			inner join Provincia p
 			on p.id_provincia = a.id_provincia
+			inner join ciudad c
+			on c.id_ciudad = a.ciudad
 			inner join Ocupacion o
 			on o.id_ocupacion = a.id_ocupacion
 			inner join Entidad e

@@ -592,6 +592,7 @@ class Controller
     {
         require("view/mensajes.php");
     }
+
     public function EliminarAutor($id)
     {
         $this->resp = $this->modelUsuario2->EliminarAutor($id);
