@@ -501,13 +501,11 @@ class Controller
 
     public function VerCertificados($id)
     {
-        $estudianteCongreso = new Certificados();
-        $estudianteCongreso = $this->modelCertificado->ObtenerCertificadoEstudianteCongreso($id);
-        // $this->resp = $this->modelUsuario2->verCertificado($id);
-        // header('Location: ?op=certificados&msg=' . $this->resp);
-        // $listaEstudiantesEve = new Usuarios();
-        // $listaEstudiantesEve = $this->modelUsuario2->ObetenerCertificadosEstudianteEve();
-        require("view/generar_certificado.php");
+        $this->resp = $this->modelUsuario2->verCertificado($id);
+        header('Location: ?op=certificados&msg=' . $this->resp);
+        $listaCertificados = new Usuarios();
+        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
+        require("view/ver.php");
     }
 
     public function AgregarAdmin()
