@@ -79,7 +79,7 @@ if ($_SESSION["acceso"] != true)
                             <td>0011</td>
                             <td>Congreso Internacional de Ingeniería, Ciencias y Tecnología</td>
                             <td>Tecnologia</td>
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="?op=error">Editar</a></td>
                             <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                         </tr>
                     </tbody>

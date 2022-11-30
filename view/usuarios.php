@@ -313,7 +313,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->cod_wpa; ?></td>
                                 <?php echo '<td><img src="'.$lista->gafete.'" width=80px heigh=auto></td>'; ?> 
                                 <!-- <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td> -->
-                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=error">Editar</a></td>
                                 <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>

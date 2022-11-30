@@ -76,7 +76,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->num_sala; ?></td>
                                 <td><?php echo $lista->cantidad_asientos; ?></td>
                                 
-                            <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                            <td><a class="btn btn-sm btn-primary" href="?op=error">Editar</a></td>
                             <td id="id_sala"><a class="btn btn-sm btn-primary" data-toggle="modal-delete" href="<?php echo 'index.php?id='.$lista->id_sala.'&op=eliminarSala' ?>">Eliminar</a></td>
                             </tr>
                         <?php
