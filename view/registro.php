@@ -103,18 +103,18 @@
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div>
-                            <input id="contrasena" name="contrasena" type="password" placeholder="Contraseña *" class="form-control  col-10" style="width: 400px;" required>
+                            <input id="contrasena" name="contrasena" type="password" placeholder="contrasena *" class="form-control  col-10" style="width: 400px;" required>
                         </div>
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="IEEE" id="IEEE" value="" class="chosen-select col-10" required>
+                        <select style="height: 40px; width: 400px;" name="IEEE" id="IEEE" class="chosen-select col-10" onchange="codigos()" required>
                             <option id="no" value="no">Miembro IEEE: Descuento 15% *</option>
                             <option id="si" value="si">Sí</option>
                             <option id="no" value="no">No</option>
                         </select>
                         <div>
-                            <input id="MEM" name="mem" type="text" placeholder="Código de membresia*" class="form-control  col-10" style="width: 400px; display:none;">
+                            <input id="MEM" name="id_ieee" type="number" placeholder="Código de membresia*" class="form-control  col-10" style="width: 400px;">
                         </div>
                     </div>
 
@@ -169,7 +169,7 @@
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="pais" id="pais" class="chosen-select  col-10" required="">
+                        <select style="height: 40px; width: 400px;" name="pais" id="pais" class="chosen-select  col-10" required>
                             <option>Seleccione su país</option>
                             <?php foreach ($listaPais as $p) { ?>
                                 <option value="<?php echo $p->id_pais; ?>"><?php echo $p->nombre_pais; ?></option>
@@ -228,8 +228,8 @@
 
 
                     <div class="form-group mb-2 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <select style="height: 40px; width: 400px;" name="ocupacion" id="ocupacion" class="chosen-select  col-10" required="">
-                            <option>Seleccione su ocupación</option>
+                        <select style="height: 40px; width: 400px;" name="ocupacion" id="ocupacion" class="chosen-select  col-10" required>
+                            <option disabled>Seleccione su ocupación</option>
                             <?php foreach ($listaOcupacion as $o) { ?>
                                 <option value="<?php echo $o->id_ocupacion; ?>"><?php echo $o->nombre; ?></option>
                             <?php } ?>
@@ -238,14 +238,14 @@
 
                     <div class="form-group mb-2 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div>
-                            <input value="10" type="radio" id="cena" name="cena" value="10.00">
+                            <input type="radio" id="cena" name="cena" value=10.00>
                             <label for="Asistiré a la cena de clausura + $ 10.00 US">Asistiré a la cena de clausura + $ 10.00 US</label>
                         </div>
                     </div>
 
                     <div class="form-group mb-2 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div>
-                            <input value="50" type="radio" id="cena2" name="cena" value="50.00">
+                            <input  type="radio" id="cena2" name="cena" value=50.00>
                             <label for="Asistiré con un acompañante a la cena de clausura + $ 50.00 US">Asistiré con un acompañante a la cena de clausura + $ 50.00 US</label>
                         </div>
                     </div>
@@ -344,10 +344,10 @@
                 <div id="tipoPago">
                     <div class="alert alert-info mt-">
                         <i class="fa fa-info-circle"></i>
-                        <strong>Importante: </strong><br>Por favor seleccione una forma de pago.<br><strong>* Al terminar haga click en Inscribirme y Pagar para finalizar su inscripción..</strong>
+                        <strong>Importante: </strong><br>Por favor seleccione una forma de pago.<br><strong>* Al terminar haga click en Inscribirme y Pagar para finalizar su inscripción.<br>* SI SELECCIONA EFECTIVO SOLO HAGA CLICK EN EL BOTÓN DE INSCRIBIRME</strong>
                     </div>
                     <div>
-                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoPago" id="opcionPago" class="chosen-select" required="">
+                        <select style="height: 40px; width: 250px; margin-left:20px; margin-bottom:20px;" name="tipoPago" id="opcionPago" class="chosen-select" onchange="Pago()" required="">
                             <option>Forma de pago</option>
                             <option id="tarjeta" value="tarjeta">Tarjeta débito / crédito</option>
                             <option id="efectivo" value="efectivo">Efectivo</option>
@@ -380,7 +380,7 @@
 
                         <div class="col-md-6 col-lg-6 col-xl-6">
                             <label for="fecha">Fecha de Vencimiento</label><br>
-                            <input type="month" name="fecha" id="fechaVencimiento" class="form-control col-10">
+                            <input type="month" id="fecha" name="fecha" id="fechaVencimiento" class="form-control col-10">
                         </div>
                     </div>
                 </div>

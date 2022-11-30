@@ -73,7 +73,7 @@ if ($_SESSION["acceso"] != true)
                     <input type="email" class="form-control" id="email" name="correo" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
+                    <label for="password" class="form-label">contrasena</label>
                     <input type="password" class="form-control" id="password" name="contrasena" required>
                 </div>
                 <label for="pais" class="form-label">País de Residencia</label>

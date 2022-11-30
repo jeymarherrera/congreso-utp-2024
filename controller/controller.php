@@ -111,16 +111,25 @@ class Controller
         $usuario->apellido  = $_REQUEST['apellido'];
         $usuario->cedula = $_REQUEST['cedula'];
         $usuario->contrasena = md5($_REQUEST['contrasena']);
-        $usuario->id_ieee = $_REQUEST['mem'];
+        if ($_REQUEST['IEEE'] == "no") {
+            $usuario->id_ieee = null;
+        }else {
+            $usuario->id_ieee = intval($_REQUEST['id_ieee']);
+        }
+            
         $usuario->id_wpa = $_REQUEST['wpa'];
-
         $usuario->telefono  = $_REQUEST['paper1'];
         $usuario->sexo  = $_REQUEST['paper2_'];
         $usuario->correo = $_REQUEST['paper3_'];
         $usuario->sexo  = $_REQUEST['sexo'];
         $usuario->telefono  = $_REQUEST['telefono'];
         $usuario->id_pais  = $_REQUEST['pais'];
-        $usuario->id_provincia  = $_REQUEST['provincia'];
+        if ($_REQUEST['provincia'] == 'Seleccione su provincia') {
+            $usuario->id_provincia  = NULL;
+        } else {
+            $usuario->id_provincia  = $_REQUEST['provincia'];
+
+        }
         $usuario->ciudad = $_REQUEST['ciudad'];
         $usuario->correo = $_REQUEST['correo'];
         $usuario->id_ocupacion = $_REQUEST['ocupacion'];
@@ -143,30 +152,42 @@ class Controller
         $usuario->estado = 1;
         $usuario->id_entidad = 1;
 
-        $informacion = $usuario->nombre . ' ' . $usuario->apellido . ' ' . $usuario->cedula;
+        // $informacion = $usuario->nombre . ' ' . $usuario->apellido . ' ' . $usuario->cedula;
+        $informacion = $usuario->cedula;
         $correo = $usuario->correo;
         $this->GenerarQR($informacion);
 
+        $carpeta = "public/temp/";
+        $nombreCod = $usuario->cedula .".png";
+        // $temp = "public/temp/";
+        // $src = $carpeta.$nombreCod;
+        // move_uploaded_file($_FILES['foto']['tmp_name'], $src);
+        $imagen = $carpeta.$nombreCod;
 
-        //move_uploaded_file($_FILES['foto']['tmp_name'], "public/temp/test.png".$_SESSION["id"].".png");
-            
-        $usuario->gafete = imagepng(imagecreatefrompng("public/temp/test.png"));
-
+        $usuario->gafete = $imagen;
 
         //$usuario->gafete = 'public/temp/test.png';
 
-        if ($tipo == "Estudiante UTP" || $tipo == "Estudiante nacional " || $tipo == "Estudiante internacional") {
+        if ($tipo == "Estudiante UTP" || $tipo == "Estudiante nacional" || $tipo == "Estudiante internacional") {
             if ($usuario->tipo_usuario == "Estudiante UTP") {
                 $usuario->id_entidad = 1;
             }
             $this->resp = $this->modelUsuario1->Registro($usuario);
+
+            /* if ($this->resp == 0) {
+                $this->EnviarEmail($correo);
+            }
+            else {
+                header('Location: ?op=crear&msg=Error de registro&t=text-danger');
+
+            } */
         } elseif ($tipo == "Autor") {
             $usuario->monto = 325;
             $usuario->comision_pago = 16.25;
             $usuario->comision = 0.50;
             $usuario->monto_total = 341.75 + $cena;
             $this->resp = $this->modelUsuario1->RegistrarAutor($usuario);
-        } elseif ($tipo == "Funcionario UTP" || $tipo== "Profesional nacional" || $tipo== "Profesional internacional") {
+        } elseif ($tipo == "Funcionario UTP" || $tipo == "Profesional nacional" || $tipo == "Profesional internacional") {
             if ($tipo == "Funcionario UTP") {
                 $usuario->id_entidad = 1;
             }
@@ -190,20 +211,20 @@ class Controller
             mkdir($dir);
 
         //Declaramos la ruta y nombre del archivo a generar
-        $filename = $dir . 'test.png';
+        $filename = $dir . $informacion .'.png';
 
         //Parametros de Condiguración
 
         $tamaño = 7; //Tamaño de Pixel
         $level = 'H'; //Precisión Alta
         $framSize = 3; //Tamaño en blanco
-        $contenido = $informacion; //"http://codigosdeprogramacion.com"; //Texto
+        $contenido = $informacion; // contenido del codigo qr
 
         //Enviamos los parametros a la Función para generar código QR 
         QRcode::png($contenido, $filename, $level, $tamaño, $framSize);
 
 
-       // echo '<meta http-equiv="refresh" content="0;url=?op=crear&msg=Se ha enviado un correo electrónico para confrimar su inscripción&t=text-success">';
+        // echo '<meta http-equiv="refresh" content="0;url=?op=crear&msg=Se ha enviado un correo electrónico para confrimar su inscripción&t=text-success">';
     }
 
     public function EnviarEmail($correo)
@@ -235,10 +256,10 @@ class Controller
                 <img src="https://utp.ac.pa/documentos/2015/imagen/logo_utp_1_72.png" width="100px" height="100px" >
                 </p>
                 <p align="center">Felicidades su inscripción ha sido procesada con éxito.</p>
-                <p align="center"><b>Puede utilizar la contrase&ntilde;a y correo que ingresó en el formulario para acceder a nuestra app móvil. </p>
+                <p align="left"><b>Puede utilizar la contrase&ntilde;a y correo que ingresó en el formulario para acceder a nuestra app móvil. </p>
 
-                <p align="center"><b>El código QR adjunto será utilizado para validar su ingreso al congreso y a las diferentes presentaciones.: </b></p>
-                <p align="center">
+                <p align="left"><b>El código QR adjunto será utilizado para validar su ingreso al congreso y a las diferentes presentaciones.: </b></p>
+                <p align="left">
                 </p>';
 
 
@@ -250,7 +271,7 @@ class Controller
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo '<meta http-equiv="refresh" content="0;url=?op=crear&msg=Correo de inscripción enviado&t=text-success">';
+        echo '<meta http-equiv="refresh" content="0;url=?op=crear&msg=Revise la bandeja de entrada de su correo&t=text-success">';
         //header('Location:?op=crear&msg=Se ha enviado un correo electrónico de confirmación&t=text-success');
 
 
@@ -280,7 +301,7 @@ class Controller
             //header('Location:https://fisc-ds7.000webhostapp.com/?op=permitido');
 
         } else {
-            header('Location: ?op=login&msg=Su contraseña o usuario está incorrecto');
+            header('Location: ?op=login&msg=Su contrasena o usuario está incorrecto');
         }
     }
 
@@ -452,7 +473,7 @@ class Controller
     public function GenerarCertificados()
     {
         $listaCertificados = new Usuarios();
-        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();  
+        $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
 
         $listaProfesionales = new Usuarios();
         $listaProfesionales = $this->modelUsuario2->ObtenerCertificadoProfesional();
@@ -514,7 +535,7 @@ class Controller
         $admin->telefono = $_REQUEST['telefono'];
         $admin->sexo = $_REQUEST['sexo'];
         $admin->correo = $_REQUEST['correo'];
-        $admin->contrasena =md5($_REQUEST['contrasena']);
+        $admin->contrasena = md5($_REQUEST['contrasena']);
         $admin->id_pais = $_REQUEST['pais'];
         $admin->ciudad = $_REQUEST['ciudad'];
         $admin->id_provincia = $_REQUEST['provincia'];
@@ -556,7 +577,7 @@ class Controller
         $conferencista->telefono = $_REQUEST['telefono'];
         $conferencista->sexo = $_REQUEST['sexo'];
         $conferencista->correo = $_REQUEST['correo'];
-        $conferencista->contraseña = md5($_REQUEST['contrasena']);
+        $conferencista->contrasena = md5($_REQUEST['contrasena']);
         $conferencista->id_pais = $_REQUEST['pais'];
         $conferencista->ciudad = $_REQUEST['ciudad'];
         $conferencista->id_provincia = $_REQUEST['provincia'];
@@ -581,9 +602,9 @@ class Controller
     {
         //$conferencista = new Usuario();
 
-   
 
-      //  $this->resp = $this->modelUsuario2->ObtenerGafete($conferencista);
+
+        //  $this->resp = $this->modelUsuario2->ObtenerGafete($conferencista);
 
         header('Location: ?op=invitados&msg=' . $this->resp);
     }
@@ -759,5 +780,4 @@ class Controller
     {
         require("view/agregar-area.php");
     }
-
 }

@@ -53,9 +53,9 @@ class Registro
 	{
 		try {
 			$sql = "declare @fecha datetime	Set @fecha=GETDATE() Select CONVERT(varchar,@fecha,20) as [YYYY-MM-DD HH:MM:SS]; declare @id_pago int
-					EXEC PagoEst  @fecha,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@id_pago";
+					EXEC PagoEst  @fecha,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@id_pago,?";
 
-			$this->pdo->prepare($sql)
+			$stm = $this->pdo->prepare($sql)
 				->execute(
 					array(
 						$data->id_tipo,
@@ -83,10 +83,11 @@ class Registro
 						$data->ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
-						// $data->id_ieee,
+						$data->id_ieee
 						// $data->id_wpa,
 					)
 				);
+				
 			$this->msg = "Su registro se ha guardado exitosamente!&t=text-success";
 		} catch (Exception $e) {
 			if ($e->errorInfo[1] == 1062) { // error 1062 es de duplicación de datos 
@@ -95,12 +96,8 @@ class Registro
 				$this->msg = "Error al guardar los datos&t=text-danger";
 			}
 		}
-
 		return $this->msg;
 	}
-
-
-
 
 
 	public function ObtenerTodosLosEstudiantes(Usuario $data)
@@ -120,7 +117,7 @@ class Registro
 	{
 		try {
 			$sql = "declare @fecha datetime	Set @fecha=GETDATE() Select CONVERT(varchar,@fecha,20) as [YYYY-MM-DD HH:MM:SS]; declare @id_pago int
-			EXEC PagoAutor  @fecha, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,@id_pago";
+			EXEC PagoAutor  @fecha,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@id_pago,?";
 
 			$this->pdo->prepare($sql)
 				->execute(
@@ -134,6 +131,7 @@ class Registro
 						$data->comision_pago,
 						$data->monto_total,
 						$data->estado,
+
 						$data->cedula,
 						$data->tipo_usuario,
 						$data->nombre,
@@ -148,7 +146,7 @@ class Registro
 						$data->ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
-						// $data->id_ieee,
+						$data->id_ieee
 						// $data->id_wpa,
 						//$data->id_pago
 					)
@@ -169,8 +167,7 @@ class Registro
 		try {
 
 			$sql = "declare @fecha datetime	Set @fecha=GETDATE() Select CONVERT(varchar,@fecha,20) as [YYYY-MM-DD HH:MM:SS]; declare @id_pago int
-			EXEC PagoEst  @fecha,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@id_pago";
-
+			EXEC PagoEst  @fecha,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,@id_pago,?";
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
@@ -199,7 +196,7 @@ class Registro
 						$data->ciudad,
 						$data->id_ocupacion,
 						$data->id_entidad,
-						// $data->id_ieee,
+						$data->id_ieee
 						// $data->id_wpa,
 						//$data->id_pago
 					)
@@ -215,3 +212,7 @@ class Registro
 		return $this->msg;
 	}
 }
+
+
+
+			

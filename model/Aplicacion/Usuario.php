@@ -27,10 +27,10 @@ class Usuario
 	public function ObtenerTodosLosUsuarios(Usuario $data)
 	{
 		try {
-			$stm = $this->pdo->prepare("SELECT correo, contraseña FROM estudiante UNION
-			SELECT correo, contraseña FROM profesional UNION
-			SELECT correo, contraseña FROM autor
-			WHERE correo = ? AND contraseña = ?");
+			$stm = $this->pdo->prepare("SELECT correo, contrasena FROM estudiante UNION
+			SELECT correo, contrasena FROM profesional UNION
+			SELECT correo, contrasena FROM autor
+			WHERE correo = ? AND contrasena = ?");
 			$stm->execute(array($data->correo, $data->contrasena));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
@@ -42,7 +42,7 @@ class Usuario
 	{
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM administrador
-			WHERE correo = ? AND contraseña = ?");
+			WHERE correo = ? AND contrasena = ?");
 			$stm->execute(array($data->correo, $data->contrasena));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {

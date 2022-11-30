@@ -162,7 +162,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
@@ -226,19 +226,21 @@ if ($_SESSION["acceso"] != true)
                         ?>
                             <tr>
                                 <td><?php echo $lista->id_profesional; ?></td>
-                                <td><?php echo $lista->nombre_p; ?></td>
+                                <td><?php echo $lista->nombre_pe; ?></td>
                                 <td><?php echo $lista->apellido; ?></td>
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
                                 <td><?php echo $lista->cod_ieee; ?></td>
                                 <td><?php echo $lista->cod_wpa; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=verGafeteProfesional">Ver</a></td>
+                                <?php echo '<td><img src="public/temp/test.png"width=80px heigh=auto></td>'; ?> 
+
+                                <!-- <td><a class="btn btn-sm btn-primary" href="?op=verGafeteProfesional">Ver</a></td> -->
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td id="id_profesional"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_profesional.'&op=eliminarAProfesional' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
@@ -303,13 +305,14 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
                                 <td><?php echo $lista->cod_ieee; ?></td>
                                 <td><?php echo $lista->cod_wpa; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td>
+                                <?php echo '<td><img src="'.$lista->gafete.'" width=80px heigh=auto></td>'; ?> 
+                                <!-- <td><a class="btn btn-sm btn-primary" href="?op=verGafeteEstudiante">Ver</a></td> -->
                                 <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
                                 <td id="id_estudiante"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_estudiante.'&op=eliminarEstudiante' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>

@@ -1,20 +1,20 @@
-jQuery(document).ready(function( $ ) {
+jQuery(document).ready(function ($) {
 
   // Back to top button
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
     } else {
       $('.back-to-top').fadeOut('slow');
     }
   });
-  $('.back-to-top').click(function(){
-    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+  $('.back-to-top').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
     return false;
   });
 
 
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
     } else {
@@ -50,7 +50,7 @@ jQuery(document).ready(function( $ ) {
     speed: 400
   });
 
- 
+
   if ($('#nav-menu-container').length) {
     var $mobile_nav = $('#nav-menu-container').clone().prop({
       id: 'mobile-nav'
@@ -64,19 +64,19 @@ jQuery(document).ready(function( $ ) {
     $('body').append('<div id="mobile-body-overly"></div>');
     $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
 
-    $(document).on('click', '.menu-has-children i', function(e) {
+    $(document).on('click', '.menu-has-children i', function (e) {
       $(this).next().toggleClass('menu-item-active');
       $(this).nextAll('ul').eq(0).slideToggle();
       $(this).toggleClass("fa-chevron-up fa-chevron-down");
     });
 
-    $(document).on('click', '#mobile-nav-toggle', function(e) {
+    $(document).on('click', '#mobile-nav-toggle', function (e) {
       $('body').toggleClass('mobile-nav-active');
       $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
       $('#mobile-body-overly').toggle();
     });
 
-    $(document).click(function(e) {
+    $(document).click(function (e) {
       var container = $("#mobile-nav, #mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
@@ -91,7 +91,7 @@ jQuery(document).ready(function( $ ) {
   }
 
 
-  $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
+  $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
@@ -100,7 +100,7 @@ jQuery(document).ready(function( $ ) {
         if ($('#header').length) {
           top_space = $('#header').outerHeight();
 
-          if( ! $('#header').hasClass('header-fixed') ) {
+          if (!$('#header').hasClass('header-fixed')) {
             top_space = top_space - 20;
           }
         }
@@ -129,43 +129,55 @@ jQuery(document).ready(function( $ ) {
     autoplay: true,
     dots: true,
     loop: true,
-    center:true,
-    responsive: { 0: { items: 1 }, 768: { items: 3 }, 992: { items: 4 }, 1200: {items: 5}
+    center: true,
+    responsive: {
+      0: { items: 1 }, 768: { items: 3 }, 992: { items: 4 }, 1200: { items: 5 }
     }
   });
 
 });
 
 
+function Pago() {
+
+  var tipoPago = document.registro.opcionPago.value;
+
+  var nombre = document.getElementById('nombreTarjeta')
+  var numero = document.getElementById('numTarjeta')
+  var cvv = document.getElementById('cvv')
+  var fecha = document.getElementById('fecha')
+
+  switch (tipoPago) {
+    case "tarjeta":
+      nombre.disabled = false
+      numero.disabled = false
+      cvv.disabled = false
+      fecha.disabled = false
+      break;
+
+    case "efectivo":
+      nombre.disabled = true
+      numero.disabled = true
+      cvv.disabled = true
+      fecha.disabled = true
+      break;
+
+    default:
+      break;
+  }
+}
 
 function SelectChanged() {
   var tipoUsuario = document.registro.tipoUsuario.value;
   var tipoPago = document.registro.opcionPago.value;
+  var cena = document.getElementById("cena").value;
+  //cena = 0.00
   var span = document.getElementById("subtotal");
   var span2 = document.getElementById("porcentaje");
   var span3 = document.getElementById("procesamiento");
   var span4 = document.getElementById("total");
   document.getElementById('TipoEstudiante').innerHTML = tipoUsuario;
 
-  switch (tipoPago) {
-    case "tarjeta":
-      document.getElementById('nombreTarjeta').disabled =false
-      document.getElementById('numTarjeta').disabled = false
-      document.getElementById('cvv').disabled = false
-      document.getElementById('fecha').disabled = false
-      break;
-    
-    case "efectivo":
-      document.getElementById('nombreTarjeta').disabled = true
-      document.getElementById('numTarjeta').disabled = true
-      document.getElementById('cvv').disabled = true
-      document.getElementById('fecha').disabled = true
-
-      break;
-
-    default:
-      break;
-  }
 
   switch (tipoUsuario) {
     case 'Estudiante UTP':
@@ -184,105 +196,124 @@ function SelectChanged() {
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'none'
       document.getElementById('idEst').style.display = 'none'
-      document.getElementById('ocupacion').style.display = 'none'
+      document.getElementById('ocupacion').style.display = 'block'
       document.getElementById('wpa').style.display = 'none'
       document.getElementById('institucion').disabled = true
-      document.getElementById('institucion').value = 1 
-      
-      span.textContent = "USD 75";
-      span2.textContent = "USD 3.75";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 79.25";
+      document.getElementById('institucion').value = 1
+
+      var monto = 75.00
+      span.textContent = 'USD ' + monto
+      var comision = 3.75
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
       break;
     case 'Autor':
       document.getElementById('paper1').style.display = 'block'
       document.getElementById('paper2').style.display = 'block'
       document.getElementById('paper3').style.display = 'block'
-      document.getElementById('pais').style.display = 'block'
       document.getElementById('provincia').style.display = 'none'
       document.getElementById('wpa').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'block'
       document.getElementById('institucion').disabled = false
-      document.getElementById('institucion').value = ""
+      document.getElementById('idEst').style.display = 'none'
+      //document.getElementById('institucion').value = ""
 
-      span.textContent = "USD 325";
-      span2.textContent = "USD 16.25";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 341.75";
+
+      var monto = 325.00
+      span.textContent = 'USD ' + monto
+      var comision = 16.25
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
+
       break;
     case 'Estudiante nacional':
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'none'
-      document.getElementById('pais').style.display = 'block'
+      document.getElementById('pais').value = 170
+
       document.getElementById('idEst').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'none'
       document.getElementById('wpa').style.display = 'block'
       document.getElementById('institucion').disabled = false
-      document.getElementById('institucion').value = ""
 
-      span.textContent = "USD 75";
-      span2.textContent = "USD 3.75";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 79.25";
+      var monto = 75.00
+      span.textContent = 'USD ' + monto
+      var comision = 3.75
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
       break;
     case 'Estudiante internacional':
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'block'
       document.getElementById('provincia').style.display = 'none'
       document.getElementById('idEst').style.display = 'block'
       document.getElementById('ocupacion').style.display = 'none'
       document.getElementById('wpa').style.display = 'block'
       document.getElementById('institucion').disabled = false
-      document.getElementById('institucion').value = ""
 
-      span.textContent = "USD 150";
-      span2.textContent = "USD 7.50";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 158.00";
+      var monto = 150.00
+      span.textContent = 'USD ' + monto
+      var comision = 7.50
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
       break;
     case 'Funcionario UTP':
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'none'
+      document.getElementById('pais').value = 170
       document.getElementById('idEst').style.display = 'none'
       document.getElementById('wpa').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'block'
       document.getElementById('institucion').disabled = true
-      document.getElementById('institucion').value = "Universidad Tecnológica de Panamá"
+      document.getElementById('institucion').value = 1
 
-      span.textContent = "USD 225";
-      span2.textContent = "USD 11.25";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 236.75";
+      var monto = 225.00
+      span.textContent = 'USD ' + monto
+      var comision = 11.25
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
       break;
     case 'Profesional nacional':
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'none'
       document.getElementById('idEst').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'block'
       document.getElementById('wpa').style.display = 'block'
       document.getElementById('institucion').disabled = false
-      document.getElementById('institucion').value = ""
 
-      span.textContent = "USD 225";
-      span2.textContent = "USD 11.25";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 236.75";
+      var monto = 225.00
+      span.textContent = 'USD ' + monto
+      var comision = 11.25
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
       break;
     case 'Profesional internacional':
       document.getElementById('paper1').style.display = 'none'
       document.getElementById('paper2').style.display = 'none'
       document.getElementById('paper3').style.display = 'none'
-      document.getElementById('pais').style.display = 'block'
       document.getElementById('provincia').style.display = 'none'
       document.getElementById('idEst').style.display = 'none'
       document.getElementById('ocupacion').style.display = 'none'
@@ -290,10 +321,14 @@ function SelectChanged() {
       document.getElementById('institucion').disabled = false
       document.getElementById('institucion').value = ""
 
-      span.textContent = "USD 300";
-      span2.textContent = "USD 15.00";
-      span3.textContent = "USD 0.50";
-      span4.textContent = "USD 315.50";
+      var monto = 300.00
+      span.textContent = 'USD ' + monto
+      var comision = 15.00
+      span2.textContent = 'USD ' + comision
+      var comision_pago = 0.50
+      span3.textContent = 'USD ' + comision_pago
+      var total = monto + comision + comision_pago
+      span4.textContent = 'USD ' + total
       break;
     default:
       span.textContent = "USD 0.00";
@@ -325,17 +360,17 @@ function SelectChanged() {
 
 }
 
-function TipoPago() { 
+function TipoPago() {
   var tipoPago = document.registro.tipoPago.value;
 
   switch (tipoPago) {
     case "tarjeta":
-      document.getElementById('nombreTarjeta').disabled =false
+      document.getElementById('nombreTarjeta').disabled = false
       document.getElementById('NumTarjeta').disabled = false
       document.getElementById('cvv').disabled = false
       document.getElementById('fecha').disabled = false
       break;
-    
+
     case "efectivo":
       document.getElementById('nombreTarjeta').disabled = true
       document.getElementById('NumTarjeta').disabled = true
@@ -346,7 +381,7 @@ function TipoPago() {
     default:
       break;
   }
- }
+}
 
 function codigos() {
   const ieee = document.registro.IEEE.value;
@@ -376,63 +411,63 @@ function codigos() {
 
   // Spinner
   var spinner = function () {
-      setTimeout(function () {
-          if ($('#spinner').length > 0) {
-              $('#spinner').removeClass('show');
-          }
-      }, 1);
+    setTimeout(function () {
+      if ($('#spinner').length > 0) {
+        $('#spinner').removeClass('show');
+      }
+    }, 1);
   };
   spinner();
-  
-  
+
+
   // Back to top button
   $(window).scroll(function () {
-      if ($(this).scrollTop() > 300) {
-          $('.back-to-top').fadeIn('slow');
-      } else {
-          $('.back-to-top').fadeOut('slow');
-      }
+    if ($(this).scrollTop() > 300) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
   });
   $('.back-to-top').click(function () {
-      $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-      return false;
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+    return false;
   });
 
 
   // Sidebar Toggler
   $('.sidebar-toggler').click(function () {
-      $('.sidebar, .content').toggleClass("open");
-      return false;
+    $('.sidebar, .content').toggleClass("open");
+    return false;
   });
 
 
   // Progress Bar
   $('.pg-bar').waypoint(function () {
-      $('.progress .progress-bar').each(function () {
-          $(this).css("width", $(this).attr("aria-valuenow") + '%');
-      });
-  }, {offset: '80%'});
+    $('.progress .progress-bar').each(function () {
+      $(this).css("width", $(this).attr("aria-valuenow") + '%');
+    });
+  }, { offset: '80%' });
 
 
   // Calender
   $('#calender').datetimepicker({
-      inline: true,
-      format: 'L'
+    inline: true,
+    format: 'L'
   });
 
 
   // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
-      autoplay: true,
-      smartSpeed: 1000,
-      items: 1,
-      dots: true,
-      loop: true,
-      nav : false
+    autoplay: true,
+    smartSpeed: 1000,
+    items: 1,
+    dots: true,
+    loop: true,
+    nav: false
   });
 
 
 
-  
+
 })(jQuery);
 
