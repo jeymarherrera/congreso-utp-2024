@@ -63,6 +63,8 @@ if (isset($_GET['op'])) {
     $controller->eliminarPonenciaPro($id);
   } elseif ($opcion == "eventos") {
     $controller->CrearEvento();
+  } elseif ($opcion == "CrearEvento") {
+    $controller->RegistrarEvento();
   } elseif ($opcion == "areas") {
     $controller->AgregarArea();
   } elseif ($opcion == "crearArea") {

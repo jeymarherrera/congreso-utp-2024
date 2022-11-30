@@ -74,7 +74,6 @@ if ($_SESSION["acceso"] != true)
 
                     <tbody>
                         <?php
-                        $n = 1;
                         foreach ($listaConferencia as $lista) {
                         ?>
                             <tr>
@@ -89,7 +88,6 @@ if ($_SESSION["acceso"] != true)
                                 <td id="id_conferencia"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_conferencia.'&op=eliminarConferencia' ?>">Eliminar</a></td>
                             </tr>
                         <?php
-                            $n++;
                         }
                         ?>
                     </tbody>
@@ -121,7 +119,6 @@ if ($_SESSION["acceso"] != true)
 
                     <tbody>
                         <?php
-                        $n = 1;
                         foreach ($listaPonencias as $lista) {
                         ?>
                             <tr>
@@ -134,7 +131,6 @@ if ($_SESSION["acceso"] != true)
                                 <td id="id_ponencia"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->ponencia.'&op=eliminarPonencia' ?>">Eliminar</a></td>
                             </tr>
                         <?php
-                            $n++;
                         }
                         ?>
                     </tbody>

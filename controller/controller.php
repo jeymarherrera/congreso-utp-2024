@@ -385,21 +385,26 @@ class Controller
 
     public function RegistrarPonenciaAutor()
     {
-        $ponencia = new Conferencias();
+        $ponencia = new Eventos();
 
         $ponencia->ponente = $_REQUEST['ponente'];
         $ponencia->titulo = $_REQUEST['titulo'];
-        $ponencia->fechaIni = $_REQUEST['fechaIni'];
-        $ponencia->fechaFin = $_REQUEST['fechaFin'];
-        $ponencia->cantidad = $_REQUEST['conferencia'];
+        $ponencia->fecha_inicio = $_REQUEST['fecha_inicio'];
+        $ponencia->fecha_fin = $_REQUEST['fecha_fin'];
+        $ponencia->id_evento = $_REQUEST['id_evento'];
 
-        $this->resp = $this->modelConferencia2->CrearPonencia($ponencia);
+        $this->resp = $this->modelEvento->CrearPonencia($ponencia);
 
-        header('Location: ?op=conferencias&msg=' . $this->resp);
+        header('Location: ?op=evento&msg=' . $this->resp);
     }
 
     public function CrearEvento()
     {
+        $listaEvento = new Eventos();
+        $listaEvento = $this->modelEvento->ObtenerTodasLosEventos();
+
+        $listaPonencias = new Eventos();
+        $listaPonencias = $this->modelEvento->ObtenerTodasLasPonencias();
         require("view/evento.php");
     }
 
@@ -750,11 +755,39 @@ class Controller
 
     public function nuevoEvento()
     {
+        $sala = new Salas();
+        $sala = $this->modelSala1->ObtenerTodasLasSalas();
+
+        $congreso = new Congreso();
+        $congreso = $this->modelCongreso->ObtenerTodosLosCongresos();
+
         require("view/agregar-evento.php");
+    }
+
+    public function RegistrarEvento()
+    {
+        $evento = new Eventos();
+
+        $evento->titulo = $_REQUEST['titulo'];
+        $evento->horas = $_REQUEST['horas'];
+        $evento->cantidad_ponencias = $_REQUEST['cantidad'];
+        $evento->fecha_inicio = $_REQUEST['fecha_inicio'];
+        $evento->fecha_fin = $_REQUEST['fecha_fin'];
+        $evento->id_sala = $_REQUEST['sala'];
+        $evento->id_congreso = $_REQUEST['congreso'];
+
+        $this->resp = $this->modelEvento->CrearConferencia($evento);
+
+        header('Location: ?op=evento&msg=' . $this->resp);
     }
 
     public function nuevaPonencia()
     {
+        $listaPonente = new Conferencias();
+        $listaPonente = $this->modelEvento->ObtenerTodosLosAutores();
+
+        $listaEvento = new Conferencias();
+        $listaEvento = $this->modelEvento->ObtenerTodasLosEventos();
         require("view/agregar-ponencias-autor.php");
     }
 

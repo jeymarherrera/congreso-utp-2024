@@ -65,7 +65,7 @@ if ($_SESSION["acceso"] != true)
 
                 <br><label for="conferencia" class="form-label">Conferencia</label>
                 <select class="form-select mb-3" aria-label="Default select example" name="id_conferencia" required>
-                    <option>Seleccione un ponente</option>
+                    <option>Seleccione una conferencia</option>
                     <?php foreach ($listaConferencia as $c) { ?>
                         <option value="<?php echo $c->id_conferencia; ?>"><?php echo $c->titulo; ?></option>
                     <?php } ?>
