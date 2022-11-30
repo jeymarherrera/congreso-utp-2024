@@ -501,7 +501,7 @@ class Controller
         header('Location: ?op=certificados&msg=' . $this->resp);
         $listaCertificados = new Usuarios();
         $listaCertificados = $this->modelUsuario2->ObtenerUsuariosCertificado();
-        require("view/generar-certificado.php");
+        require("view/ver.php");
     }
 
     public function AgregarAdmin()
