@@ -25,6 +25,6 @@
         //Mostramos la imagen generada
 	echo '<img src="'.$dir.basename($filename).'" /><hr/>';
 	header('Location: ?op=mail&msg=Correo enviado');
-	//echo '<meta http-equiv="refresh" content="0;url=?op=email &msg=Se ha enviado un correo electrónico para restablecer la contraseña&t=text-success">';
+	//echo '<meta http-equiv="refresh" content="0;url=?op=email &msg=Se ha enviado un correo electrónico para restablecer la contrasena&t=text-success">';
 
 ?>

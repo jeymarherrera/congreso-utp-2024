@@ -57,11 +57,11 @@
 
             <!-- AREA CONTRASENA -->
             <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg" name="contrasena" placeholder="Contraseña" />
+              <input type="password" id="form3Example4" class="form-control form-control-lg" name="contrasena" placeholder="contrasena" />
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button class="btn btn-lg btn-primary w-100 m-2" type="submit">Entrar</button>
                 <div class="d-flex justify-content-center links">
-                  <a style="color:#000" href="?op=recuperar">¿Olvidó su contraseña?</a>
+                  <a style="color:#000" href="?op=recuperar">¿Olvidó su contrasena?</a>
                 </div>
 
               </div>

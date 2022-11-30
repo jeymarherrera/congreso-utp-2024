@@ -42,7 +42,7 @@
                     <!-- CAMBIAR EL TIPO DE METODO AL GUARDAR EN LA BASE -->
                     <form method="POST" action="./?op=login">
                         <div class="section-header">
-                            <h2 style="text-align:center">Recupera tu contraseña</h2>
+                            <h2 style="text-align:center">Recupera tu contrasena</h2>
                         </div>
                         <!-- AREA CORREO -->
                         <div class="form-outline mb-4">

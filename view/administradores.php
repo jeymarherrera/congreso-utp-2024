@@ -92,7 +92,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->contraseña; ?></td>
+                                <td><?php echo $lista->contrasena; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
                                 <td><?php echo $lista->nombre_ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
