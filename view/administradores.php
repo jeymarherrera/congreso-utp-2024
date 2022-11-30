@@ -94,11 +94,11 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->correo; ?></td>
                                 <td><?php echo $lista->contrasena; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
-                                <td><?php echo $lista->nombre_ciudad; ?></td>
+                                <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>
                                 <td><?php echo $lista->nombre_o; ?></td>
                                 <td><?php echo $lista->nombre_e; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=error">Editar</a></td>
                                 <td id="id_admin"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_administrador.'&op=eliminarAdmin'?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>

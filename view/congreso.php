@@ -83,7 +83,7 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->horas_minimas; ?></td>
                                 <td><?php echo $lista->fecha_inicio; ?></td>
                                 <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="<?php ?>">Editar</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="?op=error">Editar</a></td>
                                 <td id="id_congreso"><a class="btn btn-sm btn-primary" href="<?php echo 'index.php?id='.$lista->id_congreso.'&op=eliminarCongreso' ?>">Eliminar</a></td>
                                 <td><span class="text-success"><?php ?></span></td>
                             </tr>
