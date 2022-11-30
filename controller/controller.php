@@ -39,6 +39,7 @@ class Controller
     private $modelArticulo;
     private $modelUbicacion;
     private $modelEntidad;
+    private $modelCertificado;
 
     public function __CONSTRUCT()
     {
@@ -55,6 +56,7 @@ class Controller
         $this->modelArticulo = new Articulos();
         $this->modelUbicacion = new Ubicacion();
         $this->modelEntidad = new Entidades();
+        $this->modelCertificado = new Certificados();
     }
 
     public function Index()
@@ -314,6 +316,8 @@ class Controller
     {
 
         $listaUsuario = new Usuarios();
+        $listaUsuario = $this->modelUsuario2->CantidadAdmin();
+
         $listaRegistros = new Usuarios();
         $listaRegistros = $this->modelUsuario2->ObtenerTodosLosRegistros();
 
@@ -487,7 +491,7 @@ class Controller
         $listaProfesionalesEv = $this->modelUsuario2->ObtenerCertificadoProfesionalEvento();
 
         $listaEstudiantes = new Usuarios();
-        $listaEstudiantes = $this->modelUsuario4->ObtenerCertificadoEstudiante();
+        $listaEstudiantes = $this->modelUsuario2->ObtenerCertificadoEstudiante();
 
         $listaEstudianteEv = new Usuarios();
         $listaEstudianteEv = $this->modelUsuario2->ObtenerCertificadoEstudianteEvento();
@@ -495,7 +499,7 @@ class Controller
         require("view/certificados.php");
     }
 
-    public function VerCertificados()
+    public function VerCertificados($id)
     {
         $this->resp = $this->modelUsuario2->verCertificado($id);
         header('Location: ?op=certificados&msg=' . $this->resp);

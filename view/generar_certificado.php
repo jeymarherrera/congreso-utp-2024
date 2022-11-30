@@ -7,12 +7,17 @@ $image = imagecreatefrompng('public/imagen.png');
 ob_start();
 // Asignar el color para el texto
 $color = imagecolorallocate($image, 0,0, 0);
-
+showImage($image);
 // Asignar la ruta de la fuente
 $font_path = __DIR__.'\arial.ttf';
 
-$name = "Jeymar Herrera"; // Texto 1
-$date = "20/10/2024"; // Texto 2
+//foreach ($listaEstudiantesEve as $lista) {
+    $name =$lista->nombre;
+    $date = $lista->Finalizacion;
+//}
+
+// $name = "Jeymar Herrera"; // Texto 1
+// $date = "20/10/2024"; // Texto 2
 
 /// imagettftext ( resource $image , float $size , float $angle , int $x , int $y , int $color , string $fontfile , string $text )
 imagettftext($image, 80, 0, 200, 770, $color, $font_path, $name); // Colocar el texto 1 en la imagen
@@ -49,3 +54,4 @@ $result = $db->query("INSERT into images (image) SET Imagen='$png'");
 imagedestroy($image); // Limpiar la memoria
 
 ?> 
+

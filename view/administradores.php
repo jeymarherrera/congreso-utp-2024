@@ -69,7 +69,7 @@ if ($_SESSION["acceso"] != true)
                             <th scope="col">Telefono</th>
                             <th scope="col">Sexo</th>
                             <th scope="col">Correo</th>
-                            <th scope="col">Contrasena</th>
+                            <!-- <th scope="col">Contrasena</th> -->
                             <th scope="col">Pais de Residencia</th>
                             <th scope="col">Ciudad</th>
                             <th scope="col">Provincia</th>
@@ -92,7 +92,6 @@ if ($_SESSION["acceso"] != true)
                                 <td><?php echo $lista->telefono; ?></td>
                                 <td><?php echo $lista->sexo; ?></td>
                                 <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->contrasena; ?></td>
                                 <td><?php echo $lista->nombre_pais; ?></td>
                                 <td><?php echo $lista->ciudad; ?></td>
                                 <td><?php echo $lista->nombre_p; ?></td>

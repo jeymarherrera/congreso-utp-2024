@@ -64,7 +64,7 @@ if ($_SESSION["acceso"] != true) {
                     <i class="fa fa-user fa-3x text-primary"></i>
                     <div class="ms-3">
                         <p class="mb-2">Cantidad de Administradores</p>
-                        <h6 class="mb-0"></h6>
+                        <h6 class="mb-0"><?php echo count($listaUsuario); ?></h6>
                     </div>
                 </div>
             </div>

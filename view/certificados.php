@@ -107,21 +107,8 @@
                     </thead>
 
                     <tbody>
-                        <?php
-                        foreach ($listaEstudiantes as $lista) {
-                        ?>
-                            <tr>
-                                <td><?php echo $lista->id_estudiante; ?></td>
-                                <td><?php echo $lista->nombre; ?></td>
-                                <td><?php echo $lista->correo; ?></td>
-                                <td><?php echo $lista->titulo; ?></td>
-                                <td><?php echo $lista->total_horas; ?></td>
-                                <td><?php echo $lista->fecha_fin; ?></td>
-                                <td><a class="btn btn-sm btn-primary" href="?op=verCertificadoEstudiante">Ver</a></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
+                    
+
                     </tbody>
                 </table>
             </div>
