@@ -1,6 +1,5 @@
 <?php
-if ($_SESSION["acceso"] != true)
-{
+if ($_SESSION["acceso"] != true) {
     header('Location: ?op=error');
 }
 ?>
@@ -42,38 +41,40 @@ if ($_SESSION["acceso"] != true)
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">Ingrese los datos del nuevo evento</h6>
-            <form>
+            <form name="registro" method="POST" action="?op=CrearEvento">
                 <div class="mb-3">
                     <label for="name" class="form-label">Titulo</label>
-                    <input type="name" class="form-control" id="name" required>
+                    <input type="name" class="form-control" id="name" name="titulo" required>
                 </div>
                 <div class="mb-3">
                     <label for="hours" class="form-label">Horas Minimas</label>
-                    <input type="number" class="form-control" id="hours" required>
+                    <input type="number" class="form-control" id="hours" name="horas" required>
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Cantidad de Ponencias</label>
-                    <input type="number" class="form-control" id="quantity" required>
+                    <input type="number" class="form-control" id="quantity" name="cantidad" required>
                 </div>
                 <div class="mb-3">
-                <label for="startDate">Seleccione la fecha de iniciacion</label>
-                <input id="startDate" class="form-control" type="date" required/>
+                    <label for="startDate">Seleccione la fecha de iniciacion</label>
+                    <input id="startDate" class="form-control" type="date" name="fecha_inicio" required />
                 </div>
                 <label for="finishDate">Seleccione la fecha de culminacion</label>
-                <input id="finishDate" class="form-control" type="date" required/>
+                <input id="finishDate" class="form-control" type="date" name="fecha_fin" required />
+
                 <br><label for="pais" class="form-label">Sala</label>
-                <select class="form-select mb-3" aria-label="Default select example" required>
+                <select class="form-select mb-3" aria-label="Default select example" id="sala" name="sala" required>
                     <option selected>Seleccione una opción</option>
-                    <option value="1">0011</option>
-                    <option value="2">0012</option>
-                    <option value="3">0013</option>
+                    <?php foreach ($sala as $s) { ?>
+                        <option value="<?php echo $s->id_sala; ?>"><?php echo $s->num_sala; ?></option>
+                    <?php } ?>
                 </select>
+                
                 <label for="pais" class="form-label">Congreso</label>
-                <select class="form-select mb-3" aria-label="Default select example" required>
-                    <option selected>Seleccione una opción</option>
-                    <option value="1">Congreso 2024</option>
-                    <option value="2">Congreso 2024</option>
-                    <option value="3">Congreso 2024</option>
+                <select class="form-select mb-3" aria-label="Default select example" id="congreso" name="congreso" required>
+                <option selected>Seleccione una opción</option>
+                    <?php foreach ($congreso as $c) { ?>
+                        <option value="<?php echo $c->id_congreso; ?>"><?php echo $c->titulo; ?></option>
+                    <?php } ?>
                 </select>
                 <br><button type="submit" class="btn btn-primary">Agregar</button>
             </form>
